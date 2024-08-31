@@ -1,0 +1,8 @@
+[@MAIN]
+#SAY
+<#Dft>
+
+[@1]
+#IF
+#ACT
+MOVE 147 0 0 1

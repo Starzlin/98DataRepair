@@ -1,0 +1,65 @@
+[@MAIN]
+#IF
+CheckCalc <$VERSION> < 6
+#ACT
+#SAY
+该玩法将在苍月版本开放，可以通过快捷键W查看版本内容详情！
+#ELSESAY
+<#D>城主龙相君与蒙君毅厉兵秣马，值此敌摧旄灭之际，巡狩玛法，诸位侠客只需花费一定数量的狩猎令便可托将士深入险地狩猎，期间所得经验与战利品都将归于各位侠客。<#D/><#PC:40><#PC:2314><#UI:ExpBoosterApply>申请玛法狩猎<#UI/><#UI:ExpBoosterHarvest>领取狩猎奖励<#UI/><#SO:1>兑换狩猎令<#SO/>
+
+[@1]
+#IF
+#ACT
+#SAY
+使用狩猎令可进行玛法狩猎，如果阁下有兴趣，可以花费金币在我这里兑换，每个狩猎令需要花费[100000]金币。<#SO:1>兑换1个狩猎令<#SO/><#SO:2>兑换10个狩猎令<#SO/><#SO:3>兑换50个狩猎令<#SO/>
+
+[@1_1]
+#IF
+CheckGold < 100000
+#ACT
+Break
+#SAY
+你没有足够的金币。<#SO:1>确定<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+#ACT
+TakeGold 100000
+GiveItemIdx 2314 1
+
+[@1_2]
+#IF
+CheckGold < 1000000
+#ACT
+Break
+#SAY
+你没有足够的金币。<#SO:1>确定<#SO/>
+
+#IF
+#ACT
+TakeGold 1000000
+GiveItemIdx 2314 10
+
+[@1_3]
+#IF
+CheckGold < 5000000
+#ACT
+Break
+#SAY
+你没有足够的金币。<#SO:1>确定<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+#ACT
+TakeGold 5000000
+GiveItemIdx 2314 50

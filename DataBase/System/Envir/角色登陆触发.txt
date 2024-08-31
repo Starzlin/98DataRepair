@@ -1,0 +1,9 @@
+[@登陆触发执行]
+{
+#IF
+IsNewHuman
+#ACT
+GlobalMessage "新玩家：<font color='#EE82EE'>[<$USERNAME>]</font>来到了<font color='#7d6aff'>《永恒测试》</font>，顿时电闪雷鸣.风云再起！！！" FALSE
+LocalMessage "新玩家：<font color='#EE82EE'>[<$USERNAME>]</font>来到了<font color='#7d6aff'>《永恒测试》</font>，顿时电闪雷鸣.风云再起！！！" TRUE
+Break
+}

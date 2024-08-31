@@ -1,0 +1,62 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+虽然吾主已逝，但作为吾主近侍，自然也不希望其伟绩湮没不闻。若阁下有足够诚意，吾主的诸多秘辛，也不是不可说与你听。<#D/><#SO:1>求取 龙卫秘典<#SO/><#SO:2>求取 传承明珠<#SO/><#SO:3>交付秘典换取经验<#SO/>
+
+[@1]
+#IF
+#ACT
+#SAY
+你可在此处使用灵符兑换龙卫秘典。<#D/><#SO:11>兑换1本（消耗灵符x8）<#SO/><#SO:12>兑换10本（消耗灵符x80）<#SO/>
+
+[@1_11]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+Break
+
+#IF
+CheckItemIdx 90226 8
+#ACT
+takeItemIdx 90226 8
+GiveItemIdx 90502 1 FALSE
+
+[@1_12]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+Break
+
+#IF
+CheckItemIdx 90226 80
+#ACT
+takeItemIdx 90226 80
+GiveItemIdx 90502 10 FALSE
+
+[@2]
+#IF
+#ACT
+MOV N1 40
+Calc N1 - J1
+#SAY
+你可在此处使用灵符兑换传承明珠。<br>(今日剩余可兑换：[<$STR(N1)>]颗)<#D/><#SO:21>兑换传承明珠1颗（消耗灵符x10）<#SO/><#SO:22>兑换传承明珠10颗（消耗灵符x100）<#SO/>
+
+[@3]
+#IF
+#ACT
+#SAY
+勇士，如果你愿意把手中的龙卫秘典交付于我的话，我会赠予你[10000]经验值。<#SO:31>给予龙卫秘典1本<#SO/>
+
+[@3_1]
+#IF
+CheckItemIdx 90502 1
+#ACT
+takeItemIdx 90502 1
+GiveExp 10000
+#SAY
+勇士，如果你愿意把手中的龙卫秘典交付于我的话，我会赠予你[10000]经验值。<#SO:31>给予龙卫秘典1本<#SO/>
+#ELSESAY
+您身上似乎并没有龙卫秘典，其他书籍我一概不收哦。<#SO:99>确认<#SO/>

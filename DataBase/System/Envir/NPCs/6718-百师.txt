@@ -1,0 +1,37 @@
+[@MAIN]
+#IF
+CheckClass 战士
+#ACT
+MOV Z1 1
+
+#IF
+CheckClass 法师
+#ACT
+MOV Z1 2
+
+#IF
+CheckClass 刺客
+#ACT
+MOV Z1 3
+
+#IF
+CheckClass 弓手
+#ACT
+MOV Z1 4
+
+#IF
+CheckClass 道士
+#ACT
+MOV Z1 5
+
+#IF
+CheckClass 龙枪
+#ACT
+MOV Z1 6
+
+#IF
+#ACT
+Calc Z1 + 710552
+#SAY
+<#P0:0><#P1:0><#T:<$STR(Z1)>>
+

@@ -1,0 +1,356 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+<P0:0><P1:0><#T:990404>
+
+[@1]
+#IF
+#ACT
+#SAY
+;<#D>请选择你要捆的普通药水类型,每种都需要100金币。<#D/><#SO:1>捆强效金创药<#SO/><#SO:2>捆强效魔法药<#SO/><#SO:3>捆金创药（中量）<#SO/><#SO:4>捆魔法药（中量）<#SO/><#SO:5>捆金创药（小量）<#SO/><#SO:6>捆魔法药（小量）<#SO/><#SO:7>返回<#SO/>
+<P0:0><P1:0><#T:666502>
+
+[@1_7]
+#IF
+#ACT
+GOTO @Main
+
+[@3_4]
+#IF
+#ACT
+GOTO @Main
+
+[@1_1]
+#IF
+CheckGold < 100
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 303 6
+#ACT
+TakeGold 100
+TakeItemIdx 303 6
+GiveItemIdx 393
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666505>
+
+[@1_2]
+#IF
+CheckGold < 100
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 323 6
+#ACT
+TakeGold 100
+TakeItemIdx 323 6
+GiveItemIdx 403
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666505>
+
+[@1_3]
+#IF
+CheckGold < 100
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 302 6
+#ACT
+TakeGold 100
+TakeItemIdx 302 6
+GiveItemIdx 392
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666505>
+
+[@1_4]
+#IF
+CheckGold < 100
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 322 6
+#ACT
+TakeGold 100
+TakeItemIdx 322 6
+GiveItemIdx 402
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666505>
+
+[@1_5]
+#IF
+CheckGold < 100
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 301 6
+#ACT
+TakeGold 100
+TakeItemIdx 301 6
+GiveItemIdx 391
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666505>
+
+[@1_6]
+#IF
+CheckGold < 100
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 321 6
+#ACT
+TakeGold 100
+TakeItemIdx 321 6
+GiveItemIdx 401
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666505>
+
+[@2]
+#IF
+#ACT
+#SAY
+<P0:0><P1:0><#T:990411>
+
+[@2_1]
+#IF
+CheckGold < 200
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 351 6
+#ACT
+TakeGold 200
+TakeItemIdx 351 6
+GiveItemIdx 411
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666505>
+
+[@2_2]
+#IF
+CheckGold < 500
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 352 6
+#ACT
+TakeGold 500
+TakeItemIdx 352 6
+GiveItemIdx 412
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666505>
+
+[@2_3]
+#IF
+CheckGold < 500
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 353 6
+#ACT
+TakeGold 500
+TakeItemIdx 353 6
+GiveItemIdx 413
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666505>
+
+[@3]
+#IF
+#ACT
+#SAY
+<P0:0><P1:0><#T:666504>
+
+[@3_1]
+#IF
+CheckGold < 100
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 80001 6
+#ACT
+TakeGold 100
+TakeItemIdx 80001 6
+GiveItemIdx 80101
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666506>
+
+[@3_2]
+#IF
+CheckGold < 100
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 80007 6
+#ACT
+TakeGold 100
+TakeItemIdx 80007 6
+GiveItemIdx 80107
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666506>
+
+[@3_3]
+#IF
+CheckGold < 100
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:666507>
+
+#IF
+CheckItemIdx 80005 6
+#ACT
+TakeGold 100
+TakeItemIdx 80005 6
+GiveItemIdx 80105
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:666506>
+
+[@4]
+#IF
+#ACT
+#SAY
+<P0:0><P1:0><#T:990408>
+
+[@4_1]
+#IF
+#ACT
+#SAY
+<P0:0><P1:0><#T:990405>
+
+[@4_2]
+#IF
+#ACT
+#SAY
+<P0:0><P1:0><#T:990406>
+
+[@4_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckGold < 1040000
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:990409>
+
+#IF
+#ACT
+TakeGold 1040000
+GiveItemIdx 80207 1
+#SAY
+<P0:0><P1:0><#T:666508>
+
+[@4_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckGold < 10000
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:990409>
+
+#IF
+CheckItemIdx 80207 5
+#ACT
+TakeGold 10000
+TakeItemIdx 80207 5
+GiveItemIdx 80209 1
+#SAY
+<P0:0><P1:0><#T:666508>
+#ELSESAY
+<P0:0><P1:0><#T:990410>
+
+[111111]
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+not CheckItemIdx 80207 5
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:990410>
+
+#IF
+CheckGold < 10000
+#ACT
+Break
+#SAY
+<P0:0><P1:0><#T:990409>
+
+#IF
+#ACT
+TakeGold 10000
+TakeItemIdx 80207 5
+GiveItemIdx 80209 1
+#SAY
+<P0:0><P1:0><#T:666508>
+

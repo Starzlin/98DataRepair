@@ -1,0 +1,21 @@
+[@MAIN]
+#IF
+#ACT
+Break
+#SAY
+欢迎来到群英之战【名扬天下】！<#SO:1>我要出去<#SO/>
+
+
+[@1]
+#IF
+CheckCalc <$STR(G50)> == 0
+#ACT
+Break
+#SAY
+请耐心等待，18点准时开区！
+
+#IF
+#ACT
+MOVE 142 0 0 1
+;GiveItem 冥想丹 1 TRUE
+GiveItemIdx 1500501 1 TRUE

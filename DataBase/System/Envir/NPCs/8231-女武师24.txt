@@ -1,0 +1,276 @@
+[@MAIN]
+;2024-天命觉醒（四）
+;2026-天命觉醒（六）
+
+
+#IF
+CheckQuest 2024 ACTIVE
+#ACT
+Break
+#SAY
+我这里有各种觉醒书页，阁下若有意在精进技艺，不妨看看<#SO:1>兑换各类觉醒书页<#SO/><#SO:99>觉醒任务无法接取？<#SO/>
+
+#IF
+CheckQuest 2026 ACTIVE
+#ACT
+Break
+#SAY
+我这里有各种觉醒书页，阁下若有意在精进技艺，不妨看看<#SO:1>兑换各类觉醒书页<#SO/><#SO:2>每日领取觉醒书页1张(免费领取1次)<#SO/><#SO:3>每日[50]灵符购买觉醒书页4张（每日可购2次）<#SO/><#SO:99>觉醒任务无法接取？<#SO/>
+
+
+#IF
+#ACT
+#SAY
+向死而生，无惧群魔，生死一线，方得突破<#SO:1>不知所云<#SO/><#SO:4>兑换各类觉醒书页·卷三<#SO/><#SO:99>觉醒任务无法接取？<#SO/>
+
+[@99]
+#IF
+Check [1] 0
+#ACT
+StartQuest 2020
+Set [1] 1
+
+[@4]
+#IF
+LEVEL < 50
+CheckCalc <$LEVEL> < 50
+#ACT
+Break
+#SAY
+<#D>等级不够！等级达到50级再来！<#D/>
+
+
+#IF
+LEVEL >= 50
+CheckCalc <$LEVEL> >= 50
+#ACT
+#SAY
+<#D>我这里有各种觉醒书页，阁下若有意在精进技艺，不妨看看<#D/><#SO:5>每日领取觉醒书页·卷三 1张(免费领取1次)<#SO/><#SO:6>每日[50]灵符购买觉醒书页·卷三 4张（限购2次）<#SO/>
+
+
+
+[@4_5]
+#IF
+CheckCalc <$STR(J5)> >= 1
+#ACT
+Break
+#SAY
+您今日已领取过[觉醒书页·卷三]，请明日再来！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+#ACT
+Calc J5 + 1
+GiveItem 觉醒书页·卷三 1 TRUE
+#SAY
+领取[觉醒书页·卷三]成功！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+[@4_5_1]
+#IF
+#ACT
+GOTO @MAIN
+
+[@4_6]
+#IF
+CheckCalc <$STR(J6)> >= 2
+#ACT
+Break
+#SAY
+您今日可购买次数已达上限，请明日再来！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+not CheckItemIdx 90226 50
+#ACT
+Break
+#SAY
+背包不足[50]灵符，无法进行购买！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+#ACT
+Calc J6 + 1
+TakeItemIdx 90226 50
+GiveItem 觉醒书页·卷三 4 TRUE
+#SAY
+购买[觉醒书页·卷三]成功！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+[@4_6_1]
+#IF
+#ACT
+GOTO @MAIN
+
+
+
+
+
+[@2]
+#IF
+checkcalc <$STR(J3)> >= 1
+#ACT
+Break
+#SAY
+您今日已领取过[觉醒书页·卷二]，请明日再来！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+#ACT
+Calc J3 + 1
+GiveItem 觉醒书页·卷二 1 TRUE
+#SAY
+领取[觉醒书页·卷二]成功！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+[@2_1]
+#IF
+#ACT
+GOTO @MAIN
+
+[@3]
+#IF
+checkcalc <$STR(J4)> >= 2
+#ACT
+Break
+#SAY
+您今日可购买次数已达上限，请明日再来！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+not CheckItemIdx 90226 50
+#ACT
+Break
+#SAY
+背包不足[50]灵符，无法进行购买！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+#ACT
+Calc J4 + 1
+TakeItemIdx 90226 50
+GiveItem 觉醒书页·卷二 4 TRUE
+#SAY
+购买[觉醒书页·卷二]成功！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+[@3_1]
+#IF
+#ACT
+GOTO @MAIN
+
+[@1]
+#IF
+CheckQuest 2024 ACTIVE
+#ACT
+Break
+#SAY
+阁下想兑换何种书页呢？<#SO:1>兑换【觉醒书页】（消耗50灵符）<#SO/><#SO:2>兑换10份【觉醒书页】（消耗500灵符）<#SO/>
+
+#IF
+CheckQuest 2026 ACTIVE
+#ACT
+Break
+#SAY
+阁下想兑换何种书页呢？<#SO:1>兑换【觉醒书页·卷二】（消耗50灵符）<#SO/><#SO:2>兑换10份【觉醒书页·卷二】（消耗500灵符）<#SO/>
+
+[@1_1]
+#IF
+#ACT
+#SAY
+兑换[1]张此书页需确认花费[50]灵符，是否确认？<#SO:1>确认兑换<#SO/><#SO:2>我再想想<#SO/>
+
+[@1_1_1]
+#IF
+not CheckItemIdx 90226 50
+#ACT
+Break
+#SAY
+背包不足[50]张灵符，无法兑换！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckQuest 2024 ACTIVE
+#ACT
+TakeItemIdx 90226 50
+GiveItemIdx 90240 1
+Break
+#SAY
+书页兑换成功!<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+CheckQuest 2026 ACTIVE
+#ACT
+TakeItemIdx 90226 50
+GiveItemIdx 90247 1
+Break
+#SAY
+书页兑换成功!<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+[@1_1_1_1]
+#IF
+#ACT
+GOTO @MAIN
+
+[@1_2]
+#IF
+#ACT
+#SAY
+兑换[10]张此书页需确认花费[500]灵符，是否确认？<#SO:1>确认兑换<#SO/><#SO:2>我再想想<#SO/>
+
+[@1_2_1]
+#IF
+not CheckItemIdx 90226 500
+#ACT
+Break
+#SAY
+背包不足[500]张灵符，无法兑换！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckQuest 2024 ACTIVE
+#ACT
+TakeItemIdx 90226 500
+GiveItemIdx 90240 10
+Break
+#SAY
+书页兑换成功!<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+CheckQuest 2026 ACTIVE
+#ACT
+TakeItemIdx 90226 500
+GiveItemIdx 90247 10
+Break
+#SAY
+书页兑换成功!<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+[@1_2_1_1]
+#IF
+#ACT
+GOTO @MAIN
+

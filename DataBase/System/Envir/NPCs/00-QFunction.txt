@@ -1,0 +1,6325 @@
+﻿[@_Login]
+#IF
+#ACT
+#CALL 角色登陆触发.txt @登陆触发执行
+
+;铜宝箱
+[@_TryOpenDropBox(2023)]
+#IF
+NOT CheckItem 铜钥匙
+#ACT
+TopMessage "开启铜质宝箱需要一把铜钥匙" FALSE
+STOP
+Break
+
+#IF
+CheckItem 铜钥匙 1
+#ACT
+SetChestKeyName 铜钥匙 1
+OpenBoxNeedTimeMSec 1
+
+
+[@_OpenDropBox(2023)]
+#IF
+#ACT
+TakeItem 铜钥匙 1
+
+;----------------------------------------------------------------------
+
+;银宝箱
+[@_TryOpenDropBox(2024)]
+#IF
+NOT CheckItem 银钥匙
+#ACT
+TopMessage "开启银质宝箱需要一把银钥匙" FALSE
+STOP
+Break
+
+#IF
+CheckItem 银钥匙 1
+#ACT
+SetChestKeyName 银钥匙 1
+OpenBoxNeedTimeMSec 1
+
+[@_OpenDropBox(2024)]
+#IF
+#ACT
+TakeItem 银钥匙 1
+
+;-------------------------------------------------------------------------
+
+;金宝箱
+[@_TryOpenDropBox(2064)]
+#IF
+NOT CheckItem 金钥匙
+#ACT
+TopMessage "开启金质宝箱需要一把金钥匙" FALSE
+STOP
+Break
+
+#IF
+CheckItem 金钥匙 1
+#ACT
+SetChestKeyName 金钥匙 1
+OpenBoxNeedTimeMSec 1
+
+[@_OpenDropBox(2064)]
+#IF
+#ACT
+TakeItem 金钥匙 1
+
+;-------------------------------------------------------------------------
+;铜钥匙
+[@_TryOpenDropBox(2033)]
+#IF
+#ACT
+
+OpenBoxNeedTimeMSec 10000
+
+;-------------------------------------------------------------------------
+;银钥匙
+[@_TryOpenDropBox(2034)]
+#IF
+#ACT
+
+OpenBoxNeedTimeMSec 10000
+
+;-------------------------------------------------------------------------
+;金钥匙
+[@_TryOpenDropBox(2035)]
+#IF
+#ACT
+
+OpenBoxNeedTimeMSec 10000
+
+;-------------------------------------------------------------------------
+
+;人物死亡触发
+[@_PlayerDie]
+#IF
+#ACT
+#CALL 人物死亡触发.txt @死亡触发执行
+
+;每日清空触发
+[@_DayChange]
+#IF
+#ACT
+#CALL 每日零点触发.txt @零点触发执行
+
+[@_开区等待]
+#IF
+#ACT
+MOV G50 1
+;GlobalMessage "[星空永恒]：<font color='#FF0000'>服务器已正式开放，点击管理员(玛法特训)离开等待地图</font>" FALSE
+
+;[@_屠魔大厅世界BOSS]
+;#IF
+;#ACT
+;MonGenEx 80 1005 273 堕落魔王 1
+;GlobalMessage "[堕落魔王]：<font color='#FF0000'>吾名堕落魔王，天命之灭世者，万物的终结者。无可阻挡，不可违逆，吾即大灾变！</font>" TRUE
+
+;[@_魔龙幻境世界BOSS]
+;#IF
+;#ACT
+;MonGenEx 36 1058 504 幻境树妖2768 1
+;GlobalMessage "[幻境树妖]：<font color='#FF0000'>吾名幻境树妖，天命之灭世者，万物的终结者。无可阻挡，不可违逆，吾即大灾变！</font>" TRUE
+
+[@_OnItemRestore(0)]
+#IF
+CheckItem 装备碎片 90
+#ACT
+TakeItemIdx 111001 90
+#CALL 武器重铸.txt @开始武器重铸
+
+[@_OnItemRestore(1)]
+#IF
+CheckItem 装备碎片 75
+#ACT
+TakeItemIdx 111001 75
+#CALL 头盔重铸.txt @开始头盔重铸
+
+[@_OnItemRestore(3)]
+#IF
+CheckItem 装备碎片 90
+#ACT
+TakeItemIdx 111001 90
+#CALL 衣服重铸.txt @开始衣服重铸
+
+[@_OnItemRestore(8)]
+#IF
+CheckItem 装备碎片 60
+#ACT
+TakeItemIdx 111001 60
+#CALL 项链重铸.txt @开始项链重铸
+
+[@_OnItemRestore(9)]
+#IF
+CheckItem 装备碎片 60
+#ACT
+TakeItemIdx 111001 60
+#CALL 戒指重铸.txt @开始戒指重铸
+
+[@_OnItemRestore(10)]
+#IF
+CheckItem 装备碎片 75
+#ACT
+TakeItemIdx 111001 75
+#CALL 手镯重铸.txt @开始手镯重铸
+
+[@_OnItemRestore(99)]
+#IF
+CheckItem 技能书残卷 60
+#ACT
+ChangeNode 11 + 1
+TakeItemIdx 111003 60
+#CALL 技能重铸.txt @开始技能重铸
+
+[@_OnItemRestore(11)]
+#IF
+CheckItem 高级技能书残卷 60
+#ACT
+ChangeNode 267 + 1
+TakeItemIdx 111022 60
+#CALL 高级技能重铸.txt @开始高级技能重铸
+
+[@_buff_add(26417)]
+#IF
+CheckClass 战士
+#ACT
+MOV N100 26411
+
+#IF
+CheckClass 法师
+#ACT
+MOV N100 26412
+
+#IF
+CheckClass 道士
+#ACT
+MOV N100 26413
+
+#IF
+CheckClass 刺客
+#ACT
+MOV N100 26414
+
+#IF
+CheckClass 弓手
+#ACT
+MOV N100 26415
+
+#IF
+CheckClass 龙枪
+#ACT
+MOV N100 26416
+
+#IF
+#ACT
+GiveBuff <$STR(N100)>
+
+[@_buff_add(12060)]
+#IF
+CheckSkill 1211 3
+#ACT
+RemoveBuff 12110
+RemoveBuff 12111
+RemoveBuff 12112
+RemoveBuff 12114
+GiveBuff 12110
+GiveBuff 12112
+#ELSEACT
+RemoveBuff 12112
+RemoveBuff 12114
+GiveBuff 12110
+
+[@_buff_add(12061)]
+#IF
+CheckSkill 1211 3
+#ACT
+RemoveBuff 12110
+RemoveBuff 12111
+RemoveBuff 12112
+RemoveBuff 12114
+GiveBuff 12112
+GiveBuff 12110
+#ELSEACT
+RemoveBuff 12110
+RemoveBuff 12111
+GiveBuff 12112
+
+[@_Buff_remove(26307)]
+#IF
+CheckClass 战士
+#ACT
+MOV N100 26301
+
+#IF
+CheckClass 法师
+#ACT
+MOV N100 26302
+
+#IF
+CheckClass 道士
+#ACT
+MOV N100 26303
+
+#IF
+CheckClass 刺客
+#ACT
+MOV N100 26304
+
+#IF
+CheckClass 弓手
+#ACT
+MOV N100 26305
+
+#IF
+CheckClass 龙枪
+#ACT
+MOV N100 26306
+
+#IF
+#ACT
+GiveBuff <$STR(N100)>
+
+[@_Buff_delete(12120)]
+#IF
+#ACT
+GiveBuff 12126
+
+#IF
+CHECKLOONG 1126
+#ACT
+GiveBuff 12125
+
+[@_Buff_delete(12121)]
+#IF
+#ACT
+GiveBuff 12123
+GiveBuff 12127
+
+#IF
+CHECKLOONG 1126
+#ACT
+GiveBuff 12125
+
+[@_Buff_delete(12122)]
+#IF
+#ACT
+GiveBuff 12124
+GiveBuff 12128
+
+#IF
+CHECKLOONG 1126
+#ACT
+GiveBuff 12125
+
+;镇魔重宝(秘境)
+[@_USEITEM(1500800)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500800 1
+#ACT
+TakeItemIdx 1500800 1
+RandomGiveItemIdx 383,21001,21002,21003,21004,21005,21006,111061,111062,90504,90506 1 FALSE
+
+;新人出征礼包
+[@_USEITEM(1505008)]
+#IF
+checkcalc <$MAP> == 92
+#ACT
+TopMessage "当前地图不可使用此礼包" FALSE
+Break
+
+
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包空格不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1505008 1
+#ACT
+TakeItemIdx 1505008 1
+GiveItem 初级经验丹 10 TRUE
+;GiveItem 灵符 50 TRUE
+GiveItem 随机传送石(大) 1 TRUE
+GiveItem 盟重回城石 1 TRUE
+GiveItem 比奇回城石 1 TRUE
+;GiveGold 500000
+GiveBindGold 1000000
+
+;初级经验丹
+[@_USEITEM(1601201)]
+#IF
+CheckItemidx 1601201 1
+#ACT
+TakeItem 初级经验丹 1
+GiveExp 20000
+
+;初级经验丹
+[@_USEITEM(1601202)]
+#IF
+CheckItemidx 1601202 1
+#ACT
+TakeItem 中级经验丹 1
+GiveExp 200000
+
+[@_USEITEM(2101)]
+#IF
+CheckItemidx 2101 1
+#ACT
+LocalMessage "地图号：<$Map>"
+LocalMessage "坐标X：<$X_COORD>"
+LocalMessage "坐标Y：<$Y_COORD>"
+LocalMessage "坐标Y：<$MAPMONCNT(<$Map>)>"
+
+[@_USEITEM(1500106)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500106 1
+#ACT
+TakeItemIdx 1500106 1
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062,701,702,703,704,705,706,707,708,413,412 1 FALSE
+
+[@_USEITEM(1500205)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500205 1
+#ACT
+TakeItemIdx 1500205 1
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062,701,702,703,704,705,706,707,708,413,412 1 FALSE
+
+;神圣石
+[@_USEITEM(111114)]
+#IF
+CHECKITEMVALUE 0 0 11 >= <$ITEMVALUE(0,0,40)>
+#ACT
+ErrorMessage 1944 0 0 
+BREAK
+
+#IF
+CheckItemidx 111114 1
+RANDOM 5
+#ACT
+TAKEITEMIDX 111114 1
+MOV P1 <$ITEMVALUE(0,0,11)>
+CALC P1 + 1
+CHANGEITEMVALUE 0 0 11 %P1
+LocalMessage "<#T:MMOGame.HolyDmg.UpdateResult>"
+#ELSEACT
+TAKEITEMIDX 111114 1
+LocalMessage "<#T:MMOGame.HolyDmg.UpdateResult0>"
+
+;;祝福油
+;[@_USEITEM(80003)]
+;#IF
+;CHECKITEMVALUE 0 0 9 >= 7
+;#ACT
+;LocalMessage "恭喜[<$USERNAME>]将[<$ITEMVALUE(0,0,51)>]幸运提升[7]点"
+;LocalMessage "当前武器幸运值已达到[7]点"
+;BREAK
+;
+;#IF
+;#ACT
+;;TAKEITEMIDX 80003 1
+;
+;;#IF
+;;RANDOMEX 5 100
+;;#ACT
+;;MOV P2 <$ITEMVALUE(0,0,9)>
+;;CALC P2 - 1
+;;CHANGEITEMVALUE 0 0 9 %P2
+;;LocalMessage "诅咒了"
+;;Break
+;
+;#IF
+;;CHECKITEMVALUE 0 0 9 == 6
+;;RANDOMEX 3 100
+;#ACT
+;MOV P2 <$ITEMVALUE(0,0,9)>
+;CALC P2 + 1
+;CHANGEITEMVALUE 0 0 9 %P2
+;Break
+;
+;
+;#IF
+;CHECKITEMVALUE 0 0 9 == 5
+;RANDOMEX 10 100
+;#ACT
+;MOV P2 <$ITEMVALUE(0,0,9)>
+;CALC P2 + 1
+;CHANGEITEMVALUE 0 0 9 %P2
+;Break
+;
+;#IF
+;CHECKITEMVALUE 0 0 9 == 4
+;RANDOMEX 20 100
+;#ACT
+;MOV P2 <$ITEMVALUE(0,0,9)>
+;CALC P2 + 1
+;CHANGEITEMVALUE 0 0 9 %P2
+;Break
+;
+;#IF
+;CHECKITEMVALUE 0 0 9 == 3
+;RANDOMEX 50 100
+;#ACT
+;MOV P2 <$ITEMVALUE(0,0,9)>
+;CALC P2 + 1
+;CHANGEITEMVALUE 0 0 9 %P2
+;Break
+;
+;#IF
+;CHECKITEMVALUE 0 0 9 == 2
+;RANDOMEX 70 100
+;#ACT
+;MOV P2 <$ITEMVALUE(0,0,9)>
+;CALC P2 + 1
+;CHANGEITEMVALUE 0 0 9 %P2
+;Break
+;
+;#IF
+;CHECKITEMVALUE 0 0 9 == 1
+;RANDOMEX 90 100
+;#ACT
+;MOV P2 <$ITEMVALUE(0,0,9)>
+;CALC P2 + 1
+;CHANGEITEMVALUE 0 0 9 %P2
+;Break
+;
+;#IF
+;RANDOM 2
+;#ACT
+;MOV P2 <$ITEMVALUE(0,0,9)>
+;CALC P2 + 1
+;CHANGEITEMVALUE 0 0 9 %P2
+;LocalMessage "当前武器幸运值已达到[7]点"
+;Break
+
+;高级长廊宝箱(3级)
+[@_USEITEM(94068)]
+#IF
+HasBagSpace < 3
+#ACT
+TopMessage "背包空格不足[3]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94068 1
+#ACT
+TakeItemIdx 94068 1
+GiveItemIdx 94070 1
+GiveItemIdx 91184 3
+GiveExp 300000
+
+#IF
+Random 5
+#ACT
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062 1 FALSE
+
+;高级长廊宝箱(2级)
+[@_USEITEM(94067)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94067 1
+#ACT
+TakeItemIdx 94067 1
+GiveItemIdx 91184 3
+GiveExp 200000
+
+#IF
+Random 10
+#ACT
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062 1 FALSE
+
+;高级长廊宝箱(1级)
+[@_USEITEM(94066)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94066 1
+#ACT
+TakeItemIdx 94066 1
+GiveItemIdx 91184 3
+GiveExp 200000
+
+;中级长廊宝箱(3级)
+[@_USEITEM(94065)]
+#IF
+HasBagSpace < 3
+#ACT
+TopMessage "背包空格不足[3]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94065 1
+#ACT
+TakeItemIdx 94065 1
+GiveItemIdx 94070 1
+GiveItemIdx 91184 3
+GiveExp 300000
+
+#IF
+Random 15
+#ACT
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062 1 FALSE
+
+;中级长廊宝箱(2级)
+[@_USEITEM(94064)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94064 1
+#ACT
+TakeItemIdx 94064 1
+GiveItemIdx 91184 3
+GiveExp 200000
+
+#IF
+Random 20
+#ACT
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062 1 FALSE
+
+;中级长廊宝箱(1级)
+[@_USEITEM(94063)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94063 1
+#ACT
+TakeItemIdx 94063 1
+GiveItemIdx 91184 3
+GiveExp 200000
+
+;长廊宝箱(3级)
+[@_USEITEM(94062)]
+#IF
+HasBagSpace < 3
+#ACT
+TopMessage "背包空格不足[3]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94062 1
+#ACT
+TakeItemIdx 94062 1
+GiveItemIdx 94070 1
+GiveItemIdx 91184 3
+GiveExp 300000
+
+#IF
+Random 25
+#ACT
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062 1 FALSE
+
+;长廊宝箱(2级)
+[@_USEITEM(94061)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94061 1
+#ACT
+TakeItemIdx 94061 1
+GiveItemIdx 91184 3
+GiveExp 200000
+
+#IF
+Random 30
+#ACT
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062 1 FALSE
+
+;长廊宝箱(1级)
+[@_USEITEM(94060)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94060 1
+#ACT
+TakeItemIdx 94060 1
+GiveItemIdx 91184 3
+GiveExp 200000
+
+;屠魔宝箱(进阶秘境)
+[@_USEITEM(94057)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94057 1
+#ACT
+TakeItemIdx 94057 1
+GiveItemIdx 91127 40
+GiveExp 2000000
+
+#IF
+Random 5
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(标准秘境)
+[@_USEITEM(94056)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94056 1
+#ACT
+TakeItemIdx 94056 1
+GiveItemIdx 91127 35
+GiveExp 1700000
+
+#IF
+Random 10
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(15级)
+[@_USEITEM(94055)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94055 1
+#ACT
+TakeItemIdx 94055 1
+GiveItemIdx 91127 30
+GiveExp 1500000
+
+#IF
+Random 15
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(14级)
+[@_USEITEM(94054)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94054 1
+#ACT
+TakeItemIdx 94054 1
+GiveItemIdx 91127 28
+GiveExp 1400000
+
+#IF
+Random 20
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(13级)
+[@_USEITEM(94053)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94053 1
+#ACT
+TakeItemIdx 94053 1
+GiveItemIdx 91127 26
+GiveExp 1300000
+
+#IF
+Random 25
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(12级)
+[@_USEITEM(94052)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94052 1
+#ACT
+TakeItemIdx 94052 1
+GiveItemIdx 91127 24
+GiveExp 1200000
+
+#IF
+Random 30
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(11级)
+[@_USEITEM(94051)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94051 1
+#ACT
+TakeItemIdx 94051 1
+GiveItemIdx 91127 22
+GiveExp 1100000
+
+#IF
+Random 35
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(10级)
+[@_USEITEM(94050)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94050 1
+#ACT
+TakeItemIdx 94050 1
+GiveItemIdx 91127 20
+GiveExp 1000000
+
+#IF
+Random 40
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(9级)
+[@_USEITEM(94049)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94049 1
+#ACT
+TakeItemIdx 94049 1
+GiveItemIdx 91127 18
+GiveExp 900000
+
+#IF
+Random 45
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(8级)
+[@_USEITEM(94048)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94048 1
+#ACT
+TakeItemIdx 94048 1
+GiveItemIdx 91127 16
+GiveExp 800000
+
+#IF
+Random 50
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(7级)
+[@_USEITEM(94047)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94047 1
+#ACT
+TakeItemIdx 94047 1
+GiveItemIdx 91127 14
+GiveExp 700000
+
+#IF
+Random 55
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(6级)
+[@_USEITEM(94046)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94046 1
+#ACT
+TakeItemIdx 94046 1
+GiveItemIdx 91127 12
+GiveExp 600000
+
+#IF
+Random 60
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(5级)
+[@_USEITEM(94045)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94045 1
+#ACT
+TakeItemIdx 94045 1
+GiveItemIdx 91127 10
+GiveExp 500000
+
+#IF
+Random 65
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(4级)
+[@_USEITEM(94044)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94044 1
+#ACT
+TakeItemIdx 94044 1
+GiveItemIdx 91127 8
+GiveExp 400000
+
+#IF
+Random 70
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(3级)
+[@_USEITEM(94043)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94043 1
+#ACT
+TakeItemIdx 94043 1
+GiveItemIdx 91127 6
+GiveExp 300000
+
+#IF
+Random 80
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(2级)
+[@_USEITEM(94042)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94042 1
+#ACT
+TakeItemIdx 94042 1
+GiveItemIdx 91127 4
+GiveExp 200000
+
+#IF
+Random 90
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(1级)
+[@_USEITEM(94041)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94041 1
+#ACT
+TakeItemIdx 94041 1
+GiveItemIdx 91127 2
+GiveExp 100000
+
+#IF
+Random 100
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;名俊灵丹
+[@_USEITEM(90300)]
+#IF
+CheckItemidx 90300 1
+#ACT
+TakeItemIdx 90300 1
+GiveBuff 2536
+BREAK
+
+;豪杰灵丹
+[@_USEITEM(90301)]
+#IF
+CheckItemidx 90301 1
+#ACT
+TakeItemIdx 90301 1
+GiveBuff 2537
+BREAK
+
+;魔龙幻境找回礼盒1
+[@_USEITEM(2360)]
+#IF
+CheckItemidx 2360 1
+#ACT
+TakeItemIdx 2360 1
+GiveExp 900000
+
+;魔龙幻境找回礼盒2
+[@_USEITEM(2361)]
+#IF
+CheckItemidx 2361 1
+#ACT
+TakeItemIdx 2361 1
+GiveExp 900000
+
+;魔龙幻境找回礼盒3
+[@_USEITEM(2362)]
+#IF
+CheckItemidx 2362 1
+#ACT
+TakeItemIdx 2362 1
+GiveExp 1200000
+
+;屠魔找回礼盒3
+[@_USEITEM(2350)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2350 1
+#ACT
+TakeItemIdx 2350 1
+GiveItemIdx 91127 30
+GiveExp 600000
+
+;妖塔找回礼盒3
+[@_USEITEM(2338)]
+#IF
+CheckItemidx 2338 1
+#ACT
+TakeItemIdx 2338 1
+GiveExp 450000
+GiveBindGold 30000
+
+;妖塔找回礼盒2
+[@_USEITEM(2337)]
+#IF
+CheckItemidx 2337 1
+#ACT
+TakeItemIdx 2337 1
+GiveExp 350000
+GiveBindGold 30000
+
+;魔塔找回礼盒3
+[@_USEITEM(2336)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2336 1
+#ACT
+TakeItemIdx 2336 1
+GiveExp 1200000
+GiveItemIdx 90500 2
+
+;演武场找回礼盒1
+[@_USEITEM(2331)]
+#IF
+CheckItemidx 2331 1
+#ACT
+TakeItemIdx 2331 1
+GiveExp 50000
+
+;武斗场找回礼盒3
+[@_USEITEM(2332)]
+#IF
+CheckItemidx 2332 1
+#ACT
+TakeItemIdx 2332 1
+GiveExp 350000
+
+;蜘蛛长廊找回礼盒1
+[@_USEITEM(2333)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2333 1
+#ACT
+TakeItemIdx 2333 1
+GiveExp 50000
+GiveItemIdx 91184 1
+
+;蜘蛛长廊找回礼盒2
+[@_USEITEM(2334)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2334 1
+#ACT
+TakeItemIdx 2334 1
+GiveExp 80000
+
+#IF
+Random 20
+#ACT
+GiveItemIdx 91184 2
+#ELSEACT
+GiveItemIdx 91184 1
+BREAK
+
+;蜘蛛长廊找回礼盒3
+[@_USEITEM(2335)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2335 1
+#ACT
+TakeItemIdx 2335 1
+GiveExp 150000
+
+#IF
+Random 20
+#ACT
+GiveItemIdx 91184 2
+#ELSEACT
+GiveItemIdx 91184 1
+BREAK
+
+;暗殿找回礼盒
+[@_USEITEM(2327)]
+#IF
+CheckItemidx 2327 1
+#ACT
+TakeItemIdx 2327 1
+GiveExp 350000
+
+;妖塔找回礼盒1
+[@_USEITEM(2316)]
+#IF
+CheckItemidx 2316 1
+#ACT
+TakeItemIdx 2316 1
+GiveExp 250000
+GiveBindGold 30000
+
+;魔塔找回礼盒1
+[@_USEITEM(2317)]
+#IF
+CheckItemidx 2317 1
+#ACT
+TakeItemIdx 2317 1
+GiveExp 1000000
+
+;魔塔找回礼盒2
+[@_USEITEM(2318)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2318 1
+#ACT
+TakeItemIdx 2318 1
+GiveExp 1000000
+GiveItemIdx 90501 2 TRUE
+
+;紧急找回礼盒1
+[@_USEITEM(2319)]
+#IF
+CheckItemidx 2319 1
+#ACT
+TakeItemIdx 2319 1
+
+#IF
+level >= 50
+#ACT
+GiveExp 50000
+BREAK
+
+#IF
+level >= 40
+#ACT
+GiveExp 40000
+BREAK
+
+#IF
+level >= 30
+#ACT
+GiveExp 30000
+BREAK
+
+#IF
+#ACT
+GiveExp 20000
+BREAK
+
+;紧急找回礼盒2
+[@_USEITEM(2351)]
+#IF
+CheckItemidx 2351 1
+#ACT
+TakeItemIdx 2351 1
+
+#IF
+level >= 50
+#ACT
+GiveExp 75000
+BREAK
+
+#IF
+level >= 40
+#ACT
+GiveExp 55000
+BREAK
+
+#IF
+level >= 30
+#ACT
+GiveExp 45000
+BREAK
+
+#IF
+#ACT
+GiveExp 30000
+BREAK
+
+;白日门找回礼盒1
+[@_USEITEM(2320)]
+#IF
+CheckItemidx 2320 1
+#ACT
+TakeItemIdx 2320 1
+GiveExp 300000
+
+;龙卫找回礼盒1
+[@_USEITEM(2321)]
+#IF
+CheckItemidx 2321 1
+#ACT
+TakeItemIdx 2321 1
+GiveExp 100000
+GiveItemIdx 90501 1 TRUE
+
+;屠魔找回礼盒1
+[@_USEITEM(2322)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2322 1
+#ACT
+TakeItemIdx 2322 1
+GiveExp 400000
+GiveItemIdx 91127 12
+
+;屠魔找回礼盒2
+[@_USEITEM(2323)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2323 1
+#ACT
+TakeItemIdx 2323 1
+GiveExp 500000
+GiveItemIdx 91127 24
+
+;武斗场找回礼盒1
+[@_USEITEM(2324)]
+#IF
+CheckItemidx 2324 1
+#ACT
+TakeItemIdx 2324 1
+GiveExp 180000
+
+;武斗场找回礼盒2
+[@_USEITEM(2325)]
+#IF
+CheckItemidx 2325 1
+#ACT
+TakeItemIdx 2325 1
+GiveExp 250000
+
+;随机技能书
+[@_USEITEM(2306)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2306 1
+#ACT
+TakeItemIdx 2306 1
+
+#IF
+Random 50
+#ACT
+RandomGiveItemIdx 31036,31037,31038,32535,32537,32539,32550,33008,33018,33015,34008,34010,35007,35008,35010,36008,36009,36010 1 FALSE
+#ELSEACT
+RandomGiveItemIdx 31031,31032,31033,32531,32532,32541,32544,32533,32549,32538,32545,32534,33002,33001,33004,33005,33003,33009,33014,33006,33007,34001,34004,34011,34002,34003,35001,35002,35003,35004,35005,36001,36002,36003,36004,31033,31034,31035,32545,32534,32536,32546,32547,33006,33007,33011,33012,34002,34003,34007,34005,34006,35004,35005,35006,35013,36004,36005,36006,36007 1 FALSE
+
+;随机技能书
+[@_USEITEM(2305)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2305 1
+#ACT
+TakeItemIdx 2305 1
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006 1 FALSE
+
+;无相石礼包
+[@_USEITEM(140006)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格"
+BREAK
+
+#IF
+CheckItemidx 140006 1
+#ACT
+TakeItemIdx 140006 1
+GiveItemIdx 140001 40 TRUE
+
+;技能书残卷礼包
+[@_USEITEM(1510093)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格"
+BREAK
+
+#IF
+CheckItemidx 1510093 1
+#ACT
+TakeItemIdx 1510093 1
+
+#IF
+CheckCalc <$VERSION> < 4
+#ACT
+GiveItem 技能书残卷 500
+#ELSEACT
+GiveItem 技能书残卷 999
+BREAK
+
+;蛋糕烟花2
+[@_USEITEM(1510088)]
+#IF
+CheckItemidx 1510088 1
+#ACT
+TopMessage "<#P0:<$USERNAME>><#P1:0><#T:990330>" FALSE
+
+#IF
+CheckCalc <$VERSION> == 0
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 250000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 1
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 330000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 3
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 330000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 4
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 500000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 6
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 500000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 7
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 1000000
+BREAK
+
+;大蛋糕烟花3
+[@_USEITEM(1510096)]
+#IF
+CheckItemidx 1510096 1
+#ACT
+TopMessage "<#P0:<$USERNAME>><#P1:0><#T:990330>" FALSE
+
+#IF
+CheckCalc <$VERSION> == 0
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 12500000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 1
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 12500000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 3
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 16500000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 4
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 25000000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 6
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 25000000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 7
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 50000000
+BREAK
+
+;诱惑圣水
+[@_USEITEM(719)]
+#IF
+HasBuff 46020
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+HasBuff 45780
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+CheckItemidx 719 1
+#ACT
+TakeItemIdx 719 1
+GiveBuff 46010
+BREAK
+
+[@_USEITEM(720)]
+#IF
+HasBuff 46010
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+HasBuff 45780
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+CheckItemidx 720 1
+#ACT
+TakeItemIdx 720 1
+GiveBuff 46020
+BREAK
+
+;诱惑神水
+[@_USEITEM(801)]
+#IF
+HasBuff 46020
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+HasBuff 46010
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+CheckItemidx 801 1
+#ACT
+TakeItemIdx 801 1
+GiveBuff 45780
+BREAK
+
+;幽冥海传送卷轴
+[@_USEITEM(91112)]
+#IF
+CheckCalc <$VERSION> < 1
+#ACT
+TopMessage "该玩法将在幽冥海版本开放，可以通过快捷键W查看版本内容详情！" FALSE
+BREAK
+
+#IF
+Checkmap 223
+CheckItem 幽冥海传送卷轴 1
+#ACT
+TakeItem 幽冥海传送卷轴 1
+MOVE 226 950 208
+BREAK
+
+#IF
+Checkmap 224
+CheckItem 幽冥海传送卷轴 1
+#ACT
+TakeItem 幽冥海传送卷轴 1
+MOVE 226 950 208
+BREAK
+
+#IF
+Checkmap 225
+CheckItem 幽冥海传送卷轴 1
+#ACT
+TakeItem 幽冥海传送卷轴 1
+MOVE 226 950 208
+#ELSEACT
+TopMessage "此卷轴只可在幽冥海中使用" FALSE
+
+;传永宝典(13级)
+[@_USEITEM(1500501)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500501 1
+#ACT
+TakeItemIdx 1500501 1
+GiveItemIdx 1500502 1
+GiveItem 修为丹 1 TRUE
+
+;传永宝典(15级)
+[@_USEITEM(1500502)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500502 1
+#ACT
+TakeItemIdx 1500502 1
+GiveItemIdx 1500503 1
+GiveItem 修为丹 3 TRUE
+
+;传永宝典(21级)
+[@_USEITEM(1500503)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500503 1
+#ACT
+TakeItemIdx 1500503 1
+GiveItemIdx 1500504 1
+GiveTitle 106
+
+;传永宝典(25级)
+[@_USEITEM(1500504)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500504 1
+#ACT
+TakeItemIdx 1500504 1
+GiveItemIdx 1500505 1
+GiveItem 修为丹 5 TRUE
+
+;传永宝典(29级)
+[@_USEITEM(1500505)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 战士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 法师铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 刺客铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 道士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 弓手铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 龙枪铭文石 1 TRUE
+BREAK
+
+;传永宝典(33级)
+[@_USEITEM(1500506)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 战士铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 法师铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 刺客铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 道士铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 弓手铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 龙枪铭文石 2 TRUE
+BREAK
+
+;传永宝典(35级)
+[@_USEITEM(1500507)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500507 1
+#ACT
+TakeItemIdx 1500507 1
+GiveItemIdx 1500508 1
+GiveItem 祝福油 1 TRUE
+
+;传永宝典(37级)
+[@_USEITEM(1500508)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500508 1
+#ACT
+TakeItemIdx 1500508 1
+GiveItemIdx 1500509 1
+GiveItem 兽皮腰带 1 TRUE
+BREAK
+
+;传永宝典(39级)
+[@_USEITEM(1500509)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500509 1
+#ACT
+TakeItemIdx 1500509 1
+GiveItemIdx 1500510 1
+GiveItemIdx 99990317 1 TRUE
+BREAK
+
+;传永宝典(41级)
+[@_USEITEM(1500510)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 龙之戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 红宝石戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 闪影戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 铂金戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 狼首戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 龙之戒指 1 TRUE
+BREAK
+
+;传永宝典(42级)
+[@_USEITEM(1500511)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之刃 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之杖 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之刺 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之幡 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之弓 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之矛 1 TRUE
+BREAK
+
+;中级技能书
+[@_USEITEM(31000)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+
+#IF
+CheckClass 战士
+CheckItemidx 31000 1
+#ACT
+TakeItem 中级技能书 1
+GiveItem 半月弯刀 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 31000 1
+#ACT
+TakeItem 中级技能书 1
+GiveItem 地狱雷光 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 31000 1
+#ACT
+TakeItem 中级技能书 1
+GiveItem 炎龙波 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 31000 1
+#ACT
+TakeItem 中级技能书 1
+GiveItem 群体治愈术 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 31000 1
+#ACT
+TakeItem 中级技能书 1
+GiveItem 击飞射击 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 31000 1
+#ACT
+TakeItem 中级技能书 1
+GiveItem 乾坤斗气 1 TRUE
+BREAK
+
+;稀有技能书残卷
+[@_USEITEM(1700002)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+
+#IF
+CheckClass 战士
+CheckItemidx 1700002 1
+#ACT
+TakeItem 稀有技能书残卷 1
+GiveItem 烈火剑法残卷 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1700002 1
+#ACT
+TakeItem 稀有技能书残卷 1
+GiveItem 冰咆哮残卷 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1700002 1
+#ACT
+TakeItem 稀有技能书残卷 1
+GiveItem 冷酷残卷 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1700002 1
+#ACT
+TakeItem 稀有技能书残卷 1
+GiveItem 召唤神兽残卷 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1700002 1
+#ACT
+TakeItem 稀有技能书残卷 1
+GiveItem 强袭残卷 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1700002 1
+#ACT
+TakeItem 稀有技能书残卷 1
+GiveItem 枪出如龙残卷 1 TRUE
+BREAK
+
+;各职业铭文石
+[@_USEITEM(1700001)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+
+#IF
+CheckClass 战士
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 战士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 法师铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 刺客铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 道士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 弓手铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 龙枪铭文石 1 TRUE
+BREAK
+
+;铭文石福袋
+[@_USEITEM(1500066)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+
+#IF
+CheckClass 战士
+CheckItemidx 1500066 1
+#ACT
+TakeItem 铭文石福袋 1
+GiveItem 战士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500066 1
+#ACT
+TakeItem 铭文石福袋 1
+GiveItem 法师铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500066 1
+#ACT
+TakeItem 铭文石福袋 1
+GiveItem 刺客铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500066 1
+#ACT
+TakeItem 铭文石福袋 1
+GiveItem 道士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500066 1
+#ACT
+TakeItem 铭文石福袋 1
+GiveItem 弓手铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500066 1
+#ACT
+TakeItem 铭文石福袋 1
+GiveItem 龙枪铭文石 1 TRUE
+BREAK
+
+;酬勤礼盒21
+[@_USEITEM(140102)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 140102 1
+#ACT
+TakeItemIdx 140102 1
+GiveItem 太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 10 TRUE
+GiveItem 练功券 2 TRUE
+GiveItem 碎裂的无相石 30 TRUE
+
+;酬勤礼盒1
+[@_USEITEM(1500301)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500301 1
+#ACT
+TakeItem 酬勤礼盒1 1
+GiveItem 太阳水包3 1 TRUE
+GiveItem 强效战神油 5 TRUE
+GiveItem 超级金创药3 1 TRUE
+GiveItem 超级魔法药3 1 TRUE
+GiveItem 副本入场券 1 TRUE
+
+;酬勤礼盒2
+[@_USEITEM(1500302)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500302 1
+#ACT
+TakeItem 酬勤礼盒2 1
+GiveItem 太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 10 TRUE
+GiveItem 练功券 2 TRUE
+
+;精进礼盒1
+[@_USEITEM(1500303)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500303 1
+#ACT
+TakeItem 精进礼盒1 1
+GiveItem 强效太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 15 TRUE
+GiveItem 练功券 2 TRUE
+
+;精进礼盒2
+[@_USEITEM(1500304)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500304 1
+#ACT
+TakeItem 精进礼盒2 1
+GiveItem 强效太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 20 TRUE
+GiveItem 练功券 3 TRUE
+
+;酬勤礼盒11
+[@_USEITEM(140101)]
+#IF
+HasBagSpace < 6
+#ACT
+TopMessage "背包格数剩余不足[6]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 140101 1
+#ACT
+TakeItem 酬勤礼盒11 1
+GiveItem 太阳水包3 1 TRUE
+GiveItem 强效战神油 5 TRUE
+GiveItem 超级金创药3 1 TRUE
+GiveItem 超级魔法药3 1 TRUE
+GiveItem 副本入场券 1 TRUE
+GiveItem 碎裂的无相石 30 TRUE
+
+;传永礼包
+[@_USEITEM(1500038)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500038 1
+#ACT
+TakeItem 传永礼包 1
+GiveItem 强效太阳水包3 3 TRUE
+GiveItem 强效战神油 5 TRUE
+GiveItem 冥想丹 1 TRUE
+
+;疗伤药礼包
+[@_USEITEM(1500064)]
+#IF
+HasBagSpace < 10
+#ACT
+TopMessage "背包格数剩余不足[10]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500064 1
+#ACT
+TakeItem 疗伤药礼包 1
+GiveItem 疗伤药包3 10 TRUE
+
+;疗伤药礼包1
+[@_USEITEM(1500176)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500176 1
+#ACT
+TakeItem 疗伤药礼包1 1
+GiveItem 疗伤药包3 5 TRUE
+
+;疗伤药礼包2
+[@_USEITEM(1500177)]
+#IF
+HasBagSpace < 10
+#ACT
+TopMessage "背包格数剩余不足[10]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500177 1
+#ACT
+TakeItem 疗伤药礼包2 1
+GiveItem 疗伤药包3 10 TRUE
+
+;强效太阳水礼包3
+[@_USEITEM(1500196)]
+#IF
+HasBagSpace < 3
+#ACT
+TopMessage "背包格数剩余不足[3]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500196 1
+#ACT
+TakeItem 强效太阳水礼包3 1
+GiveItem 强效太阳水包3 3 TRUE
+
+;强效太阳水礼包5
+[@_USEITEM(1500197)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500197 1
+#ACT
+TakeItem 强效太阳水礼包5 1
+GiveItem 强效太阳水包3 5 TRUE
+
+;精进礼盒11
+[@_USEITEM(140103)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 140103 1
+#ACT
+TakeItem 精进礼盒11 1
+GiveItem 强效太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 15 TRUE
+GiveItem 练功券 2 TRUE
+GiveItemIDX 140002 3 TRUE
+
+;精进礼盒21
+[@_USEITEM(140104)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 140104 1
+#ACT
+TakeItem 精进礼盒21 1
+GiveItem 强效太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 20 TRUE
+GiveItem 练功券 5 TRUE
+
+;灵石礼包103
+[@_USEITEM(1000103)]
+#IF
+HasBagSpace < 3
+#ACT
+TopMessage "背包格数剩余不足[3]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1000103 1
+#ACT
+TakeItem 灵石礼包103 1
+GiveItem 命朱灵石1级 1 TRUE
+GiveItem 守阳灵石1级 1 TRUE
+GiveItem 纯紫灵石1级 1 TRUE
+
+;全民提升礼包104
+[@_USEITEM(1000104)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1000104 1
+#ACT
+TakeItem 全民提升礼包104 1
+GiveItem 如意丹 5 TRUE
+GiveItem 如意果 1 TRUE
+
+;技能书礼包(战)
+[@_USEITEM(1400001)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1400001 1
+#ACT
+TakeItem 技能书礼包(战) 1
+GiveItem 烈火剑法 1 TRUE
+GiveItem 狮子吼 1 TRUE
+GiveItem 爆炎剑诀 1 TRUE
+GiveItem 逐日剑法 1 TRUE
+
+;技能书礼包(法)
+[@_USEITEM(1400002)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1400002 1
+#ACT
+TakeItem 技能书礼包(法) 1
+GiveItem 魔法盾 1 TRUE
+GiveItem 冰咆哮 1 TRUE
+GiveItem 寒冰掌 1 TRUE
+GiveItem 灭天火 1 TRUE
+
+;技能书礼包(道)
+[@_USEITEM(1400003)]
+#IF
+HasBagSpace < 3
+#ACT
+TopMessage "背包格数剩余不足[3]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1400003 1
+#ACT
+TakeItem 技能书礼包(道) 1
+GiveItem 召唤神兽 1 TRUE
+GiveItem 无极真气 1 TRUE
+GiveItem 噬血术 1 TRUE
+
+;技能书礼包(刺)
+[@_USEITEM(1400004)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1400004 1
+#ACT
+TakeItem 技能书礼包(刺) 1
+GiveItem 冷酷 1 TRUE
+GiveItem 旋风腿 1 TRUE
+GiveItem 鬼灵步 1 TRUE
+GiveItem 火镰狂舞 1 TRUE
+
+;技能书礼包(弓)
+[@_USEITEM(1400005)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1400005 1
+#ACT
+TakeItem 技能书礼包(弓) 1
+GiveItem 强袭 1 TRUE
+GiveItem 连环暗雷 1 TRUE
+GiveItem 穿刺射击 1 TRUE
+GiveItem 凝神 1 TRUE
+
+;技能书礼包(枪)
+[@_USEITEM(1400006)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1400006 1
+#ACT
+TakeItem 技能书礼包(枪) 1
+GiveItem 枪出如龙 1 TRUE
+GiveItem 御龙晶甲 1 TRUE
+GiveItem 凌云枪法 1 TRUE
+GiveItem 燃血化元 1 TRUE
+
+;武器升级礼包
+[@_USEITEM(1500013)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500013 1
+#ACT
+TakeItem 武器升级礼包 1
+GiveItem 黑铁矿石26 5 TRUE
+
+;超级金创药礼包
+[@_USEITEM(1500017)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500017 1
+#ACT
+TakeItem 超级金创药礼包 1
+GiveItem 超级金创药3 5 TRUE
+
+;超级魔法药礼包
+[@_USEITEM(1500018)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500018 1
+#ACT
+TakeItem 超级魔法药礼包 1
+GiveItem 超级魔法药3 5 TRUE
+
+;强效太阳水礼包
+[@_USEITEM(1500019)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500019 1
+#ACT
+TakeItem 强效太阳水礼包 1
+GiveItem 强效太阳水包3 5 TRUE
+
+;至尊礼包
+[@_USEITEM(1500193)]
+#IF
+HasBagSpace < 7
+#ACT
+TopMessage "背包格数剩余不足[7]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500193 1
+#ACT
+TakeItem 至尊礼包 1
+GiveItem 庆典烟花 5 TRUE
+GiveItem 强效太阳水包3 3 TRUE
+GiveItem 随机传送石 1 TRUE
+GiveItem 幽冥海入场券 1
+GiveItem 冥想丹 1
+
+;荣耀礼包
+[@_USEITEM(1500194)]
+#IF
+HasBagSpace < 10
+#ACT
+TopMessage "背包格数剩余不足[10]格" FALSE
+BREAK
+
+
+#IF
+CheckClass 战士
+CheckItemidx 1500194 1
+#ACT
+TakeItem 荣耀礼包 1
+GiveItem 庆典烟花 5 TRUE
+GiveItem 强效太阳水包3 5 TRUE
+GiveItem 幽冥海入场券 1 TRUE
+GiveItem 比奇回城石 TRUE
+GiveItem 盟重回城石 TRUE
+GiveBindGold 10000
+GiveItem 战士铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500194 1
+#ACT
+TakeItem 荣耀礼包 1
+GiveItem 庆典烟花 5 TRUE
+GiveItem 强效太阳水包3 5 TRUE
+GiveItem 幽冥海入场券 1 TRUE
+GiveItem 比奇回城石 TRUE
+GiveItem 盟重回城石 TRUE
+GiveBindGold 10000
+GiveItem 法师铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500194 1
+#ACT
+TakeItem 荣耀礼包 1
+GiveItem 庆典烟花 5 TRUE
+GiveItem 强效太阳水包3 5 TRUE
+GiveItem 幽冥海入场券 1 TRUE
+GiveItem 比奇回城石 TRUE
+GiveItem 盟重回城石 TRUE
+GiveBindGold 10000
+GiveItem 刺客铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500194 1
+#ACT
+TakeItem 荣耀礼包 1
+GiveItem 庆典烟花 5 TRUE
+GiveItem 强效太阳水包3 5 TRUE
+GiveItem 幽冥海入场券 1 TRUE
+GiveItem 比奇回城石 TRUE
+GiveItem 盟重回城石 TRUE
+GiveBindGold 10000
+GiveItem 道士铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500194 1
+#ACT
+TakeItem 荣耀礼包 1
+GiveItem 庆典烟花 5 TRUE
+GiveItem 强效太阳水包3 5 TRUE
+GiveItem 幽冥海入场券 1 TRUE
+GiveItem 比奇回城石 TRUE
+GiveItem 盟重回城石 TRUE
+GiveBindGold 10000
+GiveItem 弓手铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500194 1
+#ACT
+TakeItem 荣耀礼包 1
+GiveItem 庆典烟花 5 TRUE
+GiveItem 强效太阳水包3 5 TRUE
+GiveItem 幽冥海入场券 1 TRUE
+GiveItem 比奇回城石 TRUE
+GiveItem 盟重回城石 TRUE
+GiveBindGold 10000
+GiveItem 龙枪铭文石 2 TRUE
+BREAK
+
+;修为丹
+[@_USEITEM(91125)]
+#IF
+CheckItemidx 91125 1
+#ACT
+TakeItem 修为丹 1
+GiveExp 10000
+BREAK
+
+;高级修为丹
+[@_USEITEM(1501120)]
+#IF
+CheckItemidx 1501120 1
+#ACT
+TakeItem 高级修为丹 1
+GiveExp 50000
+BREAK
+
+;特级修为丹
+[@_USEITEM(1501121)]
+#IF
+CheckItemidx 1501121 1
+#ACT
+TakeItemIdx 1501121 1
+GiveExp 100000
+BREAK
+
+;庆典修为丹
+[@_USEITEM(1501152)]
+#IF
+CheckItemidx 1501152 1
+#ACT
+TakeItemIdx 1501152 1
+GiveExp 666666
+BREAK
+
+;龙卫之乡经验包
+[@_USEITEM(1370001)]
+#IF
+CheckItemidx 1370001 1
+#ACT
+TakeItemIdx 1370001 1
+GiveExp 3300
+BREAK
+
+;巨木之森经验包
+[@_USEITEM(1370002)]
+#IF
+CheckItemidx 1370002 1
+#ACT
+TakeItemIdx 1370002 1
+GiveExp 3300
+BREAK
+
+;英雄土城经验包
+[@_USEITEM(1370003)]
+#IF
+CheckItemidx 1370003 1
+#ACT
+TakeItemIdx 1370003 1
+GiveExp 66000
+BREAK
+
+;昔日龙脉经验包
+[@_USEITEM(1370004)]
+#IF
+CheckItemidx 1370004 1
+#ACT
+TakeItemIdx 1370004 1
+GiveExp 99000
+BREAK
+
+;沃玛珍宝经验包
+[@_USEITEM(1370005)]
+#IF
+CheckItemidx 1370005 1
+#ACT
+TakeItemIdx 1370005 1
+GiveExp 132000
+BREAK
+
+;毒虫迷宫经验包
+[@_USEITEM(1370006)]
+#IF
+CheckItemidx 1370006 1
+#ACT
+TakeItemIdx 1370006 1
+GiveExp 165000
+BREAK
+
+;猪妖秘宝经验包
+[@_USEITEM(1370007)]
+#IF
+CheckItemidx 1370007 1
+#ACT
+TakeItemIdx 1370007 1
+GiveExp 198000
+BREAK
+
+;祖玛旧梦经验包
+[@_USEITEM(1370008)]
+#IF
+CheckItemidx 1370008 1
+#ACT
+TakeItemIdx 1370008 1
+GiveExp 231000
+BREAK
+
+;白日围城经验包
+[@_USEITEM(1370012)]
+#IF
+CheckItemidx 1370012 1
+#ACT
+TakeItemIdx 1370012 1
+GiveExp 300000
+BREAK
+
+;赤月恶魔经验包
+[@_USEITEM(1370009)]
+#IF
+CheckItemidx 1370009 1
+#ACT
+TakeItemIdx 1370009 1
+GiveExp 450000
+BREAK
+
+;魔龙谷经验包
+[@_USEITEM(1370010)]
+#IF
+CheckItemidx 1370010 1
+#ACT
+TakeItemIdx 1370010 1
+GiveExp 600000
+BREAK
+
+;赤月群岛经验包
+[@_USEITEM(1370014)]
+#IF
+CheckItemidx 1370014 1
+#ACT
+TakeItemIdx 1370014 1
+GiveExp 750000
+BREAK
+
+;苍月岛经验包
+[@_USEITEM(1370011)]
+#IF
+CheckItemidx 1370011 1
+#ACT
+TakeItemIdx 1370011 1
+GiveExp 900000
+BREAK
+
+;踏雪屠龙经验包
+[@_USEITEM(1370013)]
+#IF
+CheckItemidx 1370013 1
+#ACT
+TakeItemIdx 1370013 1
+GiveExp 1050000
+BREAK
+
+;精进修为丹
+[@_USEITEM(91189)]
+#IF
+CheckItemidx 91189 1
+#ACT
+TakeItemIdx 91189 1
+GiveExp 200000
+BREAK
+
+;龙卫之乡银币包
+[@_USEITEM(1370201)]
+#IF
+CheckItemidx 1370201 1
+#ACT
+TakeItemIdx 1370201 1
+GiveBindGold 15000
+BREAK
+
+;巨木之森银币包
+[@_USEITEM(1370202)]
+#IF
+CheckItemidx 1370202 1
+#ACT
+TakeItemIdx 1370202 1
+GiveBindGold 30000
+BREAK
+
+;英雄土城银币包
+[@_USEITEM(1370203)]
+#IF
+CheckItemidx 1370203 1
+#ACT
+TakeItemIdx 1370203 1
+GiveBindGold 45000
+BREAK
+
+;昔日龙脉银币包
+[@_USEITEM(1370204)]
+#IF
+CheckItemidx 1370204 1
+#ACT
+TakeItemIdx 1370204 1
+GiveBindGold 60000
+BREAK
+
+;沃玛珍宝银币包
+[@_USEITEM(1370205)]
+#IF
+CheckItemidx 1370205 1
+#ACT
+TakeItemIdx 1370205 1
+GiveBindGold 75000
+BREAK
+
+;毒虫迷宫银币包
+[@_USEITEM(1370206)]
+#IF
+CheckItemidx 1370206 1
+#ACT
+TakeItemIdx 1370206 1
+GiveBindGold 90000
+BREAK
+
+;猪妖秘宝银币包
+[@_USEITEM(1370207)]
+#IF
+CheckItemidx 1370207 1
+#ACT
+TakeItemIdx 1370207 1
+GiveBindGold 105000
+BREAK
+
+;祖玛旧梦银币包
+[@_USEITEM(1370208)]
+#IF
+CheckItemidx 1370208 1
+#ACT
+TakeItemIdx 1370208 1
+GiveBindGold 120000
+BREAK
+
+;银币礼包10000
+[@_USEITEM(1370209)]
+#IF
+CheckItemidx 1370209 1
+#ACT
+TakeItemIdx 1370209 1
+GiveBindGold 10000
+BREAK
+
+;银币礼包20000
+[@_USEITEM(1370210)]
+#IF
+CheckItemidx 1370210 1
+#ACT
+TakeItemIdx 1370210 1
+GiveBindGold 20000
+BREAK
+
+;银币礼包50000
+[@_USEITEM(1370211)]
+#IF
+CheckItemidx 1370211 1
+#ACT
+TakeItemIdx 1370211 1
+GiveBindGold 50000
+BREAK
+
+;银币礼包100000
+[@_USEITEM(1370212)]
+#IF
+CheckItemidx 1370212 1
+#ACT
+TakeItemIdx 1370212 1
+GiveBindGold 100000
+BREAK
+
+;银币礼包500000
+[@_USEITEM(1370213)]
+#IF
+CheckItemidx 1370213 1
+#ACT
+TakeItemIdx 1370213 1
+GiveBindGold 500000
+BREAK
+
+;银币礼包1000000
+[@_USEITEM(1370214)]
+#IF
+CheckItemidx 1370214 1
+#ACT
+TakeItemIdx 1370214 1
+GiveBindGold 1000000
+BREAK
+
+;银币礼包150000
+[@_USEITEM(1370215)]
+#IF
+CheckItemidx 1370215 1
+#ACT
+TakeItemIdx 1370215 1
+GiveBindGold 150000
+BREAK
+
+;至尊银币礼包
+[@_USEITEM(1500892)]
+#IF
+CheckItemidx 1500892 1
+#ACT
+TakeItemIdx 1500892 1
+GiveBindGold 150000
+BREAK
+
+;银币加油包
+[@_USEITEM(1502033)]
+#IF
+CheckItemidx 1502033 1
+#ACT
+TakeItemIdx 1502033 1
+GiveBindGold 500000
+BREAK
+
+;媒体特权礼包1
+[@_USEITEM(1500858)]
+#IF
+CheckItemidx 1500858 1
+#ACT
+TakeItemIdx 1500858 1
+GiveBindGold 50000
+BREAK
+
+;白日围城金币包
+[@_USEITEM(1370112)]
+#IF
+CheckItemidx 1370112 1
+#ACT
+TakeItemIdx 1370112 1
+GiveGold 135000
+BREAK
+
+;赤月恶魔金币包
+[@_USEITEM(1370109)]
+#IF
+CheckItemidx 1370109 1
+#ACT
+TakeItemIdx 1370109 1
+GiveGold 165000
+BREAK
+
+;魔龙谷金币包
+[@_USEITEM(1370110)]
+#IF
+CheckItemidx 1370110 1
+#ACT
+TakeItemIdx 1370110 1
+GiveGold 220000
+BREAK
+
+;赤月群岛金币包
+[@_USEITEM(1370114)]
+#IF
+CheckItemidx 1370114 1
+#ACT
+TakeItemIdx 1370114 1
+GiveGold 275000
+BREAK
+
+;苍月岛金币包
+[@_USEITEM(1370111)]
+#IF
+CheckItemidx 1370111 1
+#ACT
+TakeItemIdx 1370111 1
+GiveGold 330000
+BREAK
+
+;踏雪屠龙金币包
+[@_USEITEM(1370113)]
+#IF
+CheckItemidx 1370113 1
+#ACT
+TakeItemIdx 1370113 1
+GiveGold 385000
+BREAK
+
+;财源滚滚礼包
+[@_USEITEM(1500039)]
+#IF
+CheckItemidx 1500039 1
+#ACT
+TakeItemIdx 1500039 1
+GiveGold 880000
+BREAK
+
+;感恩传永礼包
+[@_USEITEM(1500058)]
+#IF
+CheckItemidx 1500058 1
+#ACT
+TakeItemIdx 1500058 1
+GiveGold 1880000
+BREAK
+
+;修行不缀
+[@_USEITEM(1410094)]
+#IF
+CheckItemidx 1410094 1
+#ACT
+TakeItemIdx 1410094 1
+GiveTitle 94
+BREAK
+
+;征战玛法
+[@_USEITEM(1410103)]
+#IF
+CheckItemidx 1410103 1
+#ACT
+TakeItemIdx 1410103 1
+GiveTitle 139
+BREAK
+
+;擂台小将
+[@_USEITEM(1410096)]
+#IF
+CheckItemidx 1410096 1
+#ACT
+TakeItemIdx 1410096 1
+GiveTitle 96
+BREAK
+
+;擂台霸主
+[@_USEITEM(1410097)]
+#IF
+CheckItemidx 1410097 1
+#ACT
+TakeItemIdx 1410097 1
+GiveTitle 97
+BREAK
+
+;玛法功臣礼包
+[@_USEITEM(1410093)]
+#IF
+CheckItemidx 1410093 1
+#ACT
+TakeItemIdx 1410093 1
+GiveTitle 93
+BREAK
+
+;17173称号礼包
+[@_USEITEM(1410095)]
+#IF
+CheckItemidx 1410095 1
+#ACT
+TakeItemIdx 1410095 1
+GiveTitle 95
+BREAK
+
+[@_USEITEM(1410122)]
+#IF
+CheckItemidx 1410122 1
+#ACT
+TakeItemIdx 1410122 1
+GiveTitle 128
+BREAK
+
+[@_USEITEM(1410123)]
+#IF
+CheckItemidx 1410123 1
+#ACT
+TakeItemIdx 1410123 1
+GiveTitle 129
+BREAK
+
+[@_USEITEM(1410124)]
+#IF
+CheckItemidx 1410124 1
+#ACT
+TakeItemIdx 1410124 1
+GiveTitle 133
+BREAK
+
+[@_USEITEM(1503008)]
+#IF
+CheckItemidx 1503008 1
+#ACT
+TakeItemIdx 1503008 1
+GiveTitle 14
+BREAK
+
+[@_USEITEM(1501061)]
+#IF
+CheckItemidx 1501061 1
+#ACT
+TakeItemIdx 1501061 1
+GiveTitle 136
+BREAK
+
+[@_USEITEM(1501220)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501220 1
+#ACT
+TakeItemIdx 1501220 1
+GiveItemIdx 91115 11 TRUE
+GiveItemIdx 1501086 200 TRUE
+BREAK
+
+[@_USEITEM(1501221)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501221 1
+#ACT
+TakeItemIdx 1501221 1
+GiveItemIdx 91116 11 TRUE
+GiveItemIdx 1501086 200 TRUE
+BREAK
+
+[@_USEITEM(1501222)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501222 1
+#ACT
+TakeItemIdx 1501222 1
+GiveItemIdx 91115 23 TRUE
+GiveItemIdx 1501086 400 TRUE
+BREAK
+
+[@_USEITEM(1501223)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501223 1
+#ACT
+TakeItemIdx 1501223 1
+GiveItemIdx 91116 23 TRUE
+GiveItemIdx 1501086 400 TRUE
+BREAK
+
+[@_USEITEM(1501211)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501211 1
+#ACT
+TakeItemIdx 1501211 1
+GiveItemIdx 41002 10 TRUE
+GiveItemIdx 1501086 10 TRUE
+BREAK
+
+[@_USEITEM(1501212)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501212 1
+#ACT
+TakeItemIdx 1501212 1
+GiveItemIdx 41001 10 TRUE
+GiveItemIdx 1501086 20 TRUE
+BREAK
+
+[@_USEITEM(1501062)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501062 1
+#ACT
+TakeItemIdx 1501062 1
+GiveItemIdx 110006 40 TRUE
+GiveItemIdx 1501086 160 TRUE
+BREAK
+
+[@_USEITEM(1501063)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501063 1
+#ACT
+TakeItemIdx 1501063 1
+GiveItemIdx 110007 40 TRUE
+GiveItemIdx 1501086 160 TRUE
+BREAK
+
+[@_USEITEM(1501064)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501064 1
+#ACT
+TakeItemIdx 1501064 1
+GiveItemIdx 110008 40 TRUE
+GiveItemIdx 1501086 160 TRUE
+BREAK
+
+[@_USEITEM(1501065)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501065 1
+#ACT
+TakeItemIdx 1501065 1
+GiveItemIdx 110009 40 TRUE
+GiveItemIdx 1501086 160 TRUE
+BREAK
+
+[@_USEITEM(1501066)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501066 1
+#ACT
+TakeItemIdx 1501066 1
+GiveItemIdx 110010 40 TRUE
+GiveItemIdx 1501086 160 TRUE
+BREAK
+
+[@_USEITEM(1501067)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501067 1
+#ACT
+TakeItemIdx 1501067 1
+GiveItemIdx 110013 40 TRUE
+GiveItemIdx 1501086 160 TRUE
+BREAK
+
+[@_USEITEM(1501051)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501051 1
+#ACT
+TakeItemIdx 1501051 1
+GiveItemIdx 80003 10 TRUE
+GiveItemIdx 1501086 20 TRUE
+BREAK
+
+[@_USEITEM(1501140)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501140 1
+#ACT
+TakeItemIdx 1501140 1
+GiveItemIdx 111114 10 TRUE
+GiveItemIdx 1501086 60 TRUE
+
+[@_USEITEM(1501058)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501058 1
+#ACT
+TakeItemIdx 1501058 1
+GiveItemIdx 91117 10 TRUE
+GiveItemIdx 1501086 100 TRUE
+BREAK
+
+[@_USEITEM(1501052)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501052 1
+#ACT
+TakeItemIdx 1501052 1
+GiveItemIdx 111105 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[@_USEITEM(1501053)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501053 1
+#ACT
+TakeItemIdx 1501053 1
+GiveItemIdx 111106 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[@_USEITEM(1501054)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501054 1
+#ACT
+TakeItemIdx 1501054 1
+GiveItemIdx 111107 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[@_USEITEM(1501055)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501055 1
+#ACT
+TakeItemIdx 1501055 1
+GiveItemIdx 111108 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[@_USEITEM(1501056)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501056 1
+#ACT
+TakeItemIdx 1501056 1
+GiveItemIdx 111116 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[@_USEITEM(1501057)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501057 1
+#ACT
+TakeItemIdx 1501057 1
+GiveItemIdx 111306 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[@_USEITEM(1501068)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501068 1
+#ACT
+TakeItemIdx 1501068 1
+GiveItemIdx 110011 1000 TRUE
+GiveItemIdx 1501086 160 TRUE
+BREAK
+
+[@_USEITEM(1501201)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501201 1
+#ACT
+TakeItemIdx 1501201 1
+GiveItemIdx 140002 100 TRUE
+GiveItemIdx 1501086 50 TRUE
+BREAK
+
+[@_USEITEM(1501169)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501169 1
+#ACT
+TakeItemIdx 1501169 1
+GiveItemIdx 140002 100 TRUE
+GiveItemIdx 1501086 180 TRUE
+BREAK
+
+[@_USEITEM(1500082)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500082 1
+#ACT
+TakeItemIdx 1500082 1
+GiveItemIdx 21001 10 TRUE
+GiveItemIdx 1501086 12 TRUE
+BREAK
+
+[@_USEITEM(1510079)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1510079 1
+#ACT
+TakeItemIdx 1510079 1
+GiveItemIdx 21001 100 TRUE
+GiveItemIdx 1501086 120 TRUE
+BREAK
+
+[@_USEITEM(1500083)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500083 1
+#ACT
+TakeItemIdx 1500083 1
+GiveItemIdx 21002 10 TRUE
+GiveItemIdx 1501086 8 TRUE
+BREAK
+
+[@_USEITEM(1500080)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500080 1
+#ACT
+TakeItemIdx 1500080 1
+GiveItemIdx 21002 100 TRUE
+GiveItemIdx 1501086 80 TRUE
+BREAK
+
+[@_USEITEM(1500084)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500084 1
+#ACT
+TakeItemIdx 1500084 1
+GiveItemIdx 21003 10 TRUE
+GiveItemIdx 1501086 8 TRUE
+BREAK
+
+[@_USEITEM(1500081)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500081 1
+#ACT
+TakeItemIdx 1500081 1
+GiveItemIdx 21003 100 TRUE
+GiveItemIdx 1501086 80 TRUE
+BREAK
+
+[@_USEITEM(1500148)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500148 1
+#ACT
+TakeItemIdx 1500148 1
+GiveItemIdx 21004 10 FALSE
+GiveItemIdx 1501086 8 TRUE
+BREAK
+
+[@_USEITEM(1500147)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500147 1
+#ACT
+TakeItemIdx 1500147 1
+GiveItemIdx 21004 100 FALSE
+GiveItemIdx 1501086 80 TRUE
+BREAK
+
+[@_USEITEM(1500156)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500156 1
+#ACT
+TakeItemIdx 1500156 1
+GiveItemIdx 21005 10 FALSE
+GiveItemIdx 1501086 8 TRUE
+BREAK
+
+[@_USEITEM(1500155)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500155 1
+#ACT
+TakeItemIdx 1500155 1
+GiveItemIdx 21005 100 FALSE
+GiveItemIdx 1501086 80 TRUE
+BREAK
+
+[@_USEITEM(1500167)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500167 1
+#ACT
+TakeItemIdx 1500167 1
+GiveItemIdx 21006 10 FALSE
+GiveItemIdx 1501086 12 TRUE
+BREAK
+
+[@_USEITEM(1500166)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500166 1
+#ACT
+TakeItemIdx 1500166 1
+GiveItemIdx 21006 100 FALSE
+GiveItemIdx 1501086 120 TRUE
+BREAK
+
+[@_USEITEM(1501032)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501032 1
+#ACT
+TakeItemIdx 1501032 1
+GiveItemIdx 111105 10 FALSE
+BREAK
+
+[@_USEITEM(1501077)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501077 1
+#ACT
+TakeItemIdx 1501077 1
+GiveItemIdx 111105 10 FALSE
+BREAK
+
+[@_USEITEM(1501033)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501033 1
+#ACT
+TakeItemIdx 1501033 1
+GiveItemIdx 111106 10 FALSE
+BREAK
+
+[@_USEITEM(1501078)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501078 1
+#ACT
+TakeItemIdx 1501078 1
+GiveItemIdx 111106 10 FALSE
+BREAK
+
+[@_USEITEM(1500072)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500072 1
+#ACT
+TakeItemIdx 1500072 1
+GiveItemIdx 21001 10 FALSE
+BREAK
+
+[@_USEITEM(1500073)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500073 1
+#ACT
+TakeItemIdx 1500073 1
+GiveItemIdx 21002 10 FALSE
+BREAK
+
+[@_USEITEM(1500074)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500074 1
+#ACT
+TakeItemIdx 1500074 1
+GiveItemIdx 21003 10 FALSE
+BREAK
+
+[@_USEITEM(1500076)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500076 1
+#ACT
+TakeItemIdx 1500076 1
+GiveItemIdx 80003 10 FALSE
+BREAK
+
+[@_USEITEM(1500087)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500087 1
+#ACT
+TakeItemIdx 1500087 1
+GiveItemIdx 21001 1 FALSE
+BREAK
+
+[@_USEITEM(1500099)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500099 1
+#ACT
+TakeItemIdx 1500099 1
+GiveItemIdx 80011 10 FALSE
+BREAK
+
+[@_USEITEM(1500138)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500138 1
+#ACT
+TakeItemIdx 1500138 1
+GiveItemIdx 111058 10 FALSE
+BREAK
+
+[@_USEITEM(1500139)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500139 1
+#ACT
+TakeItemIdx 1500139 1
+GiveItemIdx 111059 10 FALSE
+BREAK
+
+[@_USEITEM(1500140)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500140 1
+#ACT
+TakeItemIdx 1500140 1
+GiveItemIdx 111060 10 FALSE
+BREAK
+
+[@_USEITEM(1500141)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500141 1
+#ACT
+TakeItemIdx 1500141 1
+GiveItemIdx 111078 10 FALSE
+BREAK
+
+[@_USEITEM(1500145)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500145 1
+#ACT
+TakeItemIdx 1500145 1
+GiveItemIdx 21004 1 FALSE
+BREAK
+
+[@_USEITEM(1500146)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500146 1
+#ACT
+TakeItemIdx 1500146 1
+GiveItemIdx 21004 11 FALSE
+BREAK
+
+[@_USEITEM(1500149)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500149 1
+#ACT
+TakeItemIdx 1500149 1
+GiveItemIdx 10620 11 FALSE
+BREAK
+
+[@_USEITEM(1500153)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500153 1
+#ACT
+TakeItemIdx 1500153 1
+GiveItemIdx 21005 1 FALSE
+BREAK
+
+[@_USEITEM(1500154)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500154 1
+#ACT
+TakeItemIdx 1500154 1
+GiveItemIdx 21005 11 FALSE
+BREAK
+
+[@_USEITEM(1500161)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500161 1
+#ACT
+TakeItemIdx 1500161 1
+GiveItemIdx 111091 10 FALSE
+BREAK
+
+[@_USEITEM(1500164)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500164 1
+#ACT
+TakeItemIdx 1500164 1
+GiveItemIdx 21006 1 FALSE
+BREAK
+
+[@_USEITEM(1500165)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500165 1
+#ACT
+TakeItemIdx 1500165 1
+GiveItemIdx 21006 11 FALSE
+BREAK
+
+[@_USEITEM(1500175)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 战士铭文石 5 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 法师铭文石 5 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 刺客铭文石 5 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 道士铭文石 5 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 弓手铭文石 5 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 龙枪铭文石 5 TRUE
+BREAK
+
+[@_USEITEM(1500880)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500880 1
+#ACT
+TakeItemIdx 1500880 1
+GiveItemIdx 111058 5 FALSE
+
+[@_USEITEM(1500881)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500881 1
+#ACT
+TakeItemIdx 1500881 1
+GiveItemIdx 111059 5 FALSE
+
+[@_USEITEM(1500882)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500882 1
+#ACT
+TakeItemIdx 1500882 1
+GiveItemIdx 111060 5 FALSE
+
+[@_USEITEM(1500883)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500883 1
+#ACT
+TakeItemIdx 1500883 1
+GiveItemIdx 111078 5 FALSE
+
+[@_USEITEM(1500884)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500884 1
+#ACT
+TakeItemIdx 1500884 1
+GiveItemIdx 111091 5 FALSE
+
+[@_USEITEM(1500885)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500885 1
+#ACT
+TakeItemIdx 1500885 1
+GiveItemIdx 111301 5 FALSE
+BREAK
+
+[@_USEITEM(1501141)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501141 1
+#ACT
+TakeItemIdx 1501141 1
+GiveItemIdx 111114 10 FALSE
+BREAK
+
+[@_USEITEM(1501210)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501210 1
+#ACT
+TakeItemIdx 1501210 1
+GiveItemIdx 140002 50 FALSE
+BREAK
+
+[@_USEITEM(1501173)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501173 1
+#ACT
+TakeItemIdx 1501173 1
+GiveItemIdx 91117 5 FALSE
+BREAK
+
+[@_USEITEM(1501171)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501171 1
+#ACT
+TakeItemIdx 1501171 1
+GiveItemIdx 41002 5 FALSE
+BREAK
+
+[@_USEITEM(1501170)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501170 1
+#ACT
+TakeItemIdx 1501170 1
+GiveItemIdx 140003 50 FALSE
+BREAK
+
+[@_USEITEM(1501224)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501224 1
+#ACT
+TakeItemIdx 1501224 1
+GiveItemIdx 91115 23 FALSE
+BREAK
+
+[@_USEITEM(1501225)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501225 1
+#ACT
+TakeItemIdx 1501225 1
+GiveItemIdx 91116 23 FALSE
+BREAK
+
+[@_USEITEM(2323)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2323 1
+#ACT
+TakeItemIdx 2323 1
+GiveItemIdx 91127 24 FALSE
+BREAK
+
+[@_USEITEM(2333)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2333 1
+#ACT
+TakeItemIdx 2333 1
+GiveItemIdx 91184 1 FALSE
+BREAK
+
+[@_USEITEM(2334)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2334 1
+#ACT
+TakeItemIdx 2334 1
+GiveItemIdx 91184 2 FALSE
+BREAK
+
+[@_USEITEM(2335)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2335 1
+#ACT
+TakeItemIdx 2335 1
+GiveItemIdx 91184 2 FALSE
+BREAK
+
+[@_USEITEM(140007)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 140007 1
+#ACT
+TakeItemIdx 140007 1
+GiveItemIdx 140005 5 FALSE
+BREAK
+
+[@_USEITEM(140008)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 140008 1
+#ACT
+TakeItemIdx 140008 1
+GiveItemIdx 140002 30 FALSE
+BREAK
+
+[@_USEITEM(1500008)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500008 1
+#ACT
+TakeItemIdx 1500008 1
+GiveItemIdx 397 1 FALSE
+BREAK
+
+[@_USEITEM(1500010)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500010 1
+#ACT
+TakeItemIdx 1500010 1
+GiveItemIdx 416 1 FALSE
+BREAK
+
+[@_USEITEM(1500020)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500020 1
+#ACT
+TakeItemIdx 1500020 1
+GiveItemIdx 80003 3 TRUE
+BREAK
+
+[@_USEITEM(1500040)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500040 1
+#ACT
+TakeItemIdx 1500040 1
+GiveItemIdx 69900008 1 TRUE
+BREAK
+
+[@_USEITEM(1500058)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500058 1
+#ACT
+TakeItemIdx 1500058 1
+GiveItemIdx 91125 188 TRUE
+BREAK
+
+[@_USEITEM(1500172)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500172 1
+#ACT
+TakeItemIdx 1500172 1
+GiveItemIdx 111301 10 FALSE
+BREAK
+
+[@_USEITEM(1500191)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500191 1
+#ACT
+TakeItemIdx 1500191 1
+GiveItemIdx 91211 1 TRUE
+BREAK
+
+[@_USEITEM(1500192)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500192 1
+#ACT
+TakeItemIdx 1500192 1
+GiveItemIdx 416 2 FALSE
+BREAK
+
+[@_USEITEM(1500202)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500202 1
+#ACT
+TakeItemIdx 1500202 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500209)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500209 1
+#ACT
+TakeItemIdx 1500209 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500212)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500212 1
+#ACT
+TakeItemIdx 1500212 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500214)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500214 1
+#ACT
+TakeItemIdx 1500214 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500215)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500215 1
+#ACT
+TakeItemIdx 1500215 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500216)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500216 1
+#ACT
+TakeItemIdx 1500216 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500217)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500217 1
+#ACT
+TakeItemIdx 1500217 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500218)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500218 1
+#ACT
+TakeItemIdx 1500218 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500219)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500219 1
+#ACT
+TakeItemIdx 1500219 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500220)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500220 1
+#ACT
+TakeItemIdx 1500220 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500221)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500221 1
+#ACT
+TakeItemIdx 1500221 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500223)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500223 1
+#ACT
+TakeItemIdx 1500223 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500225)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500225 1
+#ACT
+TakeItemIdx 1500225 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500226)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500226 1
+#ACT
+TakeItemIdx 1500226 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500227)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500227 1
+#ACT
+TakeItemIdx 1500227 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500228)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500228 1
+#ACT
+TakeItemIdx 1500228 1
+GiveItemIdx 397 1 TRUE
+BREAK
+
+[@_USEITEM(1500237)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500237 1
+#ACT
+TakeItemIdx 1500237 1
+GiveItemIdx 99900042 1 TRUE
+BREAK
+
+[@_USEITEM(1500351)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500351 1
+#ACT
+TakeItemIdx 1500351 1
+GiveItemIdx 111003 5 TRUE
+BREAK
+
+[@_USEITEM(1501087)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501087 1
+#ACT
+TakeItemIdx 1501087 1
+GiveItemIdx 21001 100 FALSE
+BREAK
+
+[@_USEITEM(1501088)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501088 1
+#ACT
+TakeItemIdx 1501088 1
+GiveItemIdx 21002 100 FALSE
+BREAK
+
+[@_USEITEM(1501089)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501089 1
+#ACT
+TakeItemIdx 1501089 1
+GiveItemIdx 21003 100 FALSE
+BREAK
+
+[@_USEITEM(1501090)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501090 1
+#ACT
+TakeItemIdx 1501090 1
+GiveItemIdx 21004 100 FALSE
+BREAK
+
+[@_USEITEM(1501091)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501091 1
+#ACT
+TakeItemIdx 1501091 1
+GiveItemIdx 21005 100 FALSE
+BREAK
+
+[@_USEITEM(1501092)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501092 1
+#ACT
+TakeItemIdx 1501092 1
+GiveItemIdx 21006 100 FALSE
+BREAK
+
+[@_USEITEM(1501093)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501093 1
+#ACT
+TakeItemIdx 1501093 1
+GiveItemIdx 21001 10 FALSE
+BREAK
+
+[@_USEITEM(1501094)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501094 1
+#ACT
+TakeItemIdx 1501094 1
+GiveItemIdx 21002 10 FALSE
+BREAK
+
+[@_USEITEM(1501095)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501095 1
+#ACT
+TakeItemIdx 1501095 1
+GiveItemIdx 21003 10 FALSE
+BREAK
+
+[@_USEITEM(1501096)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501096 1
+#ACT
+TakeItemIdx 1501096 1
+GiveItemIdx 21004 10 FALSE
+BREAK
+
+[@_USEITEM(1501097)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501097 1
+#ACT
+TakeItemIdx 1501097 1
+GiveItemIdx 21005 10 FALSE
+BREAK
+
+[@_USEITEM(1501098)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501098 1
+#ACT
+TakeItemIdx 1501098 1
+GiveItemIdx 21006 10 FALSE
+BREAK
+
+[@_USEITEM(94060)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94060 1
+#ACT
+TakeItemIdx 94060 1
+GiveItemIdx 91184 1 TRUE
+BREAK
+
+[@_USEITEM(94061)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94061 1
+#ACT
+TakeItemIdx 94061 1
+GiveItemIdx 91184 1 TRUE
+BREAK
+
+[@_USEITEM(94062)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94062 1
+#ACT
+TakeItemIdx 94062 1
+GiveItemIdx 91184 1 TRUE
+BREAK
+
+[@_USEITEM(94063)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94063 1
+#ACT
+TakeItemIdx 94063 1
+GiveItemIdx 91184 2 TRUE
+BREAK
+
+[@_USEITEM(94064)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94064 1
+#ACT
+TakeItemIdx 94064 1
+GiveItemIdx 91184 2 TRUE
+BREAK
+
+[@_USEITEM(94065)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94065 1
+#ACT
+TakeItemIdx 94065 1
+GiveItemIdx 91184 2 TRUE
+BREAK
+
+[@_USEITEM(94066)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94066 1
+#ACT
+TakeItemIdx 94066 1
+GiveItemIdx 91184 3 TRUE
+BREAK
+
+[@_USEITEM(94067)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94067 1
+#ACT
+TakeItemIdx 94067 1
+GiveItemIdx 91184 3 TRUE
+BREAK
+
+[@_USEITEM(1500896)]
+#IF
+HasBagSpace < 3
+#ACT
+TopMessage "背包格数剩余不足[3]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500896 1
+#ACT
+TakeItemIdx 1500896 1
+GiveItemIdx 91184 2 TRUE
+RandomGiveItemIdx 10420,10320,10620,10820,10110,10720 1 FALSE
+
+#IF
+Random 50
+#ACT
+RandomGiveItemIdx 10420,10320,10620,10820,10110,10720 1 FALSE
+BREAK
+
+[@_USEITEM(1501014)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501014 1
+#ACT
+TakeItemIdx 1501014 1
+GiveItemIdx 80003 10 TRUE
+BREAK
+
+[@_USEITEM(1501028)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501028 1
+#ACT
+TakeItemIdx 1501028 1
+GiveItemIdx 111116 10 TRUE
+BREAK
+
+[@_USEITEM(1501018)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501018 1
+#ACT
+TakeItemIdx 1501018 1
+GiveItemIdx 111108 10 TRUE
+BREAK
+
+[@_USEITEM(1501017)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501017 1
+#ACT
+TakeItemIdx 1501017 1
+GiveItemIdx 111107 10 TRUE
+BREAK
+
+[@_USEITEM(1501016)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501016 1
+#ACT
+TakeItemIdx 1501016 1
+GiveItemIdx 111106 10 TRUE
+BREAK
+
+[@_USEITEM(1501015)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501015 1
+#ACT
+TakeItemIdx 1501015 1
+GiveItemIdx 111105 10 TRUE
+BREAK
+
+[@_USEITEM(1029001)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+Random 80
+CheckItemidx 1029001 1
+#ACT
+TakeItemIdx 1029001 1
+RandomGiveItemIdx 99990316,99990326,99990336,99990346,99990356, 99990366,99900018,99900019,99900021,99900054, 99900075,99900103,99920016,99920020,99920021, 99920044,99920073,99930014,99930017,99930018, 99930048,99930074,99940011,99940015,99940020, 99940037,99940072,99990411,99980413,99990413, 99980423,99990423,99980433,99990433,99980443, 99990443,99980453,99990453,99980463,99990463, 99990415,99990417 1 FALSE
+BREAK
+
+#IF
+CheckItemidx 1029001 1
+#ACT
+TakeItemIdx 1029001 1
+GiveItemIDX 418 1
+BREAK
+
+[@_USEITEM(1023001)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItem 铜钥匙 1
+#ELSEACT
+TopMessage "开启宝箱所需（铜钥匙）一把" FALSE
+BREAK
+
+#IF
+Random 80
+CheckItemidx 1023001 1
+#ACT
+TakeItemIdx 1023001 1
+RandomGiveItemIdx 99961001,99961002,99961003,99961004,99961005,99961006,99920017,99920018,99920019,99920045,99920074,99920084,99930019,99930020,99930021,99930049,99930075,99930085,99940010,99940012,99940016,99940021,99940038,99940073,99940083 1 FALSE
+BREAK
+
+#IF
+CheckItemidx 1023001 1
+#ACT
+TakeItemIdx 1023001 1
+RandomGiveItemIdx 111061,111062,111063,111064,80003 1 FALSE
+BREAK
+
+[@_USEITEM(1023002)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItem 银钥匙 1
+#ELSEACT
+TopMessage "开启宝箱所需（银钥匙）一把" FALSE
+BREAK
+
+#IF
+Random 80
+CheckItemidx 1023002 1
+#ACT
+TakeItemIdx 1023002 1
+RandomGiveItemIdx 99961001,99961002,99961003,99961004,99961005,99961006,99920027,99920028,99920029,99920046,99920075,99920085,99930033,99930034,99930035,99930050,99930076,99930086,99940024,99940025,99940026,99940039,99940074,99940084,99990611,99990621,99990631,99990641,99990651,99990661 1 FALSE
+BREAK
+
+#IF
+CheckItemidx 1023002 1
+#ACT
+TakeItemIdx 1023002 1
+RandomGiveItemIdx 111061,111062,111063,111064,80003 1 FALSE
+BREAK
+
+[@_USEITEM(1023003)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItem 金钥匙 1
+#ELSEACT
+TopMessage "开启宝箱所需（金钥匙）一把" FALSE
+BREAK
+
+#IF
+Random 80
+CheckItemidx 1023003 1
+#ACT
+TakeItemIdx 1023003 1
+RandomGiveItemIdx 99920032,99920033,99920034,99920047,99920076,99920086,99930038,99930039,99930040,99930051,99930077,99930087,99940030,99940031,99940032,99940040,99940075,99940085,99990715,99990725,99990735,99990745,99990755,99990765,99990717,99990727,99990737,99990747,99990757,99990767 1 FALSE
+BREAK
+
+#IF
+CheckItemidx 1023003 1
+#ACT
+TakeItemIdx 1023003 1
+RandomGiveItemIdx 91125,80003 1 FALSE
+BREAK
+
+[@_USEITEM(1500305)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500305 1
+#ACT
+TakeItemIdx 1500305
+GiveItemIdx 417 1
+GiveItemIdx 80011 30
+GiveItemIdx 2315 5
+
+#IF
+Random 50
+#ACT
+GiveItemIdx 80003 1
+BREAK
+
+#IF
+Random 20
+#ACT
+GiveItemIdx 2315 1
+BREAK
+
+[@_USEITEM(1500706)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+Random 80
+CheckItemidx 1500706 1
+#ACT
+TakeItemIdx 1500706 1
+RandomGiveItemIdx 99920027,99920028,99920029,99920046,99920075, 99920085,99930033,99930034,99930035,99930050,99930076,99930086,99940024,99940025,99940026,99940039,99940074,99940084,99990611,99990621,99990631,99990641,99990651,99990661 1 FALSE
+BREAK
+
+#IF
+CheckItemidx 1500706 1
+#ACT
+TakeItemIdx 1500706 1
+RandomGiveItemIdx 99920017,99920018,99920019,99920045,99920074,99920084,99930019,99930020,99930021,99930049,99930075,99930085,99940010,99940012,99940016,99940021,99940038,99940073,99940083 1 FALSE
+BREAK
+
+[@_USEITEM(1510706)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+Random 80
+CheckItemidx 1510706 1
+#ACT
+TakeItemIdx 1510706 1
+RandomGiveItemIdx 99920027,99920028,99920029,99920046,99920075, 99920085,99930033,99930034,99930035,99930050,99930076,99930086,99940024,99940025,99940026,99940039,99940074,99940084,99990611,99990621,99990631,99990641,99990651,99990661 1 FALSE
+BREAK
+
+#IF
+CheckItemidx 1510706 1
+#ACT
+TakeItemIdx 1510706
+RandomGiveItemIdx 99920017,99920018,99920019,99920045,99920074,99920084,99930019,99930020,99930021,99930049,99930075,99930085,99940010,99940012,99940016,99940021,99940038,99940073,99940083 1 FALSE
+BREAK
+
+[@_USEITEM(1500710)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+Random 80
+CheckItemidx 1500710 1
+#ACT
+TakeItemIdx 1500710
+RandomGiveItemIdx 99920027,99920028,99920029,99920046,99920075, 99920085,99930033,99930034,99930035,99930050,99930076,99930086,99940024,99940025,99940026,99940039,99940074,99940084,99990611,99990621,99990631,99990641,99990651,99990661 1 FALSE
+BREAK
+
+#IF
+CheckItemidx 1500710 1
+#ACT
+TakeItemIdx 1500710 1
+RandomGiveItemIdx 99920017,99920018,99920019,99920045,99920074,99920084,99930019,99930020,99930021,99930049,99930075,99930085,99940010,99940012,99940016,99940021,99940038,99940073,99940083 1 FALSE
+BREAK
+
+[@_USEITEM(1500897)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500897 1
+#ACT
+TakeItemIdx 1500897 1
+RandomGiveItemIdx 99920017,99920018,99920019,99920045,99920074,99920084,99930019,99930020,99930021,99930049,99930075,99930085,99940010,99940012,99940016,99940021,99940038,99940073,99940083 1 FALSE
+BREAK
+
+[@_USEITEM(1700007)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1700007 1
+#ACT
+TakeItemIdx 1700007 1
+RandomGiveItemIdx 99920017,99920018,99920019,99920045,99920074,99920084,99930019,99930020,99930021,99930049,99930075,99930085,99940010,99940012,99940016,99940021,99940038,99940073,99940083 1 FALSE
+BREAK
+
+[@_USEITEM(1700029)]
+#IF
+CheckItemidx 1700029 1
+#ACT
+TakeItemIdx 1700029 1
+GiveDoubleExp 500000
+BREAK
+
+;装备碎片礼包
+[@_USEITEM(1510092)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckCalc <$VERSION> < 4
+CheckItemidx 1510092 1
+#ACT
+TakeItemIdx 1510092 1
+GiveItemIdx 111001 500
+Break
+
+#IF
+CheckCalc <$VERSION> > 3
+CheckCalc <$VERSION> < 7
+CheckItemidx 1510092 1
+#ACT
+TakeItemIdx 1510092 1
+GiveItemIdx 111001 999
+Break
+
+#IF
+CheckCalc <$VERSION> > 5
+CheckCalc <$VERSION> == 7
+CheckItemidx 1510092 1
+#ACT
+TakeItemIdx 1510092 1
+GiveItemIdx 111001 1500
+Break
+
+[@_USEITEM(1500820)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500820 1
+#ACT
+TakeItemIdx 1500820 1
+GiveItemIdx 91184 2
+GiveItem 战士铭文石 10 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500820 1
+#ACT
+TakeItemIdx 1500820 1
+GiveItemIdx 91184 2
+GiveItem 法师铭文石 10 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500820 1
+#ACT
+TakeItemIdx 1500820 1
+GiveItemIdx 91184 2
+GiveItem 刺客铭文石 10 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500820 1
+#ACT
+TakeItemIdx 1500820 1
+GiveItemIdx 91184 2
+GiveItem 道士铭文石 10 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500820 1
+#ACT
+TakeItemIdx 1500820 1
+GiveItemIdx 91184 2
+GiveItem 弓手铭文石 10 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500820 1
+#ACT
+TakeItemIdx 1500820 1
+GiveItemIdx 91184 2
+GiveItem 龙枪铭文石 10 TRUE
+BREAK
+
+[@_USEITEM(1500551)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500551 1
+#ACT
+TakeItemIdx 1500551 1
+GiveItemIdx 1500552 1
+GiveItemIdx 91125 1
+BREAK
+
+[@_USEITEM(1500552)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500552 1
+#ACT
+TakeItemIdx 1500552 1
+GiveItemIdx 1500553 1
+GiveItemIdx 91125 3
+BREAK
+
+[@_USEITEM(1500553)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500553 1
+#ACT
+TakeItemIdx 1500553 1
+GiveItemIdx 1500554 1
+GiveItemIdx 2201 1
+BREAK
+
+[@_USEITEM(1500554)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500554 1
+#ACT
+TakeItemIdx 1500554 1
+GiveItemIdx 1500555 1
+GiveItemIdx 91125 5
+BREAK
+
+[@_USEITEM(1500555)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+
+#IF
+CheckClass 战士
+CheckItemidx 1500555 1
+#ACT
+TakeItemIdx 1500555 1
+GiveItemIdx 1500556 1
+GiveItem 战士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500555 1
+#ACT
+TakeItemIdx 1500555 1
+GiveItemIdx 1500556 1
+GiveItem 法师铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500555 1
+#ACT
+TakeItemIdx 1500555 1
+GiveItemIdx 1500556 1
+GiveItem 刺客铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500555 1
+#ACT
+TakeItemIdx 1500555 1
+GiveItemIdx 1500556 1
+GiveItem 道士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500555 1
+#ACT
+TakeItemIdx 1500555 1
+GiveItemIdx 1500556 1
+GiveItem 弓手铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500555 1
+#ACT
+TakeItemIdx 1500555 1
+GiveItemIdx 1500556 1
+GiveItem 龙枪铭文石 1 TRUE
+BREAK
+
+[@_USEITEM(1500556)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+
+#IF
+CheckClass 战士
+CheckItemidx 1500556 1
+#ACT
+TakeItemIdx 1500556 1
+GiveItemIdx 1500557 1
+GiveItem 战士铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500556 1
+#ACT
+TakeItemIdx 1500556 1
+GiveItemIdx 1500557 1
+GiveItem 法师铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500556 1
+#ACT
+TakeItemIdx 1500556 1
+GiveItemIdx 1500557 1
+GiveItem 刺客铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500556 1
+#ACT
+TakeItemIdx 1500556 1
+GiveItemIdx 1500557 1
+GiveItem 道士铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500556 1
+#ACT
+TakeItemIdx 1500556 1
+GiveItemIdx 1500557 1
+GiveItem 弓手铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500556 1
+#ACT
+TakeItemIdx 1500556 1
+GiveItemIdx 1500557 1
+GiveItem 龙枪铭文石 2 TRUE
+BREAK
+
+[@_USEITEM(1500557)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500557 1
+#ACT
+TakeItemIdx 1500557 1
+GiveItemIdx 1500558 1
+GiveItemIdx 80003 1
+BREAK
+
+[@_USEITEM(1500558)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500558 1
+#ACT
+TakeItemIdx 1500558 1
+GiveItemIdx 1500559 1
+GiveItemIdx 99990315 1
+BREAK
+
+[@_USEITEM(1500559)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500559 1
+#ACT
+TakeItemIdx 1500559 1
+GiveItemIdx 1500560 1
+GiveItemIdx 99990317 1
+BREAK
+
+[@_USEITEM(1500560)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500560 1
+#ACT
+TakeItemIdx 1500560 1
+GiveItem 龙之戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500560 1
+#ACT
+TakeItemIdx 1500560 1
+GiveItem 红宝石戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500560 1
+#ACT
+TakeItemIdx 1500560 1
+GiveItem 闪影戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500560 1
+#ACT
+TakeItemIdx 1500560 1
+GiveItem 铂金戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500560 1
+#ACT
+TakeItemIdx 1500560 1
+GiveItem 狼首戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500560 1
+#ACT
+TakeItemIdx 1500560 1
+GiveItem 龙之戒指 1 TRUE
+BREAK
+
+[@_USEITEM(1500521)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500521 1
+#ACT
+TakeItemIdx 1500521 1
+GiveItemIdx 1500522 1
+GiveItemIdx 1501120 1
+BREAK
+
+[@_USEITEM(1500522)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500522 1
+#ACT
+TakeItemIdx 1500522 1
+GiveItemIdx 1500523 1
+GiveItemIdx 91189 1
+BREAK
+
+[@_USEITEM(1500523)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500523 1
+#ACT
+TakeItemIdx 1500523 1
+GiveItemIdx 1500524 1
+GiveTitle 106
+BREAK
+
+[@_USEITEM(1500524)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500524 1
+#ACT
+TakeItemIdx 1500524 1
+GiveItemIdx 1500525 1
+GiveItemIdx 91184 1
+BREAK
+
+[@_USEITEM(1500525)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500525 1
+#ACT
+TakeItemIdx 1500525 1
+GiveItemIdx 1500526 1
+GiveItem 战士铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500525 1
+#ACT
+TakeItemIdx 1500525 1
+GiveItemIdx 1500526 1
+GiveItem 法师铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500525 1
+#ACT
+TakeItemIdx 1500525 1
+GiveItemIdx 1500526 1
+GiveItem 刺客铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500525 1
+#ACT
+TakeItemIdx 1500525 1
+GiveItemIdx 1500526 1
+GiveItem 道士铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500525 1
+#ACT
+TakeItemIdx 1500525 1
+GiveItemIdx 1500526 1
+GiveItem 弓手铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500525 1
+#ACT
+TakeItemIdx 1500525 1
+GiveItemIdx 1500526 1
+GiveItem 龙枪铭文石 2 TRUE
+BREAK
+
+[@_USEITEM(1500526)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500526 1
+#ACT
+TakeItemIdx 1500526 1
+GiveItemIdx 1500527 1
+GiveItemIdx 99990315 1
+BREAK
+
+[@_USEITEM(1500527)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500527 1
+#ACT
+TakeItemIdx 1500527 1
+GiveItemIdx 1500528 1
+GiveItemIdx 99990317 1
+BREAK
+
+[@_USEITEM(1500528)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500528 1
+#ACT
+TakeItemIdx 1500528 1
+GiveItemIdx 1500529 1
+GiveItemIdx 80003 2
+BREAK
+
+[@_USEITEM(1500529)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500529 1
+#ACT
+TakeItemIdx 1500529 1
+GiveItemIdx 1500530 1
+GiveItem 龙之戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500529 1
+#ACT
+TakeItemIdx 1500529 1
+GiveItemIdx 1500530 1
+GiveItem 红宝石戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500529 1
+#ACT
+TakeItemIdx 1500529 1
+GiveItemIdx 1500530 1
+GiveItem 闪影戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500529 1
+#ACT
+TakeItemIdx 1500529 1
+GiveItemIdx 1500530 1
+GiveItem 铂金戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500529 1
+#ACT
+TakeItemIdx 1500529 1
+GiveItemIdx 1500530 1
+GiveItem 狼首戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500529 1
+#ACT
+TakeItemIdx 1500529 1
+GiveItemIdx 1500530 1
+GiveItem 龙之戒指 1 TRUE
+BREAK
+
+[@_USEITEM(1500530)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500530 1
+#ACT
+TakeItemIdx 1500530 1
+GiveItemIdx 1500531 1
+GiveItemIdx 91211 1
+BREAK
+
+[@_USEITEM(1500531)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+
+#IF
+CheckClass 战士
+CheckItemidx 1500531 1
+#ACT
+TakeItemIdx 1500531 1
+GiveItemIdx 1500532 1
+GiveItem 命运之刃 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500531 1
+#ACT
+TakeItemIdx 1500531 1
+GiveItemIdx 1500532 1
+GiveItem 命运之杖 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500531 1
+#ACT
+TakeItemIdx 1500531 1
+GiveItemIdx 1500532 1
+GiveItem 命运之刺 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500531 1
+#ACT
+TakeItemIdx 1500531 1
+GiveItemIdx 1500532 1
+GiveItem 命运之幡 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500531 1
+#ACT
+TakeItemIdx 1500531 1
+GiveItemIdx 1500532 1
+GiveItem 命运之弓 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500531 1
+#ACT
+TakeItemIdx 1500531 1
+GiveItemIdx 1500532 1
+GiveItem 命运之矛 1 TRUE
+BREAK
+
+[@_USEITEM(1500532)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500532 1
+#ACT
+TakeItemIdx 1500532 1
+GiveItemIdx 91211 2
+BREAK
+
+[@_USEITEM(140105)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 140105 1
+#ACT
+TakeItemIdx 140105 1
+GiveItemIdx 417 1
+GiveItemIdx 80011 30
+GiveItemIdx 2315 10
+
+#IF
+Random 80
+CheckClass 战士
+#ACT
+GiveItem 战士铭文石 1 TRUE
+BREAK
+
+#IF
+Random 80
+CheckClass 法师
+#ACT
+GiveItem 法师铭文石 1 TRUE
+BREAK
+
+#IF
+Random 80
+CheckClass 刺客
+#ACT
+GiveItem 刺客铭文石 1 TRUE
+BREAK
+
+#IF
+Random 80
+CheckClass 道士
+#ACT
+GiveItem 道士铭文石 1 TRUE
+BREAK
+
+#IF
+Random 80
+CheckClass 弓手
+#ACT
+GiveItem 弓手铭文石 1 TRUE
+BREAK
+
+#IF
+Random 80
+CheckClass 龙枪
+#ACT
+GiveItem 龙枪铭文石 1 TRUE
+BREAK
+
+#IF
+Random 80
+#ACT
+GiveItem 祝福油 1 TRUE
+BREAK
+
+[@_USEITEM(1500894)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21001 16 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21002 16 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21003 16 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21004 16 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21005 16 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21006 16 TRUE
+BREAK
+
+;名俊疗伤药礼包
+[@_USEITEM(1500368)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500368 1
+#ACT
+TakeItemIdx 1500368 1
+GiveItemIdx 418 2 TRUE
+BREAK
+
+;名俊铭文石礼包
+[@_USEITEM(1500369)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500369 1
+#ACT
+TakeItemIdx 1500369 1
+GiveItem 战士铭文石 6 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500369 1
+#ACT
+TakeItemIdx 1500369 1
+GiveItem 法师铭文石 6 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500369 1
+#ACT
+TakeItemIdx 1500369 1
+GiveItem 刺客铭文石 6 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500369 1
+#ACT
+TakeItemIdx 1500369 1
+GiveItem 道士铭文石 6 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500369 1
+#ACT
+TakeItemIdx 1500369 1
+GiveItem 弓手铭文石 6 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500369 1
+#ACT
+TakeItemIdx 1500369 1
+GiveItem 龙枪铭文石 6 TRUE
+BREAK
+
+;名俊武器精粹礼包
+[@_USEITEM(1500370)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500370 1
+#ACT
+TakeItemIdx 1500370 1
+GiveItem 圣战武器精粹 5 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500370 1
+#ACT
+TakeItemIdx 1500370 1
+GiveItem 法神武器精粹 5 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500370 1
+#ACT
+TakeItemIdx 1500370 1
+GiveItem 天尊武器精粹 5 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500370 1
+#ACT
+TakeItemIdx 1500370 1
+GiveItem 影刺武器精粹 5 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500370 1
+#ACT
+TakeItemIdx 1500370 1
+GiveItem 箭灵武器精粹 5 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500370 1
+#ACT
+TakeItemIdx 1500370 1
+GiveItem 龙枪武器精粹 5 TRUE
+BREAK
+
+
+
+
+

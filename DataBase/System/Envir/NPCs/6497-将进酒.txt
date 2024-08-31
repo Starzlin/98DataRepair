@@ -1,0 +1,166 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:666410>
+
+[@4]
+#IF
+#ACT
+#SAY
+<#P0:10000><#P1:0><#T:666419>
+
+[@4_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 90502 1
+#ACT
+TakeItemIdx 90502 1
+GiveExp 10000
+#SAY
+<#P0:10000><#P1:0><#T:666421>
+#ELSESAY
+<#P0:10000><#P1:0><#T:666420>
+
+[@5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:666407>
+
+[@5_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 90226 8
+#ACT
+TakeItemIdx 90226 8
+GiveItemIdx 90502 1
+#SAY
+<#P0:1><#P1:0><#T:666415>
+#ELSESAY
+<#P0:0><#P1:0><#T:666409>
+
+[@5_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+
+#IF
+CheckItemIdx 90226 80
+#ACT
+TakeItemIdx 90226 80
+GiveItemIdx 90502 10
+#SAY
+<#P0:10><#P1:0><#T:666415>
+#ELSESAY
+<#P0:0><#P1:0><#T:666409>
+
+[@6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+
+#IF
+#ACT
+MOV N104 40
+Calc N104 - %J104
+#SAY
+<#P0:<$STR(N104)>><#P1:0><#T:666408>
+
+[@6_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckCalc <$STR(J104)> >= 40
+#ACT
+Break
+#SAY
+<#P0:40><#P1:0><#T:666417>
+
+#IF
+CheckItemIdx 90226 10
+#ACT
+Calc J104 + 1
+MOV N104 40
+Calc N104 - %J104
+TakeItemIdx 90226 10
+GiveItemIdx 90504 1
+#SAY
+<#P0:<$STR(N104)>><#P1:0><#T:666418>
+#ELSESAY
+<#P0:40><#P1:0><#T:666409>
+
+[@6_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckCalc <$STR(J104)> >= 40
+#ACT
+Break
+#SAY
+<#P0:40><#P1:0><#T:666417>
+
+#IF
+#ACT
+MOV N105 %J104
+Calc N105 + 10
+
+#IF
+CheckCalc <$STR(N105)> > 40
+#ACT
+Break
+#SAY
+<#P0:10><#P1:0><#T:666422>
+
+#IF
+CheckItemIdx 90226 100
+#ACT
+Calc J104 + 10
+MOV N104 40
+Calc N104 - %J104
+TakeItemIdx 90226 100
+GiveItemIdx 90504 10
+#SAY
+<#P0:<$STR(N104)>><#P1:0><#T:666418>
+#ELSESAY
+<#P0:40><#P1:0><#T:666409>
+
+

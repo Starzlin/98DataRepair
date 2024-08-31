@@ -1,0 +1,3370 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+;享有对应玛法特权玩家，每天可来此处领取强效战神油，兑换职业战具、铭文切换神符、龙卫切换神符。<#SO:1>领取强效战神油<#SO/><#SO:2>兑换职业战具（30级以后才可以兑换）<#SO/><#SO:3>兑换铭文切换神符x2（每次需要10万金币）<#SO/><#SO:4>兑换龙卫切换神符x2（每次需要10万金币）<#SO/><#SO:99>升级玛法特权<#SO/>
+享有对应玛法特权玩家，每天可来此处领取强效战神油，兑换职业战具、铭文切换神符、龙卫切换神符。<#SO:1>领取强效战神油<#SO/><#SO:2>兑换职业战具（30级以后才可以兑换）<#SO/><#SO:3>兑换铭文切换神符x2（每次需要10万金币）<#SO/><#SO:4>兑换龙卫切换神符x2（每次需要10万金币）<#SO/>
+
+[@4]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+Checkgold >= 100000
+#ACT
+TakeGold 100000
+GiveItemIdx 91212 2
+#ELSESAY
+你身上不足（10）万金币，无法兑换！<#SO:99>知道了<#SO/>
+
+[@3]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+Checkgold >= 100000
+#ACT
+TakeGold 100000
+GiveItemIdx 91208 2
+#ELSESAY
+你身上不足（10）万金币，无法兑换！<#SO:99>知道了<#SO/>
+
+[@2]
+#IF
+CheckClass 战士
+#ACT
+MOV S1 魔疗石
+
+#IF
+CheckClass 法师
+#ACT
+MOV S1 圣魔石
+
+#IF
+CheckClass 道士
+#ACT
+MOV S1 圣尊符
+
+#IF
+CheckClass 刺客
+#ACT
+MOV S1 血皇令
+
+#IF
+CheckClass 弓手
+#ACT
+MOV S1 神射箭袋
+
+#IF
+CheckClass 龙枪
+#ACT
+MOV S1 龙魄玉
+
+#IF
+#ACT
+#SAY
+道具：魔血石<br>效果：装备后持续恢复体力和魔法，代替技能道具消耗。<br>道具：<$STR(S1)>（玛法特权专属）<br>效果：装备后持续恢复体力，攻击时有小概率使目标定身。<#SO:21>兑换魔血石（灵符 x 10）<#SO/><#SO:22>兑换<$STR(S1)>（玛法特权专属，灵符 x 60）<#SO/><#SO:23>兑换魔血石（50万金币）<#SO/><#SO:24>兑换<$STR(S1)>（玛法特权专属，300万金币）<#SO/>
+
+[@2_24]
+#IF
+CheckCalc <$VIP> < 0
+#ACT
+Break
+#SAY
+请购买[玛法特权]后再来兑换！<#SO:99>知道了<#SO/>
+
+#IF
+LEVEL < 30
+#ACT
+Break
+#SAY
+不好意思，您的等级不足，请到达[30]级以后再来！<#SO:99>知道了<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+#ACT
+MOV N1 99999112
+
+#IF
+CheckClass 法师
+#ACT
+MOV N1 99999113
+
+#IF
+CheckClass 道士
+#ACT
+MOV N1 99999114
+
+#IF
+CheckClass 刺客
+#ACT
+MOV N1 99999115
+
+#IF
+CheckClass 弓手
+#ACT
+MOV N1 99999116
+
+#IF
+CheckClass 龙枪
+#ACT
+MOV N1 99999117
+
+#IF
+Checkgold >= 3000000
+#ACT
+TakeGold 3000000
+GiveItemIdx <$STR(N1)> 1 TRUE
+#ELSESAY
+您身上金币数量不足[300]万，无法兑换！<#SO:99>知道了<#SO/>
+
+[@2_23]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+LEVEL < 30
+#ACT
+Break
+#SAY
+不好意思，您的等级不足，请到达[30]级以后再来！<#SO:99>知道了<#SO/>
+
+#IF
+Checkgold >= 500000
+#ACT
+TakeGold 500000
+GiveItemIdx 99999118 1 TRUE
+#ELSESAY
+您身上金币数量不足[50]万，无法兑换！<#SO:99>知道了<#SO/>
+
+[@2_22]
+#IF
+CheckCalc <$VIP> < 0
+#ACT
+Break
+#SAY
+请购买[玛法特权]后再来兑换！<#SO:99>知道了<#SO/>
+
+#IF
+LEVEL < 30
+#ACT
+Break
+#SAY
+不好意思，您的等级不足，请到达[30]级以后再来！<#SO:99>知道了<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+#ACT
+MOV N1 99999112
+
+#IF
+CheckClass 法师
+#ACT
+MOV N1 99999113
+
+#IF
+CheckClass 道士
+#ACT
+MOV N1 99999114
+
+#IF
+CheckClass 刺客
+#ACT
+MOV N1 99999115
+
+#IF
+CheckClass 弓手
+#ACT
+MOV N1 99999116
+
+#IF
+CheckClass 龙枪
+#ACT
+MOV N1 99999117
+
+#IF
+CheckItemIdx 90226 60
+#ACT
+TakeItemIdx 90226 60
+GiveItemIdx <$STR(N1)> 1 TRUE
+#ELSESAY
+您的灵符数量不足，请确认后再来兑换！<#SO:9999>知道了<#SO/>
+
+[@2_21]
+#IF
+LEVEL < 30
+#ACT
+Break
+#SAY
+不好意思，您的等级不足，请到达[30]级以后再来！<#SO:99>知道了<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 90226 10
+#ACT
+TakeItemIdx 90226 10
+GiveItemIdx 99999118 1 TRUE
+#ELSESAY
+您的灵符数量不足，请确认后再来兑换！<#SO:9999>知道了<#SO/>
+
+[@1]
+#IF
+CheckCalc <$STR(J100)> == 1
+#ACT
+Break
+#SAY
+今日已领取过“强效战神油”，请明日再来领取！<#SO:9999>知道了<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckCalc <$VIP> == 6
+#ACT
+MOV J100 1
+GiveItemIdx 80011 15 TRUE
+Break
+
+#IF
+CheckCalc <$VIP> == 3
+#ACT
+MOV J100 1
+GiveItemIdx 80011 20 TRUE
+Break
+
+#IF
+CheckCalc <$VIP> == 4
+#ACT
+MOV J100 1
+GiveItemIdx 80011 30 TRUE
+Break
+
+#IF
+CheckCalc <$VIP> == 5
+#ACT
+MOV J100 1
+GiveItemIdx 80011 30 TRUE
+Break
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+MOV J100 1
+GiveItemIdx 80011 30 TRUE
+#ELSESAY
+你还不是特权玩家，无法领取“强效战神油”！<#SO:9999>知道了<#SO/>
+
+
+[@99]
+#IF
+#ACT
+;========================================================
+;【调试使用】解开
+;MarFaValue 6 30 1
+;MarFaValue 4 -30 2
+;========================================================
+; 【问题描述】该方法存在一个问题：因为取整 30天计算结果一天为2元宝  30天是 60元宝 少了8元宝为剩余天数
+; 当前的价格 / 30 天 返回一天的价格 2元宝（四舍五入取整）
+;MOV N147 68
+;CALC N147 / 30
+;TopMessage "<$STR(N147)>" FALSE
+; 一天 2元宝价格 * 剩余天数 = 等于一共的元宝
+;CALC N147 * <$MARFADAY(6)>
+;TopMessage "<$STR(N147)>" FALSE
+;TopMessage "<$MARFADAY(6)>" FALSE
+;========================================================
+
+
+#IF
+CheckCalc <$GAMEGOLD> < 6800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要68元宝才可以！<#D/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 6800
+#ACT
+#SAY
+<#D>你好勇士，我是玛法特权官请问你需要什么帮助？<#D/><#SO:1>【多期】玛法特权抵扣升级<#SO/><#SO:2>购买特权不生效？<#SO/><#SO:3>【1期】玛法特权抵扣升级<#SO/><#SO:4>关于特权升级说明<#SO/>
+
+
+[@99_1]
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+TopMessage "你当前没有特权" FALSE
+
+#IF
+CheckCalc <$VIP> == 3
+#ACT
+TopMessage "你当前是 【 玛法明俊 】 剩余天数 ： <$MARFADAY(3)>" FALSE
+
+#IF
+CheckCalc <$VIP> == 4
+#ACT
+TopMessage "你当前是 【 玛法豪杰 】 剩余天数 ： <$MARFADAY(4)>" FALSE
+
+#IF
+CheckCalc <$VIP> == 5
+#ACT
+TopMessage "你当前是 【 玛法战将 】 剩余天数 ： <$MARFADAY(5)>" FALSE
+
+#IF
+CheckCalc <$VIP> == 6
+#ACT
+TopMessage "你当前是 【 玛法新秀 】 剩余天数 ： <$MARFADAY(6)>" FALSE
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+TopMessage "你当前是 【 玛法至尊 】 剩余天数 ： <$MARFADAY(7)>" FALSE
+
+#IF
+#ACT
+#SAY
+<#D>你需要购买什么特权的商品？我们这里有什么都有<#D/><#SO:1>玛法新秀(68元宝)->1.75倍爆率<#SO/><#SO:2>玛法名俊(128元宝)->2.5倍爆率<#SO/><#SO:3>玛法豪杰(288元宝)->推荐 3倍爆率<#SO/><#SO:4>玛法战将(288元宝)->推荐 3倍爆率<#SO/><#SO:5>玛法至尊(588元宝)->推荐 3.5倍爆率<#SO/>
+
+;================================================================================================================
+;【玛法新秀】 小于15天 就提示购买
+;================================================================================================================
+[@99_1_1]
+
+#IF
+CheckCalc <$VIP> != 0
+CheckCalc <$VIP> != 6
+#ACT
+Break
+#SAY
+<#D>你当前特权大于该特权无法继续购买该特权！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> >= 15
+#ACT
+Break
+#SAY
+<#D>你当前已经是该特权用户！<#D/><#SO:999>关闭<#SO/>
+
+;如果存在天数 可以手动切换回该天数
+#IF
+CheckCalc <$VIP> != 6
+CheckCalc <$MARFADAY(6)> > 0
+#ACT
+Break
+#SAY
+<#D>目前还有剩余天数 <$MARFADAY(6)> 天，是否切换回该特权?<#D/><#SO:4>切换为该特权<#SO/>
+
+#IF
+CheckCalc <$VIP> != 0
+#ACT
+Break
+#SAY
+<#D>你当前已存在其它特权，无法购买！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+Break
+#SAY
+<#D>你确定要花费68元宝购买当前特权吗？<#D/><#SO:2>确定续费<#SO/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> < 15
+#ACT
+Break
+#SAY
+<#D>你当前特权已经不足 15天 是否进行续费购买？<#D/><#SO:3>玛法新秀<#SO/><#SO:999>关闭<#SO/>
+
+;没有特权的情况下触发购买条件
+[@99_1_1_2]
+#IF
+CheckCalc <$GAMEGOLD> < 6800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要68元宝才可以！<#D/><#SO:999>关闭<#SO/>
+#IF
+CheckCalc <$VIP> == 0
+CheckCalc <$GAMEGOLD> >= 6800
+#ACT
+GameGold - 6800
+MarFaValue 6 30 1
+LocalMessage ">>>扣除 68 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;低于15天可以续费
+[@99_1_1_3]
+#IF
+CheckCalc <$GAMEGOLD> < 6800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要68元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> < 15
+CheckCalc <$GAMEGOLD> >= 6800
+#ACT
+GameGold - 6800
+MarFaValue 6 30 0
+LocalMessage ">>>扣除 68 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+#IF
+CheckCalc <$GAMEGOLD> >= 6800
+CheckCalc <$VIP> == 0
+#ACT
+GameGold - 6800
+MarFaValue 6 30 1
+LocalMessage ">>>扣除 68 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+[@99_1_1_4]
+#IF
+CheckCalc <$VIP> != 6
+CheckCalc <$MARFADAY(6)> > 0
+#ACT
+MarFaValue 6 <$MARFADAY(6)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+;================================================================================================================
+;【玛法明俊】
+;================================================================================================================
+[@99_1_2]
+#IF
+CheckCalc <$VIP> != 0
+CheckCalc <$VIP> != 6
+CheckCalc <$VIP> != 3
+#ACT
+Break
+#SAY
+<#D>你当前特权大于该特权无法继续购买该特权！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 3
+#ACT
+Break
+#SAY
+<#D>你当前已经是该特权用户!<#D/><#SO:999>关闭<#SO/>
+
+;如果存在天数 可以手动切换回该天数
+#IF
+CheckCalc <$VIP> != 3
+CheckCalc <$MARFADAY(3)> > 0
+#ACT
+Break
+#SAY
+<#D>目前还有剩余天数 <$MARFADAY(3)> 天，是否切换回该特权?<#D/><#SO:5>切换为该特权<#SO/>
+
+
+#IF
+CheckCalc <$VIP> != 0
+CheckCalc <$VIP> != 6
+CheckCalc <$VIP> != 3
+#ACT
+Break
+#SAY
+<#D>你当前已存在其它特权，无法购买！<#D/><#SO:999>关闭<#SO/>
+
+;大于60天为多一期的价格68元宝
+#IF
+CheckCalc <$VIP> != 0
+CheckCalc <$VIP> == 6
+CheckCalc <$VIP> != 3
+CheckCalc <$MARFADAY(6)> > 59
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法名俊】可能需要一定费用。<#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+;小于30天的直接让他损失费用 不给抵扣
+#IF
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> <= 30
+#ACT
+Break
+#SAY
+<#D>你当前已经购买了比现在还小的特权，如果提升等级可能会覆盖原有的特权等级,你确定要花128元宝升级该特权吗？<#D/><#SO:3>立即购买<#SO/><#SO:999>关闭<#SO/>
+
+;没有特权可以直接让全款买
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+Break
+#SAY
+<#D>你确定要花128元宝购买该特权吗？<#D/><#SO:4>立即购买<#SO/><#SO:999>关闭<#SO/>
+
+;【抵押购买】没钱的屌丝抵押购买！
+[@99_1_2_1]
+#IF
+CheckCalc <$GAMEGOLD> < 6000
+#ACT
+Break
+#SAY
+<#D>对不起根据先前的条件，你需要再支付60元宝提升到该特权，你当前元宝数量不足60元宝<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> > 59
+CheckCalc <$GAMEGOLD> >= 6000
+#ACT
+GameGold - 6000
+MarFaValue 6 -30 2
+MarFaValue 3 30 1
+LocalMessage ">>>扣除 60 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+
+;【有钱的任性】【不考虑是否特权】愿意在花钱买！
+[@99_1_2_2]
+#IF
+CheckCalc <$GAMEGOLD> < 12800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要128元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(3)> == 0
+CheckCalc <$GAMEGOLD> >= 12800
+#ACT
+GameGold - 12800
+MarFaValue 3 30 1
+LocalMessage ">>>扣除 128 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(3)> > 0
+CheckCalc <$GAMEGOLD> >= 12800
+#ACT
+GameGold - 12800
+MarFaValue 3 30 0
+LocalMessage ">>>扣除 128 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;【有特权】 直接购买
+[@99_1_2_3]
+#IF
+CheckCalc <$GAMEGOLD> < 12800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要128元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(3)> == 0
+CheckCalc <$GAMEGOLD> >= 12800
+#ACT
+GameGold - 12800
+MarFaValue 3 30 1
+LocalMessage ">>>扣除 128 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(3)> > 0
+CheckCalc <$GAMEGOLD> >= 12800
+#ACT
+GameGold - 12800
+MarFaValue 3 30 0
+LocalMessage ">>>扣除 128 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+;【无特权】直接购买
+[@99_1_2_4]
+#IF
+CheckCalc <$GAMEGOLD> < 12800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要128元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 0
+CheckCalc <$GAMEGOLD> >= 12800
+#ACT
+GameGold - 12800
+MarFaValue 3 30 1
+LocalMessage ">>>扣除 128 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+[@99_1_2_5]
+#IF
+CheckCalc <$VIP> != 3
+CheckCalc <$MARFADAY(3)> > 0
+#ACT
+MarFaValue 3 <$MARFADAY(3)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+;================================================================================================================
+;【玛法豪杰】
+;================================================================================================================
+[@99_1_3]
+#IF
+CheckCalc <$VIP> != 0
+CheckCalc <$VIP> != 6
+CheckCalc <$VIP> != 3
+CheckCalc <$VIP> != 4
+#ACT
+Break
+#SAY
+<#D>你当前特权大于该特权无法继续购买该特权！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 4
+#ACT
+Break
+#SAY
+<#D>你当前已经是该特权用户!<#D/><#SO:999>关闭<#SO/>
+
+;如果存在天数 可以手动切换回该天数
+#IF
+CheckCalc <$VIP> != 4
+CheckCalc <$MARFADAY(4)> > 0
+#ACT
+Break
+#SAY
+<#D>目前还有剩余天数 <$MARFADAY(4)> 天，是否切换回该特权?<#D/><#SO:5>切换为该特权<#SO/>
+
+#IF
+CheckCalc <$VIP> != 0
+CheckCalc <$VIP> != 6
+CheckCalc <$VIP> != 3
+CheckCalc <$VIP> != 4
+#ACT
+Break
+#SAY
+<#D>你当前已存在其它特权，无法购买！<#D/><#SO:999>关闭<#SO/>
+
+
+;【玛法新秀】大于60天为多一期的价格68元宝    4 次 272 元宝
+#IF
+;CheckCalc <$VIP> != 0
+;CheckCalc <$VIP> == 6
+;CheckCalc <$VIP> != 3
+CheckCalc <$MARFADAY(6)> > 59
+#ACT
+Goto @MarfaRookie
+Break
+
+#IF
+;CheckCalc <$VIP> != 0
+;CheckCalc <$VIP> != 6
+;CheckCalc <$VIP> == 3
+CheckCalc <$MARFADAY(3)> > 59
+#ACT
+Goto @MarfaMingjun
+Break
+
+
+;小于30天的直接让他损失费用 不给抵扣
+#IF
+CheckCalc <$VIP> == 3
+#ACT
+Break
+#SAY
+<#D>你当前已经购买了比现在还小的特权，如果提升等级可能会覆盖原有的特权等级,你确定要花288元宝升级该特权吗？<#D/><#SO:3>立即购买<#SO/><#SO:999>关闭<#SO/>
+
+;没有特权可以直接让全款买
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+Break
+#SAY
+<#D>你确定要花288元宝购买该特权吗？<#D/><#SO:4>立即购买<#SO/><#SO:999>关闭<#SO/>
+
+
+[@99_1_3_5]
+#IF
+CheckCalc <$VIP> != 4
+CheckCalc <$MARFADAY(4)> > 0
+#ACT
+MarFaValue 4 <$MARFADAY(4)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+;从这里开始衰减 ==》【玛法新秀】
+[@MarfaRookie]
+
+;68 * 5 = 272      30 * 4 = 120   288- 272 = 16
+#IF
+CheckCalc <$MARFADAY(6)> > 119
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法豪杰】可能需要一定费用。费用大约16元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+
+;68 * 4 = 204      30 * 3 = 90   288- 204 = 84
+#IF
+CheckCalc <$MARFADAY(6)> > 89
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法豪杰】可能需要一定费用。费用大约84元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+;68 * 3 = 136      30 * 2 = 60   288- 136 = 152
+#IF
+CheckCalc <$MARFADAY(6)> > 59
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法豪杰】可能需要一定费用。费用大约152元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+
+
+[@MarfaRookie_1]
+
+;68 * 5 = 272      30 * 4 = 120   288- 272 = 16
+#IF
+CheckCalc <$MARFADAY(6)> > 119
+#ACT
+Goto @Pay1
+Break
+
+
+;68 * 4 = 204      30 * 3 = 90   288- 204 = 84
+#IF
+CheckCalc <$MARFADAY(6)> > 89
+#ACT
+Goto @Pay2
+Break
+
+;68 * 3 = 136      30 * 2 = 60   288- 136 = 152
+#IF
+CheckCalc <$MARFADAY(6)> > 59
+#ACT
+Goto @Pay3
+Break
+
+
+[@MarfaRookie_2]
+#IF
+CheckCalc <$GAMEGOLD> < 28800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要288元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+;没有买过的 扣费立即激活
+#IF
+CheckCalc <$GAMEGOLD> > 28800
+CheckCalc <$MARFADAY(4)> == 0
+#ACT
+GameGold - 28800
+MarFaValue 4 30 1
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;买过的 扣费不激活
+#IF
+CheckCalc <$GAMEGOLD> > 28800
+CheckCalc <$MARFADAY(4)> > 0
+#ACT
+GameGold - 28800
+MarFaValue 4 30 0
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;68 * 5 = 272      30 * 4 = 120   288- 272 = 16
+[@Pay1]
+#IF
+CheckCalc <$GAMEGOLD> < 1600
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要16元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 1600
+#ACT
+GameGold - 1600
+MarFaValue 6 -120 2
+MarFaValue 4 30 1
+LocalMessage ">>>扣除 16 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;68 * 4 = 204      30 * 3 = 90   288- 204 = 84
+[@Pay2]
+
+#IF
+CheckCalc <$GAMEGOLD> < 8400
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要84元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 8400
+#ACT
+GameGold - 8400
+MarFaValue 6 -90 2
+MarFaValue 4 30 1
+LocalMessage ">>>扣除 84 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;68 * 3 = 136      30 * 2 = 60   288- 136 = 152
+[@Pay3]
+
+#IF
+CheckCalc <$GAMEGOLD> < 15200
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要152元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 15200
+#ACT
+GameGold - 15200
+MarFaValue 6 -60 2
+MarFaValue 4 30 1
+LocalMessage ">>>扣除 152 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+;玛法名俊检测 2次 256元宝  支付32元宝
+[@MarfaMingjun]
+
+;128 * 3 = 256      30 * 2 = 60   288 - 256 = 32
+#IF
+CheckCalc <$MARFADAY(3)> > 59
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法豪杰】可能需要一定费用。费用大约32元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+
+[@MarfaMingjun_1]
+#IF
+CheckCalc <$MARFADAY(3)> > 59
+#ACT
+Goto @Pay4
+Break
+
+[@MarfaMingjun_2]
+#IF
+CheckCalc <$GAMEGOLD> < 28800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要288元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+;没有买过的 扣费立即激活
+#IF
+CheckCalc <$GAMEGOLD> > 28800
+CheckCalc <$MARFADAY(4)> == 0
+#ACT
+GameGold - 28800
+MarFaValue 4 30 1
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;买过的 扣费不激活
+#IF
+CheckCalc <$GAMEGOLD> > 28800
+CheckCalc <$MARFADAY(4)> > 0
+#ACT
+GameGold - 28800
+MarFaValue 4 30 0
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;128 * 3 = 256      30 * 2 = 60   288 - 256 = 32
+[@Pay4]
+#IF
+CheckCalc <$GAMEGOLD> < 3200
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要32元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 3200
+#ACT
+GameGold - 3200
+MarFaValue 3 -60 2
+MarFaValue 4 30 1
+LocalMessage ">>>扣除 32 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+[@99_1_3_3]
+#IF
+CheckCalc <$GAMEGOLD> < 28800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要288元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(4)> == 0
+CheckCalc <$GAMEGOLD> >= 28800
+#ACT
+GameGold - 28800
+MarFaValue 4 30 1
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(4)> > 0
+CheckCalc <$GAMEGOLD> >= 28800
+#ACT
+GameGold - 28800
+MarFaValue 4 30 0
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+[@99_1_3_4]
+
+#IF
+CheckCalc <$GAMEGOLD> < 28800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要288元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(4)> == 0
+CheckCalc <$GAMEGOLD> >= 28800
+#ACT
+GameGold - 28800
+MarFaValue 4 30 1
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(4)> > 0
+CheckCalc <$GAMEGOLD> >= 28800
+#ACT
+GameGold - 28800
+MarFaValue 4 30 0
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;================================================================================================================
+;【玛法战将】
+;================================================================================================================
+
+[@99_1_4]
+
+#IF
+CheckCalc <$VIP> != 0
+CheckCalc <$VIP> != 6
+CheckCalc <$VIP> != 3
+CheckCalc <$VIP> != 4
+CheckCalc <$VIP> != 5
+#ACT
+Break
+#SAY
+<#D>你当前特权大于该特权无法继续购买该特权！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 5
+#ACT
+Break
+#SAY
+<#D>你当前已经是该特权用户!<#D/><#SO:999>关闭<#SO/>
+
+;如果存在天数 可以手动切换回该天数
+#IF
+CheckCalc <$VIP> != 5
+CheckCalc <$MARFADAY(5)> > 0
+#ACT
+Break
+#SAY
+<#D>目前还有剩余天数 <$MARFADAY(5)> 天，是否切换回该特权?<#D/><#SO:5>切换为该特权<#SO/>
+
+#IF
+CheckCalc <$VIP> != 0
+CheckCalc <$VIP> != 6
+CheckCalc <$VIP> != 3
+CheckCalc <$VIP> != 4
+CheckCalc <$VIP> != 5
+#ACT
+Break
+#SAY
+<#D>你当前已存在其它特权，无法购买！<#D/><#SO:999>关闭<#SO/>
+
+;【玛法新秀】大于60天为多一期的价格68元宝    4 次 272 元宝
+#IF
+;CheckCalc <$VIP> != 0
+;CheckCalc <$VIP> == 6
+;CheckCalc <$VIP> != 3
+;CheckCalc <$VIP> != 4
+CheckCalc <$MARFADAY(6)> > 59
+#ACT
+Goto @RookieWillBeMortgaged
+Break
+
+;【玛法名俊】
+#IF
+;CheckCalc <$VIP> != 0
+;CheckCalc <$VIP> != 6
+;CheckCalc <$VIP> == 3
+;CheckCalc <$VIP> != 4
+CheckCalc <$MARFADAY(3)> > 59
+#ACT
+Goto @MarFaMingJunMortgageInterface
+Break
+
+
+
+;【玛法豪杰】
+#IF
+;CheckCalc <$VIP> != 0
+;CheckCalc <$VIP> != 6
+;CheckCalc <$VIP> != 3
+;CheckCalc <$VIP> == 4
+CheckCalc <$MARFADAY(4)> > 59
+#ACT
+Goto @MarFaHaoJie
+Break
+
+;小于30天的直接让他损失费用 不给抵扣
+#IF
+;CheckCalc <$MARFADAY(6)> <= 30
+;CheckCalc <$MARFADAY(3)> <= 30
+;CheckCalc <$MARFADAY(4)> <= 30
+;CheckCalc <$VIP> != 0
+;CheckCalc <$VIP> != 7
+;CheckCalc <$VIP> != 5
+#ACT
+Break
+#SAY
+<#D>你当前已经购买了比现在还小或同价位的特权，如果提升等级可能会覆盖原有的特权等级,你确定要花288元宝升级该特权吗？<#D/><#SO:3>立即购买<#SO/><#SO:999>关闭<#SO/>
+
+;没有特权可以直接让全款买
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+Break
+#SAY
+<#D>你确定要花288元宝购买该特权吗？<#D/><#SO:4>立即购买<#SO/><#SO:999>关闭<#SO/>
+
+
+[@99_1_4_3]
+#IF
+CheckCalc <$GAMEGOLD> < 28800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要288元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(5)> == 0
+CheckCalc <$GAMEGOLD> >= 28800
+#ACT
+GameGold - 28800
+MarFaValue 5 30 1
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(5)> > 0
+CheckCalc <$GAMEGOLD> >= 28800
+#ACT
+GameGold - 28800
+MarFaValue 5 30 0
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+[@99_1_4_4]
+
+#IF
+CheckCalc <$GAMEGOLD> < 28800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要288元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(5)> == 0
+CheckCalc <$GAMEGOLD> >= 28800
+#ACT
+GameGold - 28800
+MarFaValue 5 30 1
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(5)> > 0
+CheckCalc <$GAMEGOLD> >= 28800
+#ACT
+GameGold - 28800
+MarFaValue 5 30 0
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+[@99_1_4_5]
+#IF
+CheckCalc <$VIP> != 5
+CheckCalc <$MARFADAY(5)> > 0
+#ACT
+MarFaValue 5 <$MARFADAY(5)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+;玛法新秀抵押接口
+[@RookieWillBeMortgaged]
+
+;68 * 5 = 272      30 * 4 = 120   288- 272 = 16
+#IF
+CheckCalc <$MARFADAY(6)> > 119
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法战将】可能需要一定费用。费用大约16元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+
+;68 * 4 = 204      30 * 3 = 90   288- 204 = 84
+#IF
+CheckCalc <$MARFADAY(6)> > 89
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法战将】可能需要一定费用。费用大约84元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+;68 * 3 = 136      30 * 2 = 60   288- 136 = 152
+#IF
+CheckCalc <$MARFADAY(6)> > 59
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法战将】可能需要一定费用。费用大约152元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+
+[@RookieWillBeMortgaged_1]
+
+;68 * 5 = 272      30 * 4 = 120   288- 272 = 16
+#IF
+CheckCalc <$MARFADAY(6)> > 119
+#ACT
+Goto @Pay5
+Break
+
+;68 * 4 = 204      30 * 3 = 90   288- 204 = 84
+#IF
+CheckCalc <$MARFADAY(6)> > 89
+#ACT
+Goto @Pay6
+Break
+
+;68 * 3 = 136      30 * 2 = 60   288- 136 = 152
+#IF
+CheckCalc <$MARFADAY(6)> > 59
+#ACT
+Goto @Pay7
+Break
+
+
+[@RookieWillBeMortgaged_2]
+#IF
+CheckCalc <$GAMEGOLD> < 28800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要288元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+;没有买过的 扣费立即激活
+#IF
+CheckCalc <$GAMEGOLD> > 28800
+CheckCalc <$MARFADAY(5)> == 0
+#ACT
+GameGold - 28800
+MarFaValue 5 30 1
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;买过的 扣费不激活
+#IF
+CheckCalc <$GAMEGOLD> > 28800
+CheckCalc <$MARFADAY(5)> > 0
+#ACT
+GameGold - 28800
+MarFaValue 5 30 0
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+;68 * 5 = 272      30 * 4 = 120   288- 272 = 16
+[@Pay5]
+#IF
+CheckCalc <$GAMEGOLD> < 1600
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要16元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 1600
+#ACT
+GameGold - 1600
+MarFaValue 6 -120 2
+MarFaValue 5 30 1
+LocalMessage ">>>扣除 16 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+
+;68 * 4 = 204      30 * 3 = 90   288- 204 = 84
+[@Pay6]
+#IF
+CheckCalc <$GAMEGOLD> < 8400
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要84元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 8400
+#ACT
+GameGold - 8400
+MarFaValue 6 -90 2
+MarFaValue 5 30 1
+LocalMessage ">>>扣除 84 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+;68 * 3 = 136      30 * 2 = 60   288- 136 = 152
+[@Pay7]
+
+#IF
+CheckCalc <$GAMEGOLD> < 15200
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要152元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 15200
+#ACT
+GameGold - 15200
+MarFaValue 6 -60 2
+MarFaValue 5 30 1
+LocalMessage ">>>扣除 152 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+
+
+;=============================================================================
+;玛法名俊抵押接口
+[@MarFaMingJunMortgageInterface]
+
+;128 * 3 = 256      30 * 2 = 60   288 - 256 = 32
+#IF
+CheckCalc <$MARFADAY(3)> > 59
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法战将】可能需要一定费用。费用大约32元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+;128 * 3 = 256      30 * 2 = 60   288 - 256 = 32
+[@MarFaMingJunMortgageInterface_1]
+#IF
+CheckCalc <$MARFADAY(3)> > 59
+#ACT
+Goto @Pay8
+Break
+
+
+
+[@MarFaMingJunMortgageInterface_2]
+#IF
+CheckCalc <$GAMEGOLD> < 28800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要288元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+;没有买过的 扣费立即激活
+#IF
+CheckCalc <$GAMEGOLD> > 28800
+CheckCalc <$MARFADAY(4)> == 0
+#ACT
+GameGold - 28800
+MarFaValue 5 30 1
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;买过的 扣费不激活
+#IF
+CheckCalc <$GAMEGOLD> > 28800
+CheckCalc <$MARFADAY(4)> > 0
+#ACT
+GameGold - 28800
+MarFaValue 5 30 0
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+;128 * 3 = 256      30 * 2 = 60   288 - 256 = 32
+[@Pay8]
+#IF
+CheckCalc <$GAMEGOLD> < 3200
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要32元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 3200
+#ACT
+GameGold - 3200
+MarFaValue 3 -60 2
+MarFaValue 5 30 1
+LocalMessage ">>>扣除 32 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+;玛法豪杰抵押接口
+[@MarFaHaoJie]
+;288 * 3 = 256      30 * 2 = 60   288 - 576 = -288  【这里允许负数！】 因为同等价格判断 天数即可
+
+#IF
+CheckCalc <$MARFADAY(4)> > 59
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法战将】可能需要一定费用。费用大约0元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+[@MarFaHaoJie_1]
+#IF
+CheckCalc <$MARFADAY(4)> > 59
+#ACT
+Goto @Pay9
+Break
+
+
+[@MarFaHaoJie_2]
+#IF
+CheckCalc <$GAMEGOLD> < 28800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要288元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+;没有买过的 扣费立即激活
+#IF
+CheckCalc <$GAMEGOLD> > 28800
+CheckCalc <$MARFADAY(5)> == 0
+#ACT
+GameGold - 28800
+MarFaValue 5 30 1
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;买过的 扣费不激活
+#IF
+CheckCalc <$GAMEGOLD> > 28800
+CheckCalc <$MARFADAY(5)> > 0
+#ACT
+GameGold - 28800
+MarFaValue 5 30 0
+LocalMessage ">>>扣除 288 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;288 * 3 = 256      30 * 2 = 60   288 - 576 = -288  【这里允许负数！】 因为同等价格判断 天数即可
+[@Pay9]
+#IF
+CheckCalc <$MARFADAY(5)> == 0
+CheckCalc <$MARFADAY(4)> > 59
+#ACT
+MarFaValue 4 -30 2
+MarFaValue 5 30 1
+LocalMessage ">>>扣除 0 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(5)> > 0
+CheckCalc <$MARFADAY(4)> > 59
+#ACT
+MarFaValue 4 -30 2
+MarFaValue 5 30 0
+LocalMessage ">>>扣除 0 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+
+
+
+;================================================================================================================
+;【玛法至尊】
+;================================================================================================================
+[@99_1_5]
+#IF
+CheckCalc <$VIP> != 0
+CheckCalc <$VIP> != 6
+CheckCalc <$VIP> != 3
+CheckCalc <$VIP> != 4
+CheckCalc <$VIP> != 5
+CheckCalc <$VIP> == 7
+#ACT
+Break
+#SAY
+<#D>你当前已经是最大特权，无法继续购买！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+Break
+#SAY
+<#D>你当前已经是该特权用户!<#D/><#SO:999>关闭<#SO/>
+
+;如果存在天数 可以手动切换回该天数
+#IF
+CheckCalc <$VIP> != 7
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+Break
+#SAY
+<#D>目前还有剩余天数 <$MARFADAY(7)> 天，是否切换回该特权?<#D/><#SO:5>切换为该特权<#SO/>
+
+;【玛法新秀】计算
+#IF
+;CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> > 59
+#ACT
+Goto @RookieInterface
+Break
+
+;【玛法名俊】计算
+#IF
+;CheckCalc <$VIP> == 3
+CheckCalc <$MARFADAY(3)> > 59
+#ACT
+Goto @MingjunInterface
+Break
+
+;【玛法豪杰】计算
+#IF
+;CheckCalc <$VIP> == 4
+CheckCalc <$MARFADAY(4)> > 59
+#ACT
+Goto @HaoJieCalculates
+Break
+
+;【玛法战将】计算
+#IF
+;CheckCalc <$VIP> == 5
+CheckCalc <$MARFADAY(5)> > 59
+#ACT
+Goto @WarlordInterface
+Break
+
+
+
+;小于30天的直接让他损失费用 不给抵扣
+#IF
+CheckCalc <$MARFADAY(7)> <= 30
+;CheckCalc <$VIP> == 7
+#ACT
+Break
+#SAY
+<#D>你当前已经购买了比现在还小或同价位的特权，如果提升等级可能会覆盖原有的特权等级,你确定要花588元宝升级该特权吗？<#D/><#SO:3>立即购买<#SO/><#SO:999>关闭<#SO/>
+
+
+;没有特权可以直接让全款买
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+Break
+#SAY
+<#D>你确定要花288元宝购买该特权吗？<#D/><#SO:4>立即购买<#SO/><#SO:999>关闭<#SO/>
+
+[@99_1_5_5]
+#IF
+CheckCalc <$VIP> != 7
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+MarFaValue 7 <$MARFADAY(7)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+[@99_1_5_3]
+#IF
+CheckCalc <$GAMEGOLD> < 58800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要588元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(7)> == 0
+CheckCalc <$GAMEGOLD> >= 58800
+#ACT
+GameGold - 58800
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(7)> > 0
+CheckCalc <$GAMEGOLD> >= 58800
+#ACT
+GameGold - 58800
+MarFaValue 7 30 0
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+[@99_1_5_4]
+
+#IF
+CheckCalc <$GAMEGOLD> < 58800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要588元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(7)> == 0
+CheckCalc <$GAMEGOLD> >= 58800
+#ACT
+GameGold - 58800
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(5)> > 0
+CheckCalc <$GAMEGOLD> >= 58800
+#ACT
+GameGold - 58800
+MarFaValue 7 30 0
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+
+;玛法至尊 588  【玛法新秀】
+[@RookieInterface]
+
+;68 * 9 = 544      30 * 8 = 240   588 - 544 = 44
+#IF
+CheckCalc <$MARFADAY(6)> > 239
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约44元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+
+;68 * 8 = 544      30 * 7 = 210   588 - 476 = 112
+#IF
+CheckCalc <$MARFADAY(6)> > 209
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约112元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+
+;68 * 7 = 408      30 * 6 = 180   588 - 408 = 180
+#IF
+CheckCalc <$MARFADAY(6)> > 179
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约180元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+;68 * 6 = 340      30 * 5 = 150   588 - 340 = 248
+#IF
+CheckCalc <$MARFADAY(6)> > 149
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约248元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+;68 * 5 = 272      30 * 4 = 120   588 - 272 = 316
+#IF
+CheckCalc <$MARFADAY(6)> > 119
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约316元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+;68 * 4 = 204      30 * 3 = 90   588 - 204 = 384
+#IF
+CheckCalc <$MARFADAY(6)> > 89
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约384元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+;68 * 3 = 136      30 * 2 = 60   588 - 136 = 452
+#IF
+CheckCalc <$MARFADAY(6)> > 59
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约452元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+
+[@RookieInterface_1]
+;68 * 9 = 544      30 * 8 = 240   588 - 544 = 44
+#IF
+CheckCalc <$MARFADAY(6)> > 239
+#ACT
+Goto @Pay10
+Break
+
+
+;68 * 8 = 544      30 * 7 = 210   588 - 476 = 112
+#IF
+CheckCalc <$MARFADAY(6)> > 209
+#ACT
+Goto @Pay11
+Break
+
+
+;68 * 7 = 408      30 * 6 = 180   588 - 408 = 180
+#IF
+CheckCalc <$MARFADAY(6)> > 179
+#ACT
+Goto @Pay12
+Break
+
+;68 * 6 = 340      30 * 5 = 150   588 - 340 = 248
+#IF
+CheckCalc <$MARFADAY(6)> > 149
+#ACT
+Goto @Pay13
+Break
+
+;68 * 5 = 272      30 * 4 = 120   588 - 272 = 316
+#IF
+CheckCalc <$MARFADAY(6)> > 119
+#ACT
+Goto @Pay14
+Break
+
+;68 * 4 = 204      30 * 3 = 90   588 - 204 = 384
+#IF
+CheckCalc <$MARFADAY(6)> > 89
+#ACT
+Goto @Pay15
+Break
+
+;68 * 3 = 136      30 * 2 = 60   588 - 136 = 452
+#IF
+CheckCalc <$MARFADAY(6)> > 59
+#ACT
+Goto @Pay16
+Break
+
+
+[@RookieInterface_2]
+#IF
+CheckCalc <$GAMEGOLD> < 58800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要588元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+;没有买过的 扣费立即激活
+#IF
+CheckCalc <$GAMEGOLD> > 58800
+CheckCalc <$MARFADAY(7)> == 0
+#ACT
+GameGold - 58800
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;买过的 扣费不激活
+#IF
+CheckCalc <$GAMEGOLD> > 58800
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+GameGold - 58800
+MarFaValue 7 30 0
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+;68 * 9 = 544      30 * 8 = 240   588 - 544 = 44
+[@Pay10]
+#IF
+CheckCalc <$GAMEGOLD> < 4400
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要44元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 4400
+#ACT
+GameGold - 4400
+MarFaValue 6 -240 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 44 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;68 * 8 = 544      30 * 7 = 210   588 - 476 = 112
+[@Pay11]
+#IF
+CheckCalc <$GAMEGOLD> < 11200
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要112元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 11200
+#ACT
+GameGold - 11200
+MarFaValue 6 -210 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 112 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;68 * 7 = 408      30 * 6 = 180   588 - 408 = 180
+[@Pay12]
+#IF
+CheckCalc <$GAMEGOLD> < 18000
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要180元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 18000
+#ACT
+GameGold - 18000
+MarFaValue 6 -180 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 180 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;68 * 6 = 340      30 * 5 = 150   588 - 340 = 248
+[@Pay13]
+#IF
+CheckCalc <$GAMEGOLD> < 24800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要248元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 24800
+#ACT
+GameGold - 24800
+MarFaValue 6 -150 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 248 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;68 * 5 = 272      30 * 4 = 120   588 - 272 = 316
+[@Pay14]
+#IF
+CheckCalc <$GAMEGOLD> < 31600
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要316元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 31600
+#ACT
+GameGold - 31600
+MarFaValue 6 -120 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 316 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;68 * 4 = 204      30 * 3 = 90   588 - 204 = 384
+[@Pay15]
+#IF
+CheckCalc <$GAMEGOLD> < 38400
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要384元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 38400
+#ACT
+GameGold - 38400
+MarFaValue 6 -90 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 384 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;68 * 3 = 136      30 * 2 = 60   588 - 136 = 452
+[@Pay16]
+#IF
+CheckCalc <$GAMEGOLD> < 45200
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要452元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 45200
+#ACT
+GameGold - 45200
+MarFaValue 6 -60 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 452 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+[@MingjunInterface]
+
+;128 * 5 = 512      30 * 4 = 120   588 - 512 = 76
+#IF
+CheckCalc <$MARFADAY(3)> > 119
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约76元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+;128 * 4 = 384      30 * 3 = 90   588 - 384 = 204
+#IF
+CheckCalc <$MARFADAY(3)> > 89
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约204元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+
+;128 * 3 = 256      30 * 2 = 60   588 - 256 = 332
+#IF
+CheckCalc <$MARFADAY(3)> > 59
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约332元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+
+[@MingjunInterface_1]
+
+;128 * 5 = 512      30 * 4 = 120   588 - 512 = 76
+#IF
+CheckCalc <$MARFADAY(3)> > 119
+#ACT
+Goto @Pay17
+Break
+
+;128 * 4 = 384      30 * 3 = 90   588 - 384 = 204
+#IF
+CheckCalc <$MARFADAY(3)> > 89
+#ACT
+Goto @Pay18
+Break
+
+
+;128 * 3 = 256      30 * 2 = 60   588 - 256 = 332
+#IF
+CheckCalc <$MARFADAY(3)> > 59
+#ACT
+Goto @Pay19
+Break
+
+
+
+
+
+;128 * 5 = 512      30 * 4 = 120   588 - 512 = 76
+[@Pay17]
+#IF
+CheckCalc <$GAMEGOLD> < 7600
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要76元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 7600
+#ACT
+GameGold - 7600
+MarFaValue 3 -120 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 76 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;128 * 4 = 384      30 * 3 = 90   588 - 384 = 204
+[@Pay18]
+#IF
+CheckCalc <$GAMEGOLD> < 20400
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要204元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 20400
+#ACT
+GameGold - 20400
+MarFaValue 3 -90 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 204 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;128 * 3 = 256      30 * 2 = 60   588 - 256 = 332
+[@Pay19]
+#IF
+CheckCalc <$GAMEGOLD> < 33200
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要332元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 33200
+#ACT
+GameGold - 33200
+MarFaValue 3 -60 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 332 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+[@MingjunInterface_2]
+#IF
+CheckCalc <$GAMEGOLD> < 58800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要588元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+;没有买过的 扣费立即激活
+#IF
+CheckCalc <$GAMEGOLD> > 58800
+CheckCalc <$MARFADAY(7)> == 0
+#ACT
+GameGold - 58800
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;买过的 扣费不激活
+#IF
+CheckCalc <$GAMEGOLD> > 58800
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+GameGold - 58800
+MarFaValue 7 30 0
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+;豪杰计算
+[@HaoJieCalculates]
+
+;288 * 3 = 576      30 * 2 = 60   588 - 576 = 12
+#IF
+CheckCalc <$MARFADAY(4)> > 59
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约12元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+
+;288 * 3 = 576      30 * 2 = 60   588 - 576 = 12
+[@HaoJieCalculates_1]
+#IF
+CheckCalc <$MARFADAY(4)> > 59
+#ACT
+Goto @Pay20
+Break
+
+[@HaoJieCalculates_2]
+#IF
+CheckCalc <$GAMEGOLD> < 58800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要588元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+;没有买过的 扣费立即激活
+#IF
+CheckCalc <$GAMEGOLD> > 58800
+CheckCalc <$MARFADAY(7)> == 0
+#ACT
+GameGold - 58800
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;买过的 扣费不激活
+#IF
+CheckCalc <$GAMEGOLD> > 58800
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+GameGold - 58800
+MarFaValue 7 30 0
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+[@Pay20]
+#IF
+CheckCalc <$GAMEGOLD> < 1200
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要12元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 1200
+#ACT
+GameGold - 1200
+MarFaValue 4 -60 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 12 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+;战将计算
+[@WarlordInterface]
+
+;288 * 3 = 576      30 * 2 = 60   588 - 576 = 12
+#IF
+CheckCalc <$MARFADAY(5)> > 59
+#ACT
+Break
+#SAY
+<#D>你当前已经买了比现在还小的特权是否要转移至【玛法至尊】可能需要一定费用。费用大约12元宝 <#D/><#SO:1>确定变更补差价(我已阅读,愿意补差价)<#SO/><#SO:2>直接购买无需变更(我已阅读)<#SO/><#SO:999>关闭<#SO/>
+
+;288 * 3 = 576      30 * 2 = 60   588 - 576 = 12
+[@WarlordInterface_1]
+#IF
+CheckCalc <$MARFADAY(5)> > 59
+#ACT
+Goto @Pay21
+Break
+
+[@WarlordInterface_2]
+#IF
+CheckCalc <$GAMEGOLD> < 58800
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要588元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+;没有买过的 扣费立即激活
+#IF
+CheckCalc <$GAMEGOLD> > 58800
+CheckCalc <$MARFADAY(7)> == 0
+#ACT
+GameGold - 58800
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;买过的 扣费不激活
+#IF
+CheckCalc <$GAMEGOLD> > 58800
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+GameGold - 58800
+MarFaValue 7 30 0
+LocalMessage ">>>扣除 588 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+;288 * 3 = 576      30 * 2 = 60   588 - 576 = 12
+[@Pay21]
+#IF
+CheckCalc <$GAMEGOLD> < 1200
+#ACT
+Break
+#SAY
+<#D>对不起你当前的元宝不足以使用以下内容！最低需要12元宝才可以！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 1200
+#ACT
+GameGold - 1200
+MarFaValue 5 -60 2
+MarFaValue 7 30 1
+LocalMessage ">>>扣除 12 元宝" FALSE
+Break
+#SAY
+<#D>购买成功！<#D/><#SO:999>关闭<#SO/>
+
+
+
+
+;==========================================
+
+; 购买特权不生效！处理方案
+; 主要应对有些玩家 购买低等级特权以后，又去买高等级特权导致无法享受高等级特权的方案
+; 按照长远考虑 公司不亏本的利益原则上，选择不给抵扣、不退元宝的原则！进行替换
+;==========================================
+
+[@99_2]
+#IF
+CheckCalc <$VIP> == 0
+CheckCalc <$MARFADAY(6)> < 1
+CheckCalc <$MARFADAY(3)> < 1
+CheckCalc <$MARFADAY(4)> < 1
+CheckCalc <$MARFADAY(5)> < 1
+CheckCalc <$MARFADAY(7)> < 1
+#ACT
+TopMessage "你当前没有特权" FALSE
+Break
+#SAY
+<#D>你当前没有特权无法使用该功能！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+TopMessage "你当前已经是最高特权无法使用该功能！" FALSE
+Break
+#SAY
+<#D>你当前已经是最高特权，无需切换！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+#ACT
+#SAY
+<#D>升级特权无法退还之前购买低等级特权的金额，请须知!,例如：购买68元宝的特权，后买了高等级的其它特权，高等级特权不享受，可以在这里切换特权收益(无法回退！),已购买的低等级特权无法退款！请悉知。<#D/><#SO:1>玛法名俊不生效？<#SO/><#SO:2>玛法豪杰不生效？<#SO/><#SO:3>玛法战将不生效？<#SO/><#SO:4>玛法至尊不生效？<#SO/>
+
+
+;玛法名俊的切换
+[@99_2_1]
+
+#IF
+CheckCalc <$VIP> == 3
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你已经是当前特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 4
+#ACT
+TopMessage "你已经存在高等级特权无需修改！" FALSE
+Break
+#SAY
+<#D>你已经存在高等级特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 5
+#ACT
+TopMessage "你已经存在高等级特权无需修改！" FALSE
+Break
+#SAY
+<#D>你已经存在高等级特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+TopMessage "你已经存在高等级特权无需修改！" FALSE
+Break
+#SAY
+<#D>你已经存在高等级特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(3)> < 1
+#ACT
+Break
+#SAY
+<#D>当前特权已经过期或未开通！无法切换<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 0
+CheckCalc <$MARFADAY(3)> > 0
+#ACT
+MarfaValue 3 <$MARFADAY(3)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(3)> > 0
+#ACT
+MarfaValue 3 <$MARFADAY(3)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+;玛法豪杰切换
+[@99_2_2]
+
+#IF
+CheckCalc <$VIP> == 4
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你已经是当前特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 5
+#ACT
+TopMessage "你已经存在高等级特权无需修改！" FALSE
+Break
+#SAY
+<#D>你已经存在高等级特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+TopMessage "你已经存在高等级特权无需修改！" FALSE
+Break
+#SAY
+<#D>你已经存在高等级特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(4)> < 1
+#ACT
+Break
+#SAY
+<#D>当前特权已经过期或未开通！无法切换<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 0
+CheckCalc <$MARFADAY(4)> > 0
+#ACT
+MarfaValue 4 <$MARFADAY(4)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(4)> > 0
+#ACT
+MarfaValue 4 <$MARFADAY(4)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 3
+CheckCalc <$MARFADAY(4)> > 0
+#ACT
+MarfaValue 4 <$MARFADAY(4)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+;玛法战将切换
+[@99_2_3]
+#IF
+CheckCalc <$VIP> == 5
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你已经是当前特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+TopMessage "你已经存在高等级特权无需修改！" FALSE
+Break
+#SAY
+<#D>你已经存在高等级特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(5)> < 1
+#ACT
+Break
+#SAY
+<#D>当前特权已经过期或未开通！无法切换<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 0
+CheckCalc <$MARFADAY(5)> > 0
+#ACT
+MarfaValue 5 <$MARFADAY(5)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(5)> > 0
+#ACT
+MarfaValue 5 <$MARFADAY(5)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 3
+CheckCalc <$MARFADAY(5)> > 0
+#ACT
+MarfaValue 5 <$MARFADAY(5)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 4
+CheckCalc <$MARFADAY(5)> > 0
+#ACT
+MarfaValue 5 <$MARFADAY(5)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+;玛法至尊切换
+[@99_2_4]
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你已经是当前特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(7)> < 1
+#ACT
+Break
+#SAY
+<#D>当前特权已经过期或未开通！无法切换<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 0
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+MarfaValue 7 <$MARFADAY(7)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+MarfaValue 7 <$MARFADAY(7)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 3
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+MarfaValue 7 <$MARFADAY(7)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 4
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+MarfaValue 7 <$MARFADAY(7)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 5
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+MarfaValue 7 <$MARFADAY(7)> 1
+Break
+#SAY
+<#D>切换成功！<#D/><#SO:999>关闭<#SO/>
+
+
+
+;==========================================
+
+; 购买一期抵押升级特权
+; 有玩家反馈 购买了一期想提升到其它特权上面使用！
+; 按照长远考虑 公司不亏本的利益原则上，抵押仅限余期25天以上 且补手续费10元宝计算！
+
+;==========================================
+
+[@99_3]
+
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+TopMessage "你当前没有特权" FALSE
+Break
+#SAY
+<#D>你当前没有特权无法使用该功能！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+TopMessage "你当前已经是最高特权无法使用该功能！" FALSE
+Break
+#SAY
+<#D>你当前已经是最高特权，无需切换！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+#ACT
+#SAY
+<#D>【1期】抵押升级特权，需要的条件：当前特权剩余大于等于25天以上且含(当前特权金额+手续费10元宝),最高特权不享有该福利！请悉知<#D/><#SO:1>玛法名俊(128元宝)->2.5倍爆率<#SO/><#SO:2>玛法豪杰(288元宝)->推荐 3倍爆率<#SO/><#SO:3>玛法战将(288元宝)->推荐 3倍爆率<#SO/><#SO:4>玛法至尊(588元宝)->推荐 3.5倍爆率<#SO/>
+
+;玛法名俊
+[@99_3_1]
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+TopMessage "你当前没有特权" FALSE
+Break
+#SAY
+<#D>你当前没有特权无法使用该功能！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 3
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你已经是当前特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 4
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你已经存在高等级特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 5
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你已经存在高等级特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你当前已经是最高特权，无需切换！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(6)> < 25
+#ACT
+Break
+#SAY
+<#D>当前天数不足以抵押扣款!无法抵押！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(3)> > 0
+#ACT
+Goto @99_2
+Break
+
+#IF
+CheckCalc <$MARFADAY(6)> >= 25
+CheckCalc <$MARFADAY(6)> <= 31
+#ACT
+TopMessage "进入玛法新秀【1期】抵押升级" FALSE
+#SAY
+<#D>你已经满足抵押条件是否继续抵押升级？<#D/><#SO:1>继续抵押购买(60+手续费10元宝)<#SO/>
+#ELSEACT
+Goto @99_1
+
+[@99_3_1_1]
+
+#IF
+CheckCalc <$GAMEGOLD> < 7000
+CheckGameGold < 7000
+#ACT
+Break
+#SAY
+<#D>对不起当前元宝不足以抵押升级！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 7000
+CheckGameGold >= 7000
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> > 30
+#ACT
+GameGold - 7000
+LocalMessage ">>>扣除 70 元宝" FALSE
+MarFaValue 6 -30 1
+MarFaValue 3 30 0
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 7000
+CheckGameGold >= 7000
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> >= 25
+CheckCalc <$MARFADAY(6)> <= 31
+#ACT
+GameGold - 7000
+LocalMessage ">>>扣除 70 元宝" FALSE
+MarFaValue 6 0 1
+MarFaValue 3 30 1
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+
+;玛法豪杰
+[@99_3_2]
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+TopMessage "你当前没有特权" FALSE
+Break
+#SAY
+<#D>你当前没有特权无法使用该功能！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 4
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你已经是当前特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 5
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你已经存在高等级特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你当前已经是最高特权，无需切换！<#D/><#SO:999>关闭<#SO/>
+;-------------------------------------------------------------
+#IF
+CheckCalc <$VIP> == 6
+#ACT
+TopMessage "进入玛法新秀【1期】抵押升级" FALSE
+Goto @OneMarFaRookie1
+Break
+
+#IF
+CheckCalc <$VIP> == 3
+#ACT
+TopMessage "进入玛法名俊【1期】抵押升级" FALSE
+Goto @OneMarFaMingJunMortgaged1
+Break
+;-------------------------------------------------------------
+
+[@OneMarFaRookie1]
+
+#IF
+CheckCalc <$MARFADAY(6)> < 25
+#ACT
+Break
+#SAY
+<#D>当前天数不足以抵押扣款!无法抵押！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(4)> > 0
+#ACT
+Goto @99_2
+Break
+
+#IF
+CheckCalc <$MARFADAY(6)> >= 25
+CheckCalc <$MARFADAY(6)> <= 31
+#ACT
+#SAY
+<#D>你已经满足抵押条件是否继续抵押升级？<#D/><#SO:1>继续抵押购买(220元宝+手续费10元宝)<#SO/>
+#ELSEACT
+Goto @99_1
+
+[@OneMarFaRookie1_1]
+#IF
+CheckCalc <$GAMEGOLD> < 23000
+CheckGameGold < 23000
+#ACT
+Break
+#SAY
+<#D>对不起当前元宝不足以抵押升级！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 23000
+CheckGameGold >= 23000
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> > 30
+#ACT
+GameGold - 23000
+LocalMessage ">>>扣除 230 元宝" FALSE
+MarFaValue 6 -30 1
+MarFaValue 4 30 0
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 23000
+CheckGameGold >= 23000
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> >= 25
+CheckCalc <$MARFADAY(6)> <= 31
+#ACT
+GameGold - 23000
+LocalMessage ">>>扣除 230 元宝" FALSE
+MarFaValue 6 0 1
+MarFaValue 4 30 1
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+[@OneMarFaMingJunMortgaged1]
+
+
+#IF
+CheckCalc <$MARFADAY(3)> < 25
+#ACT
+Break
+#SAY
+<#D>当前天数不足以抵押扣款!无法抵押！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(4)> > 0
+#ACT
+Goto @99_2
+Break
+
+#IF
+CheckCalc <$MARFADAY(3)> >= 25
+CheckCalc <$MARFADAY(3)> <= 31
+#ACT
+#SAY
+<#D>你已经满足抵押条件是否继续抵押升级？<#D/><#SO:1>继续抵押购买(160元宝+手续费10元宝)<#SO/>
+#ELSEACT
+Goto @99_1
+
+[@OneMarFaMingJunMortgaged1_1]
+#IF
+CheckCalc <$GAMEGOLD> < 17000
+CheckGameGold < 17000
+#ACT
+Break
+#SAY
+<#D>对不起当前元宝不足以抵押升级！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 17000
+CheckGameGold >= 17000
+CheckCalc <$VIP> == 3
+CheckCalc <$MARFADAY(3)> > 30
+#ACT
+GameGold - 17000
+LocalMessage ">>>扣除 170 元宝" FALSE
+MarFaValue 3 -30 1
+MarFaValue 4 30 0
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 17000
+CheckGameGold >= 17000
+CheckCalc <$VIP> == 3
+CheckCalc <$MARFADAY(3)> >= 25
+CheckCalc <$MARFADAY(3)> <= 31
+#ACT
+GameGold - 17000
+LocalMessage ">>>扣除 170 元宝" FALSE
+MarFaValue 3 0 1
+MarFaValue 4 30 1
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+;玛法战将
+[@99_3_3]
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+TopMessage "你当前没有特权" FALSE
+Break
+#SAY
+<#D>你当前没有特权无法使用该功能！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 5
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你已经是当前特权无需修改！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你当前已经是最高特权，无需切换！<#D/><#SO:999>关闭<#SO/>
+;-------------------------------------------------------------
+#IF
+CheckCalc <$VIP> == 6
+#ACT
+TopMessage "进入玛法新秀【1期】抵押升级" FALSE
+Goto @OneMarFaRookie2
+Break
+
+#IF
+CheckCalc <$VIP> == 3
+#ACT
+TopMessage "进入玛法名俊【1期】抵押升级" FALSE
+Goto @OneMarFaMingJunMortgaged2
+Break
+
+#IF
+CheckCalc <$VIP> == 4
+#ACT
+TopMessage "进入玛法豪杰【1期】抵押升级" FALSE
+Goto @OneMarFaHaoJieMortgage2
+Break
+;-------------------------------------------------------------
+
+[@OneMarFaRookie2]
+
+#IF
+CheckCalc <$MARFADAY(6)> < 25
+#ACT
+Break
+#SAY
+<#D>当前天数不足以抵押扣款!无法抵押！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(5)> > 0
+#ACT
+Goto @99_2
+Break
+
+#IF
+CheckCalc <$MARFADAY(6)> >= 25
+CheckCalc <$MARFADAY(6)> <= 31
+#ACT
+#SAY
+<#D>你已经满足抵押条件是否继续抵押升级？<#D/><#SO:1>继续抵押购买(220元宝+手续费10元宝)<#SO/>
+#ELSEACT
+Goto @99_1
+
+[@OneMarFaRookie2_1]
+#IF
+CheckCalc <$GAMEGOLD> < 23000
+CheckGameGold < 23000
+#ACT
+Break
+#SAY
+<#D>对不起当前元宝不足以抵押升级！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 23000
+CheckGameGold >= 23000
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> > 30
+#ACT
+GameGold - 23000
+LocalMessage ">>>扣除 230 元宝" FALSE
+MarFaValue 6 -30 1
+MarFaValue 5 30 0
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 23000
+CheckGameGold >= 23000
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> >= 25
+CheckCalc <$MARFADAY(6)> <= 31
+#ACT
+GameGold - 23000
+LocalMessage ">>>扣除 230 元宝" FALSE
+MarFaValue 6 0 1
+MarFaValue 5 30 1
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+[@OneMarFaMingJunMortgaged2]
+
+#IF
+CheckCalc <$MARFADAY(3)> < 25
+#ACT
+Break
+#SAY
+<#D>当前天数不足以抵押扣款!无法抵押！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(5)> > 0
+#ACT
+Goto @99_2
+Break
+
+#IF
+CheckCalc <$MARFADAY(3)> >= 25
+CheckCalc <$MARFADAY(3)> <= 31
+#ACT
+#SAY
+<#D>你已经满足抵押条件是否继续抵押升级？<#D/><#SO:1>继续抵押购买(160元宝+手续费10元宝)<#SO/>
+#ELSEACT
+Goto @99_1
+
+[@OneMarFaMingJunMortgaged2_1]
+#IF
+CheckCalc <$GAMEGOLD> < 17000
+CheckGameGold < 17000
+#ACT
+Break
+#SAY
+<#D>对不起当前元宝不足以抵押升级！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 17000
+CheckGameGold >= 17000
+CheckCalc <$VIP> == 3
+CheckCalc <$MARFADAY(3)> > 30
+#ACT
+GameGold - 17000
+LocalMessage ">>>扣除 170 元宝" FALSE
+MarFaValue 3 -30 1
+MarFaValue 5 30 0
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 17000
+CheckGameGold >= 17000
+CheckCalc <$VIP> == 3
+CheckCalc <$MARFADAY(3)> >= 25
+CheckCalc <$MARFADAY(3)> <= 31
+#ACT
+GameGold - 17000
+LocalMessage ">>>扣除 170 元宝" FALSE
+MarFaValue 3 0 1
+MarFaValue 5 30 1
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+[@OneMarFaHaoJieMortgage2]
+#IF
+CheckCalc <$MARFADAY(4)> < 25
+#ACT
+Break
+#SAY
+<#D>当前天数不足以抵押扣款!无法抵押！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(5)> > 0
+#ACT
+Goto @99_2
+Break
+
+#IF
+CheckCalc <$MARFADAY(4)> >= 25
+CheckCalc <$MARFADAY(4)> <= 31
+#ACT
+#SAY
+<#D>你已经满足抵押条件是否继续抵押升级？<#D/><#SO:1>继续抵押购买(0元宝+手续费10元宝)<#SO/>
+#ELSEACT
+Goto @99_1
+
+[@OneMarFaHaoJieMortgage2_1]
+#IF
+CheckCalc <$GAMEGOLD> < 1000
+CheckGameGold < 1000
+#ACT
+Break
+#SAY
+<#D>对不起当前元宝不足以抵押升级！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 1000
+CheckGameGold >= 1000
+CheckCalc <$VIP> == 4
+CheckCalc <$MARFADAY(4)> > 30
+#ACT
+GameGold - 1000
+LocalMessage ">>>扣除 10 元宝" FALSE
+MarFaValue 4 -30 1
+MarFaValue 5 30 0
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 1000
+CheckGameGold >= 1000
+CheckCalc <$VIP> == 4
+CheckCalc <$MARFADAY(4)> >= 25
+CheckCalc <$MARFADAY(4)> <= 31
+#ACT
+GameGold - 1000
+LocalMessage ">>>扣除 10 元宝" FALSE
+MarFaValue 4 0 1
+MarFaValue 5 30 1
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+;玛法至尊
+[@99_3_4]
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+TopMessage "你当前没有特权" FALSE
+Break
+#SAY
+<#D>你当前没有特权无法使用该功能！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+TopMessage "你已经是当前特权" FALSE
+Break
+#SAY
+<#D>你当前已经是最高特权，无需切换！<#D/><#SO:999>关闭<#SO/>
+;-------------------------------------------------------------
+#IF
+CheckCalc <$VIP> == 6
+#ACT
+TopMessage "进入玛法新秀【1期】抵押升级" FALSE
+Goto @OneMarFaRookie3
+Break
+
+#IF
+CheckCalc <$VIP> == 3
+#ACT
+TopMessage "进入玛法名俊【1期】抵押升级" FALSE
+Goto @OneMarFaMingJunMortgaged3
+Break
+
+#IF
+CheckCalc <$VIP> == 4
+#ACT
+TopMessage "进入玛法豪杰【1期】抵押升级" FALSE
+Goto @OneMarFaHaoJieMortgage3
+Break
+
+#IF
+CheckCalc <$VIP> == 5
+#ACT
+TopMessage "进入玛法战将【1期】抵押升级" FALSE
+Goto @OneMarFaWillBeMortgaged3
+Break
+
+[@OneMarFaRookie3]
+
+#IF
+CheckCalc <$MARFADAY(6)> < 25
+#ACT
+Break
+#SAY
+<#D>当前天数不足以抵押扣款!无法抵押！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+Goto @99_2
+Break
+
+#IF
+CheckCalc <$MARFADAY(6)> >= 25
+CheckCalc <$MARFADAY(6)> <= 31
+#ACT
+#SAY
+<#D>你已经满足抵押条件是否继续抵押升级？<#D/><#SO:1>继续抵押购买(520元宝+手续费10元宝)<#SO/>
+#ELSEACT
+Goto @99_1
+
+[@OneMarFaRookie3_1]
+#IF
+CheckCalc <$GAMEGOLD> < 53000
+CheckGameGold < 53000
+#ACT
+Break
+#SAY
+<#D>对不起当前元宝不足以抵押升级！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 53000
+CheckGameGold >= 53000
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> > 30
+#ACT
+GameGold - 53000
+LocalMessage ">>>扣除 530 元宝" FALSE
+MarFaValue 6 -30 1
+MarFaValue 7 30 0
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 53000
+CheckGameGold >= 53000
+CheckCalc <$VIP> == 6
+CheckCalc <$MARFADAY(6)> >= 25
+CheckCalc <$MARFADAY(6)> <= 31
+#ACT
+GameGold - 53000
+LocalMessage ">>>扣除 530 元宝" FALSE
+MarFaValue 6 0 1
+MarFaValue 7 30 1
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+[@OneMarFaMingJunMortgaged3]
+
+#IF
+CheckCalc <$MARFADAY(3)> < 25
+#ACT
+Break
+#SAY
+<#D>当前天数不足以抵押扣款!无法抵押！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+Goto @99_2
+Break
+
+#IF
+CheckCalc <$MARFADAY(3)> >= 25
+CheckCalc <$MARFADAY(3)> <= 31
+#ACT
+#SAY
+<#D>你已经满足抵押条件是否继续抵押升级？<#D/><#SO:1>继续抵押购买(460元宝+手续费10元宝)<#SO/>
+#ELSEACT
+Goto @99_1
+
+[@OneMarFaMingJunMortgaged3_1]
+#IF
+CheckCalc <$GAMEGOLD> < 47000
+CheckGameGold < 47000
+#ACT
+Break
+#SAY
+<#D>对不起当前元宝不足以抵押升级！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 47000
+CheckGameGold >= 47000
+CheckCalc <$VIP> == 3
+CheckCalc <$MARFADAY(3)> > 30
+#ACT
+GameGold - 47000
+LocalMessage ">>>扣除 470 元宝" FALSE
+MarFaValue 3 -30 1
+MarFaValue 7 30 0
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 47000
+CheckGameGold >= 47000
+CheckCalc <$VIP> == 3
+CheckCalc <$MARFADAY(3)> >= 25
+CheckCalc <$MARFADAY(3)> <= 31
+#ACT
+GameGold - 47000
+LocalMessage ">>>扣除 470 元宝" FALSE
+MarFaValue 3 0 1
+MarFaValue 7 30 1
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+[@OneMarFaHaoJieMortgage3]
+
+#IF
+CheckCalc <$MARFADAY(4)> < 25
+#ACT
+Break
+#SAY
+<#D>当前天数不足以抵押扣款!无法抵押！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+Goto @99_2
+Break
+
+#IF
+CheckCalc <$MARFADAY(4)> >= 25
+CheckCalc <$MARFADAY(4)> <= 31
+#ACT
+#SAY
+<#D>你已经满足抵押条件是否继续抵押升级？<#D/><#SO:1>继续抵押购买(300元宝+手续费10元宝)<#SO/>
+#ELSEACT
+Goto @99_1
+
+[@OneMarFaHaoJieMortgage3_1]
+#IF
+CheckCalc <$GAMEGOLD> < 31000
+CheckGameGold < 31000
+#ACT
+Break
+#SAY
+<#D>对不起当前元宝不足以抵押升级！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 31000
+CheckGameGold >= 31000
+CheckCalc <$VIP> == 4
+CheckCalc <$MARFADAY(4)> > 30
+#ACT
+GameGold - 31000
+LocalMessage ">>>扣除 310 元宝" FALSE
+MarFaValue 4 -30 1
+MarFaValue 7 30 0
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 31000
+CheckGameGold >= 31000
+CheckCalc <$VIP> == 4
+CheckCalc <$MARFADAY(4)> >= 25
+CheckCalc <$MARFADAY(4)> <= 31
+#ACT
+GameGold - 31000
+LocalMessage ">>>扣除 310 元宝" FALSE
+MarFaValue 4 0 1
+MarFaValue 7 30 1
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+[@OneMarFaWillBeMortgaged3]
+
+#IF
+CheckCalc <$MARFADAY(5)> < 25
+#ACT
+Break
+#SAY
+<#D>当前天数不足以抵押扣款!无法抵押！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$MARFADAY(7)> > 0
+#ACT
+Goto @99_2
+Break
+
+#IF
+CheckCalc <$MARFADAY(5)> >= 25
+CheckCalc <$MARFADAY(5)> <= 31
+#ACT
+#SAY
+<#D>你已经满足抵押条件是否继续抵押升级？<#D/><#SO:1>继续抵押购买(300元宝+手续费10元宝)<#SO/>
+#ELSEACT
+Goto @99_1
+
+[@OneMarFaWillBeMortgaged3_1]
+#IF
+CheckCalc <$GAMEGOLD> < 31000
+CheckGameGold < 31000
+#ACT
+Break
+#SAY
+<#D>对不起当前元宝不足以抵押升级！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 31000
+CheckGameGold >= 31000
+CheckCalc <$VIP> == 5
+CheckCalc <$MARFADAY(5)> > 30
+#ACT
+GameGold - 31000
+LocalMessage ">>>扣除 310 元宝" FALSE
+MarFaValue 5 -30 1
+MarFaValue 7 30 0
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+#IF
+CheckCalc <$GAMEGOLD> >= 31000
+CheckGameGold >= 31000
+CheckCalc <$VIP> == 5
+CheckCalc <$MARFADAY(5)> >= 25
+CheckCalc <$MARFADAY(5)> <= 31
+#ACT
+GameGold - 31000
+LocalMessage ">>>扣除 310 元宝" FALSE
+MarFaValue 5 0 1
+MarFaValue 7 30 1
+Break
+#SAY
+<#D>升级成功！<#D/><#SO:999>关闭<#SO/>
+
+[@99_4]
+#IF
+#ACT
+#SAY
+<#D>1.单特权购买2次以上，可选择【多期抵押升级】<br/>2.买错新特权不生效，可选择【购买特权不生效？】<br/>3.单特权购买1次剩余天数大于25天，可选择【单期抵押升级】<#D/><#SO:999>关闭<#SO/>

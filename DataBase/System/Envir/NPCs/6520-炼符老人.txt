@@ -1,0 +1,5 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+阁下若有多余的灵药符，不妨进小店看看<#UI:OpenFilterShop2>灵药符商店<#UI/>

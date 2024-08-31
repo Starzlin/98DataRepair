@@ -1,0 +1,36 @@
+[@开始头盔重铸]
+{
+#IF
+CheckCalc <$STR(U501)> == 65000
+#ACT
+MOV U501 0
+
+
+
+;99910001-记忆头盔
+;99910007-祈祷头盔
+
+#IF
+Random 80
+#ACT
+Calc U501 + 1
+RandomGiveItemIdx 99910001,99910007 1
+SendItemRestore <$STR(G1000)>
+Break
+
+
+;99990111-青铜头盔
+;99990211-魔法头盔
+;99990311-骷髅头盔
+;99990411-道士头盔
+#IF
+#ACT
+Calc U501 + 1
+RandomGiveItemIdx 99990311,99990411,99990111,99990211 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;=====================
+
+
+}

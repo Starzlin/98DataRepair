@@ -1,0 +1,245 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+我这里可以进行武器合成，是否需要试一试？<#D/><#SO:1>祖玛档武器合成<#SO/><#SO:2>裁决档武器合成<#SO/><#SO:3>怒斩档武器合成<#SO/><#SO:4>各职业精华研磨<#SO/>
+
+[@1]
+#IF
+#ACT
+#SAY
+这里可合成武器（井中月、血饮、无极棍、赤影、沉锋、青虹），合成需消耗对应低级武器（炼狱等，部分可用武器淬炼石替换）和一定数量的催化剂，请您根据自己的需求进行合成。<#UI:ComposeNewEquip8>确定进行武器合成<#UI/>
+
+[@2]
+#IF
+#ACT
+#SAY
+这里可合成武器（裁决之杖、骨玉权杖、龙纹剑、龙爪手、猎首、虎咆），合成需消耗对应低级武器（井中月等，部分可用武器淬炼石替换）和一定数量的催化剂，请您根据自己的需求进行合成。<#UI:ComposeNewEquip9>确定进行武器合成<#UI/>
+
+[@3]
+#IF
+#ACT
+#SAY
+这里可合成武器（怒斩、龙牙、逍遥扇、霜影、血染、横江），合成需消耗对应低级武器（井中月等，部分可用武器淬炼石替换）和一定数量的催化剂，请您根据自己的需求进行合成。<#UI:ComposeNewEquip10>确定进行武器合成<#UI/>
+
+[@4]
+#IF
+#ACT
+#SAY
+我能为勇士打造天地灵器，需将灵石研磨至粉末状，方可提炼出其中精华。请选择你要研磨的种类。<#SO:1>我要研磨“初级战士精华”<#SO/><#SO:2>我要研磨“初级法师精华”<#SO/><#SO:3>我要研磨“初级道士精华”<#SO/><#SO:4>我要研磨“初级刺客精华”<#SO/><#SO:5>我要研磨“初级弓手精华”<#SO/><#SO:6>我要研磨“初级龙枪精华”<#SO/>
+
+[@4_1]
+#IF
+#ACT
+#SAY
+每研磨1个“精绿灵石1级”可以产生5份“初级战士精华”。研磨前请确保背包有足够空格。确认是否研磨？<#SO:1>确认研磨1个“精绿灵石1级”<#SO/><#SO:2>确认研磨10个“精绿灵石1级”<#SO/>
+
+[@4_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10420 1
+#ACT
+TakeItemIdx 10420 1
+GiveItemIdx 111045 5
+#ELSESAY
+研磨需要的灵石不足，无法研磨。
+
+[@4_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10420 10
+#ACT
+TakeItemIdx 10420 10
+GiveItemIdx 111045 50
+#ELSESAY
+研磨需要的灵石不足，无法研磨。
+
+[@4_2]
+#IF
+#ACT
+#SAY
+每研磨1个“蔚蓝灵石1级”可以产生5份“初级法师精华”。研磨前请确保背包有足够空格。确认是否研磨？<#SO:1>确认研磨1个“蔚蓝灵石1级”<#SO/><#SO:2>确认研磨10个“蔚蓝灵石1级”<#SO/>
+
+[@4_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10320 1
+#ACT
+TakeItemIdx 10320 1
+GiveItemIdx 111046 5
+#ELSESAY
+研磨需要的灵石不足，无法研磨。
+
+[@4_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10320 10
+#ACT
+TakeItemIdx 10320 10
+GiveItemIdx 111046 50
+#ELSESAY
+研磨需要的灵石不足，无法研磨。
+
+[@4_3]
+#IF
+#ACT
+#SAY
+每研磨1个“驭朱灵石1级”可以产生5份“初级道士精华”。研磨前请确保背包有足够空格。确认是否研磨？<#SO:1>确认研磨1个“驭朱灵石1级”<#SO/><#SO:2>确认研磨10个“驭朱灵石1级”<#SO/>
+
+[@4_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10110 1
+#ACT
+TakeItemIdx 10110 1
+GiveItemIdx 111047 5
+#ELSESAY
+研磨需要的灵石不足，无法研磨。
+
+[@4_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10110 10
+#ACT
+TakeItemIdx 10110 10
+GiveItemIdx 111047 50
+#ELSESAY
+研磨需要的灵石不足，无法研磨。
+
+[@4_4]
+#IF
+#ACT
+#SAY
+每研磨1个“深灰灵石1级”可以产生5份“初级刺客精华”。研磨前请确保背包有足够空格。确认是否研磨？<#SO:1>确认研磨1个“深灰灵石1级”<#SO/><#SO:2>确认研磨10个“深灰灵石1级”<#SO/>
+
+[@4_4_1]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10620 1
+#ACT
+TakeItemIdx 10620 1
+GiveItemIdx 111079 5
+#ELSESAY
+研磨需要的灵石不足，无法研磨。
+
+[@4_4_2]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10620 10
+#ACT
+TakeItemIdx 10620 10
+GiveItemIdx 111079 50
+#ELSESAY
+研磨需要的灵石不足，无法研磨。
+
+[@4_5]
+#IF
+#ACT
+#SAY
+每研磨1个“橙黄灵石1级”可以产生5份“初级弓手精华”。研磨前请确保背包有足够空格。确认是否研磨？<#SO:1>确认研磨1个“橙黄灵石1级”<#SO/><#SO:2>确认研磨10个“橙黄灵石1级”<#SO/>
+
+[@4_5_1]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10720 1
+#ACT
+TakeItemIdx 10720 1
+GiveItemIdx 111092 5
+#ELSESAY
+研磨需要的灵石不足，无法研磨。
+
+[@4_5_2]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10720 10
+#ACT
+TakeItemIdx 10720 10
+GiveItemIdx 111092 50
+#ELSESAY
+研磨需要的灵石不足，无法研磨。
+
+[@4_6]
+#IF
+#ACT
+#SAY
+每研磨1个“赤褐灵石1级”可以产生5份“初级龙枪精华”。研磨前请确保背包有足够空格。确认是否研磨？<#SO:1>确认研磨1个“赤褐灵石1级”<#SO/><#SO:2>确认研磨10个“赤褐灵石1级”<#SO/>
+
+[@4_6_1]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10820 1
+#ACT
+TakeItemIdx 10820 1
+GiveItemIdx 111302 5
+#ELSESAY
+研磨需要的灵石不足，无法研磨。
+
+[@4_6_2]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 10820 10
+#ACT
+TakeItemIdx 10820 10
+GiveItemIdx 111302 50
+#ELSESAY
+研磨需要的灵石不足，无法研磨。

@@ -1,0 +1,146 @@
+[@开始衣服重铸]
+{
+#IF
+CheckCalc <$STR(U503)> == 65000
+#ACT
+MOV U503 0
+
+
+;99980413-重盔甲 沃玛
+#IF
+Random 510
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99980413 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99980423-魔法长袍 沃玛
+#IF
+Random 520
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99980423 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99980433-灵魂战衣 沃玛
+#IF
+Random 530
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99980433 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99980443-刺客短袍 沃玛
+#IF
+Random 540
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99980443 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99980453-野猎之袍 沃玛
+
+#IF
+Random 550
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99980453 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99980463-镔铁盔甲 沃玛
+
+#IF
+Random 560
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99980463 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99990413-重盔甲6 沃玛
+
+#IF
+Random 570
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99990413 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99990423-魔法长袍6 沃玛
+
+#IF
+Random 580
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99990423 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99990433-灵魂战衣6 沃玛
+
+#IF
+Random 590
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99990433 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99990443-刺客短袍6 沃玛
+
+#IF
+Random 600
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99990443 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99990453-野猎之袍6 沃玛
+#IF
+Random 610
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99990453 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99990463-镔铁盔甲6 沃玛
+#IF
+Random 620
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99990463 1
+SendItemRestore <$STR(G1000)>
+Break
+
+
+
+;=========================================================================================================================
+
+;99980213-轻型盔甲
+;99990213-轻型盔甲6
+;99980313-中型盔甲
+;99990313-中型盔甲6
+;99980213-轻型盔甲
+;99980313-中型盔甲
+;99990213-轻型盔甲6
+;99990313-中型盔甲6
+
+
+#IF
+#ACT
+Calc U503 + 1
+RandomGiveItemIdx 99980213,99990213,99980313,99990313 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;======================================================================
+
+}

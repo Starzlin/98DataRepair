@@ -1,0 +1,69 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:666530>
+
+[@1]
+#IF
+Checkcalc <$STR(J101)> == 1
+#ACT
+Break
+#SAY
+今日奖励已领取，明天如有需要可再来找我。<#SO:9999>知道了<#SO/>
+
+#IF
+LEVEL < 10
+#ACT
+Break
+#SAY
+<#P0:0><#P1:0><#T:645205>
+
+#IF
+#ACT
+MOV N101 5000
+CALC N101 * <$LEVEL>
+MOV J101 1
+GiveDoubleExp <$STR(N101)>
+#SAY
+<#P0:<$STR(N101)>><#P1:0><#T:666599>
+
+[@2]
+#IF
+LEVEL < 10
+#ACT
+Break
+#SAY
+<#P0:0><#P1:0><#T:645205>
+
+#IF
+Checkcalc <$STR(J102)> == 1
+#ACT
+Break
+#SAY
+今日奖励已领取，明天如有需要可再来找我。<#SO:9999>知道了<#SO/>
+
+#IF
+#ACT
+MOV N102 4500
+CALC N102 * <$LEVEL>
+MOV N101 15000
+CALC N101 * <$LEVEL>
+#SAY
+<#P0:<$STR(N101)>><#P1:<$STR(N102)>><#T:666597>
+
+[@2_1]
+#IF
+CheckGold < <$STR(N102)>
+#ACT
+Break
+#SAY
+<#P0:<$STR(N102)>><#P1:0><#T:666600>
+
+#IF
+#ACT
+MOV J102 1
+Takegold <$STR(N102)>
+GiveDoubleExp <$STR(N101)>
+#SAY
+<#P0:<$STR(N101)>><#P1:<$STR(N102)>><#T:666599>

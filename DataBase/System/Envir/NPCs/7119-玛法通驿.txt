@@ -1,0 +1,352 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+我们玛法通驿遍布各地，无论是各大城市、要塞，还是危险的野外洞穴，都能安全快速地送达目的地！<#SO:1>造访普通区域（免费）<#SO/><#SO:2>深入野外冒险（花费金币）<#SO/>
+
+[@1]
+#IF
+#ACT
+#SAY
+您要去哪个地区呢？<#SO:11>沃玛森林<#SO/><#SO:12>沙巴克<#SO/><#SO:13>沙巴克秘密通道<#SO/><#SO:14>白日门海岸<#SO/><#SO:3>白日门城<#SO/><#SO:4>魔龙城<#SO/><#SO:5>苍月岛<#SO/>
+
+[@1_5]
+#IF
+CheckCalc <$VERSION> < 6
+#ACT
+Break
+#SAY
+该玩法将在苍月版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+level < 45
+#ACT
+Break
+#SAY
+等级不足[45]级，无法进行传送！
+
+#IF
+#ACT
+MOVE 50 0 0 1
+
+[@1_4]
+#IF
+CheckCalc <$VERSION> < 4
+#ACT
+Break
+#SAY
+该玩法将在魔龙版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+level < 42
+#ACT
+Break
+#SAY
+等级不足[42]级，无法进行传送！
+
+#IF
+#ACT
+MOVE 231 0 0 1
+
+[@1_3]
+#IF
+CheckCalc <$VERSION> < 3
+#ACT
+Break
+#SAY
+该玩法将在赤月版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+level < 40
+#ACT
+Break
+#SAY
+等级不足[40]级，无法进行传送！
+
+#IF
+#ACT
+MOVE 102 0 0 1
+
+[@1_14]
+#IF
+CheckCalc <$VERSION> < 3
+#ACT
+Break
+#SAY
+该玩法将在赤月版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+level < 40
+#ACT
+Break
+#SAY
+等级不足[40]级，无法进行传送！
+
+#IF
+#ACT
+MOVE 93 942 397 0
+
+[@1_13]
+#IF
+#ACT
+#SAY
+你确认需要传送到秘密通道吗？如果是随机位置需要花费2万金币！<#SO:1>传送至秘密通道定点位置(免费)<#SO/><#SO:2>传送至秘密通道随机位置(2万金币)<#SO/>
+
+[@1_13_1]
+#IF
+#ACT
+move 178 416 257 0
+
+[@1_13_2]
+#IF
+CheckGold < 20000
+#ACT
+Break
+#SAY
+身上不足[20000]金币，无法进行传送！
+
+#IF
+#ACT
+MOVE 178 0 0 4
+
+
+[@1_12]
+#IF
+#ACT
+#SAY
+你确认需要传送到沙巴克吗？如果是随机位置需要花费2万金币！<#SO:1>传送至沙巴克定点位置(免费)<#SO/><#SO:2>传送至沙巴克随机位置(2万金币)<#SO/>
+
+[@1_12_1]
+#IF
+#ACT
+MOVE 152 993 681 0
+
+[@1_12_2]
+#IF
+CheckGold < 20000
+#ACT
+Break
+#SAY
+身上不足[20000]金币，无法进行传送！
+
+#IF
+#ACT
+MOVE 152 0 0 4
+
+[@1_11]
+#IF
+#ACT
+MOVE 145 805 350 0
+
+[@2]
+#IF
+#ACT
+#SAY
+您打算前往何处冒险呢？<#SO:21>比奇矿区(1000金币)<#SO/><#SO:22>死亡峡谷一层(3000金币)<#SO/><#SO:27>幽虫洞窟(5000金币)<#SO/><#SO:23>沃玛寺庙(5000金币)<#SO/><#SO:24>石墓三层(10000金币)<#SO/><#SO:25>祖玛寺庙三层(20000金币)<#SO/><#SO:26>赤月群岛(20000金币)<#SO/><#SO:28>抉择之地(50000金币)<#SO/><#SO:29>魔龙岭(50000金币)<#SO/><#SO:30>兽人陵墓浅表(80000金币)<#SO/>
+
+[@2_30]
+#IF
+CheckCalc <$VERSION> < 6
+#ACT
+Break
+#SAY
+该玩法将在苍月版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+level < 47
+#ACT
+Break
+#SAY
+等级不足[47]级，无法进行传送！
+
+#IF
+CheckGold < 80000
+#ACT
+Break
+#SAY
+身上不足[80000]金币，无法进行传送！
+
+#IF
+#ACT
+TakeGold 80000
+MOVE 111 1056 175 0
+
+[@2_29]
+#IF
+CheckCalc <$VERSION> < 4
+#ACT
+Break
+#SAY
+该玩法将在魔龙版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+level < 40
+#ACT
+Break
+#SAY
+等级不足[40]级，无法进行传送！
+
+#IF
+CheckGold < 50000
+#ACT
+Break
+#SAY
+身上不足[50000]金币，无法进行传送！
+
+#IF
+#ACT
+TakeGold 50000
+MOVE 239 926 273 0
+
+[@2_28]
+#IF
+CheckCalc <$VERSION> < 3
+#ACT
+Break
+#SAY
+该玩法将在赤月版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+level < 40
+#ACT
+Break
+#SAY
+等级不足[40]级，无法进行传送！
+
+#IF
+CheckGold < 50000
+#ACT
+Break
+#SAY
+身上不足[50000]金币，无法进行传送！
+
+#IF
+#ACT
+TakeGold 50000
+MOVE 195 1137 237 0
+
+[@2_26]
+#IF
+#ACT
+#SAY
+赤月群岛暂不开放，开放时间请等待公告！
+
+[@2_25]
+#IF
+level < 35
+#ACT
+Break
+#SAY
+等级不足[35]级，无法进行传送！
+
+#IF
+CheckGold < 20000
+#ACT
+Break
+#SAY
+身上不足[20000]金币，无法进行传送！
+
+#IF
+#ACT
+TakeGold 20000
+MOVE 168 1056 285 0
+
+[@2_24]
+#IF
+level < 30
+#ACT
+Break
+#SAY
+等级不足[30]级，无法进行传送！
+
+#IF
+CheckGold < 10000
+#ACT
+Break
+#SAY
+身上不足[10000]金币，无法进行传送！
+
+#IF
+#ACT
+TakeGold 10000
+MOVE 160 967 584 0
+
+[@2_23]
+#IF
+level < 25
+#ACT
+Break
+#SAY
+等级不足[25]级，无法进行传送！
+
+#IF
+CheckGold < 5000
+#ACT
+Break
+#SAY
+身上不足[5000]金币，无法进行传送！
+
+#IF
+#ACT
+TakeGold 5000
+MOVE 146 905 744 0
+
+[@2_27]
+#IF
+level < 20
+#ACT
+Break
+#SAY
+等级不足[20]级，无法进行传送！
+
+#IF
+CheckGold < 5000
+#ACT
+Break
+#SAY
+身上不足[5000]金币，无法进行传送！
+
+#IF
+#ACT
+TakeGold 5000
+MOVE 210 934 394 0
+
+[@2_22]
+#IF
+level < 20
+#ACT
+Break
+#SAY
+等级不足[20]级，无法进行传送！
+
+#IF
+CheckGold < 3000
+#ACT
+Break
+#SAY
+身上不足[3000]金币，无法进行传送！
+
+#IF
+#ACT
+TakeGold 3000
+MOVE 148 1318 550 0
+
+[@2_21]
+#IF
+level < 15
+#ACT
+Break
+#SAY
+等级不足[15]级，无法进行传送！
+
+#IF
+CheckGold < 1000
+#ACT
+Break
+#SAY
+身上不足[1000]金币，无法进行传送！
+
+#IF
+#ACT
+TakeGold 1000
+MOVE 144 1006 123 0

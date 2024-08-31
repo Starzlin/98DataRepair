@@ -1,0 +1,39 @@
+[@MAIN]
+#IF
+CheckCalc <$MAP> == 147
+#SAY
+<#Dft>
+#ELSESAY
+我这里可以传送到巨兽大厅，你想去吗？<#SO:1>进入巨兽大厅<#SO/>
+
+
+[@1]
+#IF
+Random 5
+#ACT
+MOVE 133 1010 114 0
+BREAK
+
+#IF
+Random 4
+#ACT
+MOVE 133 1004 106 0
+BREAK
+
+#IF
+Random 3
+#ACT
+MOVE 133 1014 103 0
+BREAK
+
+#IF
+Random 2
+#ACT
+MOVE 133 1016 113 0
+BREAK
+
+#IF
+Random 1
+#ACT
+MOVE 133 1011 120 0
+BREAK

@@ -1,0 +1,169 @@
+[@MAIN]
+#IF
+CheckCalc <$VERSION> < 6
+#SAY
+<#P0:0><#P1:0><#T:666472>
+#ELSESAY
+<#P0:0><#P1:0><#T:666491>
+
+[@1]
+#IF
+CheckItemIdx 202005 1
+#SAY
+你竟然真的找到了无字天书，嗯？无字天书残缺了许多书页，请英雄在去收集足够的天书残页吧，集齐后就可在我这里获取无字天书所记录的真正秘密了<#SO:1>获取“无字天书”神秘技能<#SO/><#SO:3>兑换天书残页<#SO/>
+#ELSESAY
+<#P0:0><#P1:0><#T:666492>
+
+[@1_3]
+#IF
+#ACT
+#SAY
+英雄想要在我这里兑换天书残页吗？<#SO:1>24张灵符兑换1张天书残卷<#SO/><#SO:2>1200张灵符兑换50张天书残卷<#SO/>
+
+[@1_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 90226 24
+#ACT
+TakeItemIdx 90226 24
+GiveItemIdx 202006 1
+#SAY
+兑换天书残页成功！<#SO:1>知道了<#SO/>
+#ELSESAY
+你的灵符不足，请确认！<#SO:1>知道了<#SO/>
+
+[@1_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 90226 1200
+#ACT
+TakeItemIdx 90226 1200
+GiveItemIdx 202006 50
+#SAY
+兑换天书残页成功！<#SO:1>知道了<#SO/>
+#ELSESAY
+你的灵符不足，请确认！<#SO:1>知道了<#SO/>
+
+[@1_1]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:666380>
+
+[@1_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 202005 1
+CheckItemIdx 202006 500
+#ACT
+TakeItemIdx 202005 1
+TakeItemIdx 202006 500
+GiveItemIdx 31043
+#ELSESAY
+<#P0:500><#P1:0><#T:666495>
+
+[@1_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 202005 1
+CheckItemIdx 202006 400
+#ACT
+TakeItemIdx 202005 1
+TakeItemIdx 202006 400
+GiveItemIdx 32551
+#ELSESAY
+<#P0:400><#P1:0><#T:666495>
+
+[@1_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 202005 1
+CheckItemIdx 202006 400
+#ACT
+TakeItemIdx 202005 1
+TakeItemIdx 202006 400
+GiveItemIdx 33016
+#ELSESAY
+<#P0:400><#P1:0><#T:666495>
+
+[@1_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 202005 1
+CheckItemIdx 202006 450
+#ACT
+TakeItemIdx 202005 1
+TakeItemIdx 202006 450
+GiveItemIdx 34012
+#ELSESAY
+<#P0:450><#P1:0><#T:666495>
+
+[@1_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 202005 1
+CheckItemIdx 202006 450
+#ACT
+TakeItemIdx 202005 1
+TakeItemIdx 202006 450
+GiveItemIdx 35012
+#ELSESAY
+<#P0:450><#P1:0><#T:666495>
+
+[@1_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+GlobalMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 202005 1
+CheckItemIdx 202006 450
+#ACT
+TakeItemIdx 202005 1
+TakeItemIdx 202006 450
+GiveItemIdx 36012
+#ELSESAY
+<#P0:450><#P1:0><#T:666495>
+
+
+
+
+
+

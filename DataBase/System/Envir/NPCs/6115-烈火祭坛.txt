@@ -1,0 +1,8 @@
+[@MAIN]
+#OR
+HasBuff 58001
+HasBuff 58011
+#ELSEACT
+RemoveBuff 58002
+RemoveBuff 58003
+GiveBuff 58001

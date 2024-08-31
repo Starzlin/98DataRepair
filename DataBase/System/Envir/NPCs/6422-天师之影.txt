@@ -1,0 +1,55 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+是否要进入远古禁域？<#SO:1>进入远古禁域<#SO/>
+
+[@1]
+#IF
+Random 6
+#ACT
+MOVE 110 1029 57 0
+BREAK
+
+#IF
+Random 5
+#ACT
+MOVE 110 1023 59 0
+BREAK
+
+#IF
+Random 4
+#ACT
+MOVE 110 1015 55 0
+BREAK
+
+#IF
+Random 3
+#ACT
+MOVE 110 1007 59 0
+BREAK
+
+#IF
+Random 2
+#ACT
+MOVE 110 1017 69 0
+BREAK
+
+#IF
+Random 1
+#ACT
+MOVE 110 1027 73 0
+BREAK
+
+
+
+
+
+
+
+
+
+
+
+
+

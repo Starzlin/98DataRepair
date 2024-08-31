@@ -1,0 +1,5 @@
+[@Main]
+#IF
+#ACT
+#SAY
+我这儿或许有阁下需要的东西，不妨进来看看<#UI:OpenFilterShop2>打开商店<#UI/>

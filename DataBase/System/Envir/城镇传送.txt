@@ -1,0 +1,45 @@
+[@开始执行]
+{
+#IF
+CheckCalc <$VERSION> == 7
+#ACT
+Break
+#SAY
+您要造访哪个城镇呢？<#SO:1>边界小镇<#SO/><#SO:2>比奇大城<#SO/><#SO:3>盟重土城<#SO/><#SO:4>白日门城<#SO/><#SO:5>魔龙古寨<#SO/><#SO:6>赤月群岛<#SO/><#SO:7>苍月岛屿<#SO/>
+
+#IF
+CheckCalc <$VERSION> == 6
+#ACT
+Break
+#SAY
+您要去哪个城市呢？<#SO:1>边界小镇<#SO/><#SO:2>比奇大城<#SO/><#SO:3>盟重土城<#SO/><#SO:4>白日门城<#SO/><#SO:5>魔龙古寨<#SO/><#SO:6>赤月群岛<#SO/>
+
+#IF
+CheckCalc <$VERSION> == 4
+#ACT
+Break
+#SAY
+您要去哪个城市呢？<#SO:1>边界小镇<#SO/><#SO:2>比奇大城<#SO/><#SO:3>盟重土城<#SO/><#SO:4>白日门城<#SO/>
+
+#IF
+CheckCalc <$VERSION> == 3
+#ACT
+Break
+#SAY
+您要去哪个城市呢？<#SO:1>边界小镇<#SO/><#SO:2>比奇大城<#SO/><#SO:3>盟重土城<#SO/><#SO:4>白日门城<#SO/>
+
+#IF
+CheckCalc <$VERSION> == 1
+#ACT
+Break
+#SAY
+您要去哪个城市呢？<#SO:1>边界小镇<#SO/><#SO:2>比奇大城<#SO/><#SO:3>盟重土城<#SO/>
+
+#IF
+CheckCalc <$VERSION> == 0
+#ACT
+Break
+#SAY
+您要去哪个城市呢？<#SO:1>边界小镇<#SO/><#SO:2>比奇大城<#SO/><#SO:3>盟重土城<#SO/>
+
+}

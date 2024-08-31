@@ -1,0 +1,89 @@
+[@MAIN]
+#IF
+#ACT
+Break
+#SAY
+此活动将在3天后开放，与二区同步，给您带来不便，请谅解！
+
+#IF
+#ACT
+#SAY
+正义与邪恶的斗争一触即发！<#SO:111>屠魔大厅<#SO/><#SO:111>魔龙幻境<#SO/><#SO:111>秘宝广场<#SO/>
+
+[@111]
+#IF
+#ACT
+#SAY
+星空二区全面改版副本活动玩法，由于内容定档于赤月节点，故赤月节点开放屠魔大厅，魔龙幻境，秘宝广场三大世界BOSS争夺玩法！
+
+[@1]
+#IF
+#ACT
+#SAY
+<#SO:1>挑战屠魔大厅<#SO/>
+
+[@1_1]
+#OR
+CheckCalc <$WEEK> == 1
+CheckCalc <$WEEK> == 3
+CheckCalc <$WEEK> == 5
+#ACT
+Break
+#SAY
+当前不在活动时间，屠魔大厅仅在每周二，四，六、日的19点开放。<#SO:1>知道了<#SO/>
+
+#IF
+CheckCalc <$HOUR> != 19
+#ACT
+Break
+#SAY
+当前不在活动时间，屠魔大厅仅在每周二，四，六、日的19点开放。<#SO:1>知道了<#SO/>
+
+#IF
+#ACT
+MOVE 80 0 0 3
+
+[@2]
+#IF
+#ACT
+#SAY
+<#SO:1>挑战魔龙幻境<#SO/>
+
+[@2_1]
+#OR
+CheckCalc <$WEEK> == 2
+CheckCalc <$WEEK> == 4
+CheckCalc <$WEEK> == 6
+#ACT
+Break
+#SAY
+当前不在活动时间，魔龙幻境仅在每周一，三，五、日的19点开放。<#SO:1>知道了<#SO/>
+
+#IF
+CheckCalc <$HOUR> != 19
+#ACT
+Break
+#SAY
+当前不在活动时间，魔龙幻境仅在每周一，三，五、日的19点开放。<#SO:1>知道了<#SO/>
+
+#IF
+#ACT
+MOVE 36 0 0 3
+
+[@3]
+#IF
+#ACT
+#SAY
+<#SO:1>挑战秘宝广场<#SO/>
+
+[@3_1]
+#IF
+CheckCalc <$HOUR> != 19
+#ACT
+Break
+#SAY
+当前不在活动时间，秘宝广场仅在每日19点开放。<#SO:1>知道了<#SO/>
+
+#IF
+#ACT
+MOVE 74 0 0 3

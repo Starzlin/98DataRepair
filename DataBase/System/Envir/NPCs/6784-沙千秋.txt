@@ -1,0 +1,109 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+我以龙家百年声誉向你保证，存入我库中的物品一样都不会丢失，你尽管放心。<#UI:GuildWarehouse>公会仓库<#UI/><#SO:1>仓库升级<#SO/><#INS:S2>关于公会仓库<#INS/>
+
+[@1]
+#IF
+CheckGuildLv = 6
+#ACT
+Break
+#SAY
+公会仓库已达到最大化，无法在继续升级！<#SO:3>知道了<#SO/>
+
+#IF
+CheckGuildLv = 5
+#ACT
+Break
+#SAY
+在日常的建设发展中，如果你觉得公会仓库不够用了，我可以帮你扩容一下，扩展[6]级仓库需要[1000]万金币<#SO:1>点击升级<#SO/><#SO:2>返回<#SO/>
+
+#IF
+CheckGuildLv = 4
+#ACT
+Break
+#SAY
+在日常的建设发展中，如果你觉得公会仓库不够用了，我可以帮你扩容一下，扩展[5]级仓库需要[800]万金币<#SO:1>点击升级<#SO/><#SO:2>返回<#SO/>
+
+#IF
+CheckGuildLv = 3
+#ACT
+Break
+#SAY
+在日常的建设发展中，如果你觉得公会仓库不够用了，我可以帮你扩容一下，扩展[4]级仓库需要[600]万金币<#SO:1>点击升级<#SO/><#SO:2>返回<#SO/>
+
+#IF
+CheckGuildLv = 2
+#ACT
+Break
+#SAY
+在日常的建设发展中，如果你觉得公会仓库不够用了，我可以帮你扩容一下，扩展[3]级仓库需要[400]万金币<#SO:1>点击升级<#SO/><#SO:2>返回<#SO/>
+
+#IF
+CheckGuildLv = 1
+#ACT
+Break
+#SAY
+在日常的建设发展中，如果你觉得公会仓库不够用了，我可以帮你扩容一下，扩展[2]级仓库需要[200]万金币<#SO:1>点击升级<#SO/><#SO:2>返回<#SO/>
+
+#IF
+#ACT
+Break
+#SAY
+你都没有公会我如何帮你升级？<#SO:3>知道了<#SO/>
+
+[@1_1]
+#IF
+CheckGuildLv = 5
+CheckGold >= 10000000
+#ACT
+TakeGold 10000000
+ChangeGuildLv 6
+Break
+#SAY
+升级成功，现在你拥有[6]页公会仓库了！<#SO:3>知道了<#SO/>
+
+#IF
+CheckGuildLv = 4
+CheckGold >= 8000000
+#ACT
+TakeGold 8000000
+ChangeGuildLv 5
+Break
+#SAY
+升级成功，现在你拥有[5]页公会仓库了！<#SO:3>知道了<#SO/>
+
+#IF
+CheckGuildLv = 3
+CheckGold >= 6000000
+#ACT
+TakeGold 6000000
+ChangeGuildLv 4
+Break
+#SAY
+升级成功，现在你拥有[4]页公会仓库了！<#SO:3>知道了<#SO/>
+
+#IF
+CheckGuildLv = 2
+CheckGold >= 4000000
+#ACT
+TakeGold 4000000
+ChangeGuildLv 3
+Break
+#SAY
+升级成功，现在你拥有[3]页公会仓库了！<#SO:3>知道了<#SO/>
+
+#IF
+CheckGuildLv = 1
+CheckGold >= 2000000
+#ACT
+TakeGold 2000000
+ChangeGuildLv 2
+Break
+#SAY
+升级成功，现在你拥有[2]页公会仓库了！<#SO:3>知道了<#SO/>
+
+#IF
+#ACT
+非常抱歉，你的金币不足我无法为你升级!<#SO:3>知道了<#SO/>

@@ -1,0 +1,56 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+年轻人，我最近刚拿到了开店文书，店面焕然一新，赶快进来看看吧。<#UI:OpenFilterShop1>学宫商店<#UI/><#SO:1>灵符兑换学宫积分<#SO/>
+
+[@1]
+#IF
+#ACT
+#SAY
+400灵符 = 11个学宫积分<br>2400灵符 = 66个学宫积分<br>12000灵符 = 330个学宫积分<#SO:1>400灵符兑换11个学宫积分<#SO/><#SO:2>2400灵符兑换66个学宫积分<#SO/><#SO:3>12000灵符兑换330个学宫积分<#SO/>
+
+[@1_1]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 90226 400
+#ACT
+TakeItemIdx 90226 400
+GiveItemIdx 91143 11
+#ELSESAY
+灵符不足，无法进行兑换！
+
+[@1_2]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 90226 2400
+#ACT
+TakeItemIdx 90226 2400
+GiveItemIdx 91143 66
+#ELSESAY
+灵符不足，无法进行兑换！
+
+[@1_3]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 90226 12000
+#ACT
+TakeItemIdx 90226 12000
+GiveItemIdx 91143 330
+#ELSESAY
+灵符不足，无法进行兑换！

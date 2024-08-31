@@ -1,0 +1,77 @@
+[@MAIN]
+
+#IF
+LEVEL < 50
+CheckCalc <$LEVEL> < 50
+#ACT
+Break
+#SAY
+<#D>等级不够！等级达到50级再来！<#D/>
+
+#IF
+LEVEL >= 50
+CheckCalc <$LEVEL> >= 50
+#ACT
+#SAY
+<#D>我这里有各种觉醒书页，阁下若有意在精进技艺，不妨看看<#D/><#SO:2>每日领取觉醒书页·卷三 1张(免费领取1次)<#SO/><#SO:3>每日[50]灵符购买觉醒书页·卷三 4张（限购2次）<#SO/>
+
+[@2]
+#IF
+checkcalc <$STR(J5)> >= 1
+#ACT
+Break
+#SAY
+您今日已领取过[觉醒书页·卷三]，请明日再来！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+#ACT
+Calc J5 + 1
+GiveItem 觉醒书页·卷三 1 TRUE
+#SAY
+领取[觉醒书页·卷三]成功！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+[@2_1]
+#IF
+#ACT
+GOTO @MAIN
+
+[@3]
+#IF
+checkcalc <$STR(J6)> >= 2
+#ACT
+Break
+#SAY
+您今日可购买次数已达上限，请明日再来！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+not CheckItemIdx 90226 50
+#ACT
+Break
+#SAY
+背包不足[50]灵符，无法进行购买！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+#ACT
+Calc J6 + 1
+TakeItemIdx 90226 50
+GiveItem 觉醒书页·卷三 4 TRUE
+#SAY
+购买[觉醒书页·卷三]成功！<#SO:1>返回首页<#SO/><#SO:2>关闭对话<#SO/>
+
+[@3_1]
+#IF
+#ACT
+GOTO @MAIN
+

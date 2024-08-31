@@ -1,0 +1,22 @@
+[@MAIN]
+#SAY
+<#Dft>
+;赤月节点开放后，我的船可以带你去赤月群岛。<#SO:1>坐船去赤月群岛(50000金币)<#SO/>
+
+[@1]
+#IF
+CheckGold < 50000
+#ACT
+Break
+#SAY
+身上不足[50000]金币，无法坐船！
+
+#IF
+CheckGold > 50000
+CheckCalc <$VERSION> >= 4
+#ACT
+TakeGold 50000
+MOVE 105 1067 201
+BREAK
+#ELSESAY
+赤月节点未开放。

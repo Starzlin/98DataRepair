@@ -1,0 +1,63 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+我就是那个能打开幽冥海传送法阵的人，找到我不知算你走运还是倒霉，听说幽冥海中既有无数珍宝，又有致命魔怪，你真的想去吗？<#SO:1>确定进入<#SO/><#INS:S26>关于“幽冥海”<#INS/><#SO:3>取消<#SO/>
+
+[@1]
+#IF
+#ACT
+#SAY
+那就拿出一些诚意来吧！<#SO:11>使用“金币”进入（消耗5万金币）<#SO/><#SO:12>使用“灵符”进入（消耗2个灵符）<#SO/><#SO:13>使用“幽冥海入场券”进入<#SO/>
+
+[@1_11]
+#IF
+LEVEL < 30
+#ACT
+Break
+#SAY
+等级不足[30]级，无法进入此地图！
+
+#IF
+CheckGold < 50000
+#ACT
+Break
+#SAY
+身上不足[5]万金币，无法进入此地图！
+
+#IF
+#ACT
+TakeGold 50000
+MOVE 223 0 0 3
+
+[@1_12]
+#IF
+LEVEL < 30
+#ACT
+Break
+#SAY
+等级不足[30]级，无法进入此地图！
+
+#IF
+CheckItemIdx 90226 2
+#ACT
+TakeItemIdx 90226 2
+MOVE 223 0 0 3
+#ELSESAY
+进入此地图所需[2]张灵符！
+
+[@1_13]
+#IF
+LEVEL < 30
+#ACT
+Break
+#SAY
+等级不足[30]级，无法进入此地图！
+
+#IF
+CheckItemIdx 91102 1
+#ACT
+TakeItemIdx 91102 1
+MOVE 223 0 0 3
+#ELSESAY
+进入此地图所需[幽冥海入场券]一张！

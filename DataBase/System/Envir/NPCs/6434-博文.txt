@@ -1,0 +1,5 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+勇士们，欢迎您的到来，在老夫这里有全玛法最让人眼馋的绝世武技。玛法豪杰和玛法战将特权用户专属哦。当然，你也可以拿着武技书页来兑换我手上的珍宝。<br>友情提示：武技商店只能兑换本职业技能书哦<#UI:OpenUIActivitySignIn>传永武技签到<#UI/><#UI:OpenFilterShop1>武技兑换商店<#UI/><#UI:OpenFilterShop6>书页商店<#UI/><#INS:S89>关于武技签到<#INS/>

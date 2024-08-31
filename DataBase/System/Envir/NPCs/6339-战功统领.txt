@@ -1,0 +1,5 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+阁下可在我这里兑换一些不错的道具，不妨来看看。<#UI:Shop>军机通宝商店<#UI/><#UI:OpenMilitaryOrderPanel>战功系统<#UI/>

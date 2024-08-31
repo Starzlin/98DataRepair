@@ -1,0 +1,46 @@
+[@MAIN]
+#IF
+CheckCalc <$MAP> == 185
+#SAY
+<#Dft>
+#ELSESAY
+是否要进入元素王座？<#SO:1>进入元素王座<#SO/>
+
+[@1]
+#IF
+Random 6
+#ACT
+MOVE 119 1010 239 0
+BREAK
+
+#IF
+Random 5
+#ACT
+MOVE 119 1017 277 0
+BREAK
+
+#IF
+Random 4
+#ACT
+MOVE 119 1047 247 0
+BREAK
+
+#IF
+Random 3
+#ACT
+MOVE 119 1031 260 0
+BREAK
+
+#IF
+Random 2
+#ACT
+MOVE 119 1020 249 0
+BREAK
+
+#IF
+Random 1
+#ACT
+MOVE 119 1034 245 0
+BREAK
+
+

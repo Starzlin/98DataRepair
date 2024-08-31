@@ -1,0 +1,83 @@
+[@MAIN]
+#IF
+CheckCalc <$VERSION> < 4
+#ACT
+Break
+#SAY
+该玩法将在魔龙版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+#ACT
+#SAY
+附近有一个充满危险的地下宫殿，我能带着你前去斩妖除魔。<#SO:2>单人进入宫殿长廊<#SO/><#SO:3>购买宫殿长廊双倍经验卷（288万金币）<#SO/>
+
+[@2]
+#IF
+#ACT
+#SAY
+附近有一个充满危险的地下宫殿，我能带着你前去斩妖除魔。<#SO:1>单人 地宫休息区（50万金币）<#SO/><#SO:2>单人 地宫困兽牢笼（75万金币）<#SO/><#SO:3>单人 地宫绝境之地（100万金币）<#SO/><#SO:4>单人 地宫休息区（地宫入场券）<#SO/>
+
+[@2_1]
+#IF
+CheckGold < 500000
+#ACT
+Break
+#SAY
+身上不足[50]万金币，无法进入此地图！
+
+#IF
+#ACT
+TakeGold 500000
+MOVE 67 937 200 0
+GiveBuff 2544
+
+[@2_2]
+#IF
+CheckGold < 750000
+#ACT
+Break
+#SAY
+身上不足[50]万金币，无法进入此地图！
+
+#IF
+#ACT
+TakeGold 750000
+MOVE 67 967 367 0
+GiveBuff 2544
+
+[@2_3]
+#IF
+CheckGold < 1000000
+#ACT
+Break
+#SAY
+身上不足[50]万金币，无法进入此地图！
+
+#IF
+#ACT
+TakeGold 1000000
+MOVE 67 989 214 0
+GiveBuff 2544
+
+[@2_4]
+#IF
+CheckItemIdx 91163 1
+#ACT
+TakeItemIdx 91163 1
+MOVE 67 937 200 0
+GiveBuff 2544
+#ELSESAY
+进入此地图所需[地宫入场券]一张！
+
+[@3]
+#IF
+CheckGold < 2880000
+#ACT
+Break
+#SAY
+身上不足[288]万金币，无法进入此地图！
+
+#IF
+#ACT
+TakeGold 2880000
+GiveItemIdx 803 1 FALSE

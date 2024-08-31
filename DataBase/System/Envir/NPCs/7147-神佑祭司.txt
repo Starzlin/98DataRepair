@@ -1,0 +1,86 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+;随着对神佑的进一步研究，我们发现了更加易于操作的方法，现在使用神佑精华能够对更多的装备进行神佑，如果您有需要的话不妨试试看吧！<#UI:Shop>兑换神佑精华<#UI/><#PC:ITEMSUBTYPE_EQUIP_WEAPON><#PC:1><#UI:OpenEquipLevelUp>开始装备神佑<#UI/><#SO:3>破碎神佑石回收<#SO/><#SO:4>完整神佑石回收<#SO/><#SO:5>神佑精华余烬回收<#SO/><#INS:S101>关于神佑功能<#INS/>
+<#P0:0><#P1:0><#UI:Shop>兑换神佑精华<#UI/><#PC:ITEMSUBTYPE_EQUIP_WEAPON><#PC:1><#UI:OpenEquipLevelUp>开始装备神佑<#UI/><#SO:3>破碎神佑石回收<#SO/><#INS:S101>关于神佑功能<#INS/>
+;<#D>本功能暂时停用，非常抱歉！<#D/>
+
+[@4]
+;#IF
+;#ACT
+;#SAY
+;阁下若愿意将1颗神佑宝石交付于我，我可以给予一定数量的铭文石作为交换，不知意下如何？<#SO:1>换取战士铭文石x1666<#SO/><#SO:1>换取法师铭文石x1666<#SO/><#SO:1>换取道士铭文石x1666<#SO/><#SO:1>换取刺客铭文石x1666<#SO/><#SO:1>换取;弓手铭文石x1666<#SO/><#SO:1>换取龙枪铭文石x1666<#SO/>
+
+[@4_1]
+#IF
+#ACT
+#SAY
+阁下身上似乎并没有神佑宝石啊，请确认。<#SO:1>竟有此事，让我再翻看下包裹<#SO/>
+
+[@3]
+#IF
+#ACT
+#SAY
+<#P0:200><#P1:0>我这里回收破碎的神佑石<BR>每颗可换取【本职业铭文石】x `~，是否确认进行兑换？<#SO:1>兑换<#SO/><#SO:2>取消<#SO/>
+
+[@3_1]
+#IF
+CheckItemIdx 90311 1
+#ACT
+TakeItemIdx 90311 1
+GOTO @破碎神佑石兑换
+#ELSESAY
+<#P0:0><#P1:0><#T:700489>
+
+[@破碎神佑石兑换]
+#IF
+CheckClass 战士
+#ACT
+GiveItem 战士铭文石 200 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+#ACT
+GiveItem 法师铭文石 200 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+#ACT
+GiveItem 刺客铭文石 200 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+#ACT
+GiveItem 道士铭文石 200 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+#ACT
+GiveItem 箭灵铭文石 200 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+#ACT
+GiveItem 龙枪铭文石 200 TRUE
+BREAK
+
+[@5]
+#IF
+#ACT
+#SAY
+<#P0:3000000><#P1:0><#T:700505>
+
+[@5_1]
+#IF
+CheckItemIdx 90313 1
+#ACT
+TakeItemIdx 90313 1
+GiveGold 3000000
+#ELSESAY
+阁下身上似乎并没有神佑精华余烬啊，请仔细确认下吧。<#SO:1>知道了<#SO/>

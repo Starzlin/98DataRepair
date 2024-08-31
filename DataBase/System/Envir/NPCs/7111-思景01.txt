@@ -1,0 +1,86 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:710041>
+
+[@1]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:710047>
+
+[@1_1]
+#IF
+HasBagSpace < 3
+#ACT
+GlobalMessage "背包空格不足[3]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 90226 2
+#ACT
+TakeItemIdx 90226 2
+GiveItemIdx 413 3
+TopMessage "兑换成功，获得疗伤药包*3" FALSE
+GOTO @1
+;#SAY
+;<#P0:0><#P1:0><#T:710048>
+#ELSESAY
+<#P0:0><#P1:0><#T:710044>
+
+[@2]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:710049>
+
+[@2_2]
+#IF
+CheckCalc <$VIP> == 0
+#ACT
+BREAK
+#SAY
+<#P0:0><#P1:0><#T:710454>
+
+#IF
+CheckCalc <$VIP> == 3
+#ACT
+BREAK
+#SAY
+<#P0:0><#P1:0><#T:710454>
+
+#IF
+CheckCalc <$VIP> == 6
+#ACT
+BREAK
+#SAY
+<#P0:0><#P1:0><#T:710454>
+
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#P0:1><#P1:0><#T:990631>
+
+#IF
+CHECKGOLD < 50000
+#ACT
+BREAK
+#SAY
+<#P0:50000><#P1:0><#T:50155>
+
+#IF
+#ACT
+TakeGold 50000
+GiveItemIdx 413 1
+TopMessage "兑换成功，获得疗伤药包*1" FALSE
+GOTO @2
+
+[@3]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:710046>
+

@@ -1,0 +1,38 @@
+[@MAIN]
+#IF
+CheckCalc <$MAP> == 147
+#SAY
+<#Dft>
+#ELSESAY
+是否要进入牛魔大厅？<#SO:1>进入牛魔大厅<#SO/>
+
+[@1]
+#IF
+Random 5
+#ACT
+MOVE 66 1055 201 0
+BREAK
+
+#IF
+Random 4
+#ACT
+MOVE 66 1065 190 0
+BREAK
+
+#IF
+Random 3
+#ACT
+MOVE 66 1054 189 0
+BREAK
+
+#IF
+Random 2
+#ACT
+MOVE 66 1048 194 0
+BREAK
+
+#IF
+Random 1
+#ACT
+MOVE 66 1058 184 0
+BREAK

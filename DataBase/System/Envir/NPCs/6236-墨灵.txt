@@ -1,0 +1,3120 @@
+[@MAIN]
+#IF
+#ACT
+Break
+#SAY
+<#D>英雄们可以在我这里使用不同的藏宝图兑换雷霆，光芒，烈焰、风行、玄冰、天诛系列套装。请选择您要兑换的套装。<#D/><#SO:1>战士雷霆套装<#SO/><#SO:2>道士光芒套装<#SO/><#SO:3>法师烈焰套装<#SO/><#SO:4>刺客风行套装<#SO/><#SO:5>弓手玄冰套装<#SO/><#SO:6>龙枪天诛套装<#SO/>
+
+;===================================================================================================================
+;战士雷霆套装
+[@1]
+#IF
+#ACT
+Break
+#SAY
+<#D>英雄您是要兑换雷霆套装装备还是雷霆套装首饰？<#D/><#SO:1>我要兑换雷霆装备<#SO/><#SO:2>我要兑换雷霆首饰<#SO/>
+
+[@1_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装装备部件。<#D/><#SO:1>我要兑换雷霆战甲(男)<#SO/><#SO:2>我要兑换雷霆战甲(女)<#SO/><#SO:3>我要兑换雷霆腰带<#SO/><#SO:4>我要兑换雷霆战靴<#SO/>
+
+[@1_1_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换雷霆战甲(男)需要“雷霆战甲男宝图一”至“雷霆战甲男宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换雷霆战甲(男)<#SO/>
+
+[@1_1_1_1]
+#IF
+Not CheckItemIdx 113001 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲男宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113002 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲男宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113003 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲男宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113004 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲男宝图四 ]<#D/>
+
+#IF
+Not CheckItemIdx 113005 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲男宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113006 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲男宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113007 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲男宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113008 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲男宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113001 1
+CheckItemIdx 113002 1
+CheckItemIdx 113003 1
+CheckItemIdx 113004 1
+CheckItemIdx 113005 1
+CheckItemIdx 113006 1
+CheckItemIdx 113007 1
+CheckItemIdx 113008 1
+#ACT
+TakeItemIdx 113001 1
+TakeItemIdx 113002 1
+TakeItemIdx 113003 1
+TakeItemIdx 113004 1
+TakeItemIdx 113005 1
+TakeItemIdx 113006 1
+TakeItemIdx 113007 1
+TakeItemIdx 113008 1
+GiveItemIdx 99980713 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@1_1_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换雷霆战甲(女)需要“雷霆战甲女宝图一”至“雷霆战甲女宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换雷霆战甲(女)<#SO/>
+
+[@1_1_2_1]
+#IF
+Not CheckItemIdx 113009 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲女宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113010 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲女宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113011 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲女宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113012 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲女宝图四 ]<#D/>
+
+#IF
+Not CheckItemIdx 113013 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲女宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113014 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲女宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113015 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲女宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113016 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战甲女宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113009 1
+CheckItemIdx 113010 1
+CheckItemIdx 113011 1
+CheckItemIdx 113012 1
+CheckItemIdx 113013 1
+CheckItemIdx 113014 1
+CheckItemIdx 113015 1
+CheckItemIdx 113016 1
+#ACT
+TakeItemIdx 113009 1
+TakeItemIdx 113010 1
+TakeItemIdx 113011 1
+TakeItemIdx 113012 1
+TakeItemIdx 113013 1
+TakeItemIdx 113014 1
+TakeItemIdx 113015 1
+TakeItemIdx 113016 1
+GiveItemIdx 99990713 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@1_1_3]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换雷霆腰带需要“雷霆腰带宝图一”至“雷霆腰带宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换雷霆腰带<#SO/>
+
+[@1_1_3_1]
+#IF
+Not CheckItemIdx 113085 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆腰带宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113086 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆腰带宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113087 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆腰带宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113088 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆腰带宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113085 1
+CheckItemIdx 113086 1
+CheckItemIdx 113087 1
+CheckItemIdx 113088 1
+#ACT
+TakeItemIdx 113085 1
+TakeItemIdx 113086 1
+TakeItemIdx 113087 1
+TakeItemIdx 113088 1
+GiveItemIdx 99990715 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@1_1_4]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换雷霆战靴需要“雷霆战靴宝图一”至“雷霆战靴宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换雷霆战靴<#SO/>
+
+[@1_1_4_1]
+#IF
+Not CheckItemIdx 113097 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战靴宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113098 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战靴宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113099 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战靴宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113100 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战靴宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113097 1
+CheckItemIdx 113098 1
+CheckItemIdx 113099 1
+CheckItemIdx 113100 1
+#ACT
+TakeItemIdx 113097 1
+TakeItemIdx 113098 1
+TakeItemIdx 113099 1
+TakeItemIdx 113100 1
+GiveItemIdx 99990717 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@1_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装首饰部件。<#D/><#SO:1>我要兑换雷霆项链<#SO/><#SO:2>我要兑换雷霆护腕<#SO/><#SO:3>我要兑换雷霆战戒<#SO/>
+
+[@1_2_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换雷霆项链需要“雷霆项链宝图一”至“雷霆项链宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换雷霆项链<#SO/>
+
+[@1_2_1_1]
+#IF
+Not CheckItemIdx 113049 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆项链宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113050 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆项链宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113051 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆项链宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113052 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆项链宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113049 1
+CheckItemIdx 113050 1
+CheckItemIdx 113051 1
+CheckItemIdx 113052 1
+#ACT
+TakeItemIdx 113049 1
+TakeItemIdx 113050 1
+TakeItemIdx 113051 1
+TakeItemIdx 113052 1
+GiveItemIdx 99920032 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+[@1_2_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换雷霆护腕需要“雷霆护腕宝图一”至“雷霆护腕宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换雷霆护腕<#SO/>
+
+[@1_2_2_1]
+#IF
+Not CheckItemIdx 113073 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆护腕宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113074 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆护腕宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113075 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆护腕宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113076 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆护腕宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113073 1
+CheckItemIdx 113074 1
+CheckItemIdx 113075 1
+CheckItemIdx 113076 1
+#ACT
+TakeItemIdx 113073 1
+TakeItemIdx 113074 1
+TakeItemIdx 113075 1
+TakeItemIdx 113076 1
+GiveItemIdx 99940030 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@1_2_3]
+#IF
+#ACT
+Break
+#SAY
+<#D>换雷霆战戒需要“雷霆战戒宝图一”至“雷霆战戒宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换雷霆战戒<#SO/>
+
+[@1_2_3_1]
+#IF
+Not CheckItemIdx 113061 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战戒宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113062 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战戒宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113063 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战戒宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113064 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 雷霆战戒宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113061 1
+CheckItemIdx 113062 1
+CheckItemIdx 113063 1
+CheckItemIdx 113064 1
+#ACT
+TakeItemIdx 113061 1
+TakeItemIdx 113062 1
+TakeItemIdx 113063 1
+TakeItemIdx 113064 1
+GiveItemIdx 99930038 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+
+
+;===================================================================================================================
+;道士光芒套装
+[@2]
+#IF
+#ACT
+Break
+#SAY
+<#D>英雄您是要兑换光芒套装装备还是光芒套装首饰？<#D/><#SO:1>我要兑换光芒装备<#SO/><#SO:2>我要兑换光芒首饰<#SO/>
+
+[@2_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装装备部件。<#D/><#SO:1>我要兑换光芒道袍(男)<#SO/><#SO:2>我要兑换光芒道袍(女)<#SO/><#SO:3>我要兑换光芒腰带<#SO/><#SO:4>我要兑换光芒道靴<#SO/>
+[@2_1_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换光芒道袍(男)需要“光芒道袍(男)宝图一”至“光芒道袍男宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换光芒道袍(男)<#SO/>
+
+[@2_1_1_1]
+#IF
+Not CheckItemIdx 113033 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍男宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113034 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍男宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113035 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍男宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113036 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍男宝图四 ]<#D/>
+
+#IF
+Not CheckItemIdx 113037 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍男宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113038 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍男宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113039 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍男宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113040 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍男宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113033 1
+CheckItemIdx 113034 1
+CheckItemIdx 113035 1
+CheckItemIdx 113036 1
+CheckItemIdx 113037 1
+CheckItemIdx 113038 1
+CheckItemIdx 113039 1
+CheckItemIdx 113040 1
+#ACT
+TakeItemIdx 113033 1
+TakeItemIdx 113034 1
+TakeItemIdx 113035 1
+TakeItemIdx 113036 1
+TakeItemIdx 113037 1
+TakeItemIdx 113038 1
+TakeItemIdx 113039 1
+TakeItemIdx 113040 1
+GiveItemIdx 99980733 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@2_1_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换光芒道袍(女)需要“光芒道袍女宝图一”至“光芒道袍女宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换光芒道袍(女)<#SO/>
+
+[@2_1_2_1]
+#IF
+Not CheckItemIdx 113041 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍女宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113042 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍女宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113043 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍女宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113044 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍女宝图四 ]<#D/>
+
+#IF
+Not CheckItemIdx 113045 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍女宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113046 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍女宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113047 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍女宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113048 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道袍女宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113041 1
+CheckItemIdx 113042 1
+CheckItemIdx 113043 1
+CheckItemIdx 113044 1
+CheckItemIdx 113045 1
+CheckItemIdx 113046 1
+CheckItemIdx 113047 1
+CheckItemIdx 113048 1
+#ACT
+TakeItemIdx 113041 1
+TakeItemIdx 113042 1
+TakeItemIdx 113043 1
+TakeItemIdx 113044 1
+TakeItemIdx 113045 1
+TakeItemIdx 113046 1
+TakeItemIdx 113047 1
+TakeItemIdx 113048 1
+GiveItemIdx 99990733 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+[@2_1_3]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换光芒腰带需要“光芒腰带宝图一”至“光芒腰带宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换光芒腰带<#SO/>
+
+[@2_1_3_1]
+#IF
+Not CheckItemIdx 113093 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒腰带宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113094 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒腰带宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113095 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒腰带宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113096 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒腰带宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113093 1
+CheckItemIdx 113094 1
+CheckItemIdx 113095 1
+CheckItemIdx 113096 1
+#ACT
+TakeItemIdx 113093 1
+TakeItemIdx 113094 1
+TakeItemIdx 113095 1
+TakeItemIdx 113096 1
+GiveItemIdx 99990735 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@2_1_4]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换光芒道靴需要“光芒道靴宝图一”至“光芒道靴宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换光芒道靴<#SO/>
+
+[@2_1_4_1]
+#IF
+Not CheckItemIdx 113105 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道靴宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113106 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道靴宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113107 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道靴宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113108 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道靴宝图 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113105 1
+CheckItemIdx 113106 1
+CheckItemIdx 113107 1
+CheckItemIdx 113108 1
+#ACT
+TakeItemIdx 113105 1
+TakeItemIdx 113106 1
+TakeItemIdx 113107 1
+TakeItemIdx 113108 1
+GiveItemIdx 99990737 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@2_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装首饰部件。<#D/><#SO:1>我要兑换光芒项链<#SO/><#SO:2>我要兑换光芒护腕<#SO/><#SO:3>我要兑换光芒道戒<#SO/>
+
+[@2_2_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换光芒项链需要“光芒项链宝图一”至“光芒项链宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换光芒项链<#SO/>
+
+[@2_2_1_1]
+#IF
+Not CheckItemIdx 113057 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒项链宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113058 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒项链宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113059 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒项链宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113060 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒项链宝图 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113057 1
+CheckItemIdx 113058 1
+CheckItemIdx 113059 1
+CheckItemIdx 113060 1
+#ACT
+TakeItemIdx 113057 1
+TakeItemIdx 113058 1
+TakeItemIdx 113059 1
+TakeItemIdx 113060 1
+GiveItemIdx 99920034 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@2_2_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换光芒护腕需要“光芒护腕宝图一”至“光芒护腕宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换光芒护腕<#SO/>
+[@2_2_2_1]
+#IF
+Not CheckItemIdx 113081 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒护腕宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113082 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒护腕宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113083 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒护腕宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113084 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒护腕宝图 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113081 1
+CheckItemIdx 113082 1
+CheckItemIdx 113083 1
+CheckItemIdx 113084 1
+#ACT
+TakeItemIdx 113081 1
+TakeItemIdx 113082 1
+TakeItemIdx 113083 1
+TakeItemIdx 113084 1
+GiveItemIdx 99940032 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@2_2_3]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换光芒道戒需要“光芒道戒宝图一”至“光芒道戒宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换光芒道戒<#SO/>
+[@2_2_3_1]
+#IF
+Not CheckItemIdx 113069 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道戒宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113070 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道戒宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113071 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道戒宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113072 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 光芒道戒宝图 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113069 1
+CheckItemIdx 113070 1
+CheckItemIdx 113071 1
+CheckItemIdx 113072 1
+#ACT
+TakeItemIdx 113069 1
+TakeItemIdx 113070 1
+TakeItemIdx 113071 1
+TakeItemIdx 113072 1
+GiveItemIdx 99930040 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+;===================================================================================================================
+;法师烈焰套装
+[@3]
+#IF
+#ACT
+Break
+#SAY
+<#D>英雄您是要兑换烈焰套装装备还是烈焰套装首饰？<#D/><#SO:1>我要兑换烈焰装备<#SO/><#SO:2>我要兑换烈焰首饰<#SO/>
+
+[@3_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装装备部件。<#D/><#SO:1>我要兑换烈焰魔衣(男)<#SO/><#SO:2>我要兑换烈焰魔衣(女)<#SO/><#SO:3>我要兑换烈焰腰带<#SO/><#SO:4>我要兑换烈焰魔靴<#SO/>
+
+[@3_1_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换烈焰魔衣(男)需要“烈焰魔衣男宝图一”至“烈焰魔衣男宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换烈焰魔衣(男)<#SO/>
+
+[@3_1_1_1]
+#IF
+Not CheckItemIdx 113017 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣男宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113018 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣男宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113019 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣男宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113020 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣男宝图四 ]<#D/>
+
+#IF
+Not CheckItemIdx 113021 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣男宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113022 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣男宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113023 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣男宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113024 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣男宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113017 1
+CheckItemIdx 113018 1
+CheckItemIdx 113019 1
+CheckItemIdx 113020 1
+CheckItemIdx 113021 1
+CheckItemIdx 113022 1
+CheckItemIdx 113023 1
+CheckItemIdx 113024 1
+#ACT
+TakeItemIdx 113017 1
+TakeItemIdx 113018 1
+TakeItemIdx 113019 1
+TakeItemIdx 113020 1
+TakeItemIdx 113021 1
+TakeItemIdx 113022 1
+TakeItemIdx 113023 1
+TakeItemIdx 113024 1
+GiveItemIdx 99980723 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+[@3_1_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换烈焰魔衣(女)需要“烈焰魔衣女宝图一”至“烈焰魔衣女宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换烈焰魔衣(女)<#SO/>
+
+[@3_1_2_1]
+#IF
+Not CheckItemIdx 113025 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣女宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113026 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣女宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113027 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣女宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113028 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣女宝图四 ]<#D/>
+
+#IF
+Not CheckItemIdx 113029 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣女宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113030 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣女宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113031 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣女宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113032 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔衣女宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113025 1
+CheckItemIdx 113026 1
+CheckItemIdx 113027 1
+CheckItemIdx 113028 1
+CheckItemIdx 113029 1
+CheckItemIdx 113030 1
+CheckItemIdx 113031 1
+CheckItemIdx 113032 1
+#ACT
+TakeItemIdx 113025 1
+TakeItemIdx 113026 1
+TakeItemIdx 113027 1
+TakeItemIdx 113028 1
+TakeItemIdx 113029 1
+TakeItemIdx 113030 1
+TakeItemIdx 113031 1
+TakeItemIdx 113032 1
+GiveItemIdx 99990723 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+[@3_1_3]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换烈焰腰带需要“烈焰腰带宝图一”至“烈焰腰带宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换烈焰腰带<#SO/>
+
+[@3_1_3_1]
+#IF
+Not CheckItemIdx 113089 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰腰带宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113090 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰腰带宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113091 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰腰带宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113092 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰腰带宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113089 1
+CheckItemIdx 113090 1
+CheckItemIdx 113091 1
+CheckItemIdx 113092 1
+#ACT
+TakeItemIdx 113089 1
+TakeItemIdx 113090 1
+TakeItemIdx 113091 1
+TakeItemIdx 113092 1
+GiveItemIdx 99990725 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@3_1_4]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换烈焰魔靴需要“烈焰魔靴宝图一”至“烈焰魔靴宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换烈焰魔靴<#SO/>
+
+[@3_1_4_1]
+#IF
+Not CheckItemIdx 113101 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔靴宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113102 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔靴宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113103 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔靴宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113104 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔靴宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113101 1
+CheckItemIdx 113102 1
+CheckItemIdx 113103 1
+CheckItemIdx 113104 1
+#ACT
+TakeItemIdx 113101 1
+TakeItemIdx 113102 1
+TakeItemIdx 113103 1
+TakeItemIdx 113104 1
+GiveItemIdx 99990727 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@3_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装首饰部件。<#D/><#SO:1>我要兑换烈焰项链<#SO/><#SO:2>我要兑换烈焰护腕<#SO/><#SO:3>我要兑换烈焰魔戒<#SO/>
+
+[@3_2_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换烈焰项链需要“烈焰项链宝图一”至“烈焰项链宝图四”共四个宝图才能成功兑换，是否确认兑换？</#D/><#SO:1>确认兑换烈焰项链<#SO/>
+
+[@3_2_1_1]
+#IF
+Not CheckItemIdx 113053 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰项链宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113054 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰项链宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113055 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰项链宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113056 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰项链宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113053 1
+CheckItemIdx 113054 1
+CheckItemIdx 113055 1
+CheckItemIdx 113056 1
+#ACT
+TakeItemIdx 113053 1
+TakeItemIdx 113054 1
+TakeItemIdx 113055 1
+TakeItemIdx 113056 1
+GiveItemIdx 99920033 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@3_2_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换烈焰护腕需要“烈焰护腕宝图一”至“烈焰护腕宝图四”共四个宝图才能成功兑换，是否确认兑换？</#D/><#SO:1>确认兑换烈焰护腕<#SO/>
+
+[@3_2_2_1]
+#IF
+Not CheckItemIdx 113077 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰护腕宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113078 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰护腕宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113079 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰护腕宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113080 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰护腕宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113077 1
+CheckItemIdx 113078 1
+CheckItemIdx 113079 1
+CheckItemIdx 113080 1
+#ACT
+TakeItemIdx 113077 1
+TakeItemIdx 113078 1
+TakeItemIdx 113079 1
+TakeItemIdx 113080 1
+GiveItemIdx 99940031 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+[@3_2_3]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换烈焰魔戒需要“烈焰魔戒宝图一”至“烈焰魔戒宝图四”共四个宝图才能成功兑换，是否确认兑换？</#D/><#SO:1>确认兑换烈焰魔戒<#SO/>
+
+[@3_2_3_1]
+#IF
+Not CheckItemIdx 113065 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔戒宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113066 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔戒宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113067 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔戒宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113068 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 烈焰魔戒宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113065 1
+CheckItemIdx 113066 1
+CheckItemIdx 113067 1
+CheckItemIdx 113068 1
+#ACT
+TakeItemIdx 113065 1
+TakeItemIdx 113066 1
+TakeItemIdx 113067 1
+TakeItemIdx 113068 1
+GiveItemIdx 99930039 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+;===================================================================================================================
+
+;刺客风行套装
+[@4]
+#IF
+#ACT
+Break
+#SAY
+<#D>英雄您是要兑换风行套装装备还是风行套装首饰？<#D/><#SO:1>我要兑换风行装备<#SO/><#SO:2>我要兑换风行首饰<#SO/>
+
+[@4_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装装备部件。<#D/><#SO:1>我要兑换风行盾甲(男)<#SO/><#SO:2>我要兑换风行盾甲(女)<#SO/><#SO:3>我要兑换风行腰带<#SO/><#SO:4>我要兑换风行灵靴<#SO/>
+
+[@4_1_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换风行盾甲(男)需要“风行盾甲男宝图一”至“风行盾甲男宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换风行盾甲(男)<#SO/>
+
+[@4_1_1_1]
+#IF
+Not CheckItemIdx 113109 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲男宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113110 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲男宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113111 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲男宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113112 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲男宝图四 ]<#D/>
+
+#IF
+Not CheckItemIdx 113113 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲男宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113114 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲男宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113115 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲男宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113116 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲男宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113109 1
+CheckItemIdx 113110 1
+CheckItemIdx 113111 1
+CheckItemIdx 113112 1
+CheckItemIdx 113113 1
+CheckItemIdx 113114 1
+CheckItemIdx 113115 1
+CheckItemIdx 113116 1
+#ACT
+TakeItemIdx 113109 1
+TakeItemIdx 113110 1
+TakeItemIdx 113111 1
+TakeItemIdx 113112 1
+TakeItemIdx 113113 1
+TakeItemIdx 113114 1
+TakeItemIdx 113115 1
+TakeItemIdx 113116 1
+GiveItemIdx 99980743 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@4_1_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换风行盾甲(女)需要“风行盾甲女宝图一”至“风行盾甲女宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换风行盾甲(女)<#SO/>
+
+[@4_1_2_1]
+#IF
+Not CheckItemIdx 113117 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲女宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113118 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲女宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113119 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲女宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113120 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲女宝图四 ]<#D/>
+
+#IF
+Not CheckItemIdx 113121 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲女宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113122 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲女宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113123 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲女宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113124 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行盾甲女宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113117 1
+CheckItemIdx 113118 1
+CheckItemIdx 113119 1
+CheckItemIdx 113120 1
+CheckItemIdx 113121 1
+CheckItemIdx 113122 1
+CheckItemIdx 113123 1
+CheckItemIdx 113124 1
+#ACT
+TakeItemIdx 113117 1
+TakeItemIdx 113118 1
+TakeItemIdx 113119 1
+TakeItemIdx 113120 1
+TakeItemIdx 113121 1
+TakeItemIdx 113122 1
+TakeItemIdx 113123 1
+TakeItemIdx 113124 1
+GiveItemIdx 99990743 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@4_1_3]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换风行腰带需要“风行腰带宝图一”至“风行腰带宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换风行腰带<#SO/>
+
+[@4_1_3_1]
+#IF
+Not CheckItemIdx 113137 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行腰带宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113138 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行腰带宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113139 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行腰带宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113140 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行腰带宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113137 1
+CheckItemIdx 113138 1
+CheckItemIdx 113139 1
+CheckItemIdx 113140 1
+#ACT
+TakeItemIdx 113137 1
+TakeItemIdx 113138 1
+TakeItemIdx 113139 1
+TakeItemIdx 113140 1
+GiveItemIdx 99990745 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@4_1_4]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换风行灵靴需要“风行灵靴宝图一”至“风行灵靴宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换风行灵靴<#SO/>
+
+[@4_1_4_1]
+#IF
+Not CheckItemIdx 113141 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行灵靴宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113142 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行灵靴宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113143 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行灵靴宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113144 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行灵靴宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113141 1
+CheckItemIdx 113142 1
+CheckItemIdx 113143 1
+CheckItemIdx 113144 1
+#ACT
+TakeItemIdx 113141 1
+TakeItemIdx 113142 1
+TakeItemIdx 113143 1
+TakeItemIdx 113144 1
+GiveItemIdx 99990747 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@4_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装首饰部件。<#D/><#SO:1>我要兑换风行项链<#SO/><#SO:2>我要兑换风行护腕<#SO/><#SO:3>我要兑换风行暗戒<#SO/>
+
+[@4_2_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换风行项链需要“风行项链宝图一”至“风行项链宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换风行项链<#SO/>
+
+[@4_2_1_1]
+#IF
+Not CheckItemIdx 113125 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行项链宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113126 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行项链宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113127 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行项链宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113128 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行项链宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113125 1
+CheckItemIdx 113126 1
+CheckItemIdx 113127 1
+CheckItemIdx 113128 1
+#ACT
+TakeItemIdx 113125 1
+TakeItemIdx 113126 1
+TakeItemIdx 113127 1
+TakeItemIdx 113128 1
+GiveItemIdx 99920047 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@4_2_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换风行护腕需要“风行护腕宝图一”至“风行护腕宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换风行护腕<#SO/>
+
+[@4_2_2_1]
+#IF
+Not CheckItemIdx 113133 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行护腕宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113134 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行护腕宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113135 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行护腕宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113136 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行护腕宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113133 1
+CheckItemIdx 113134 1
+CheckItemIdx 113135 1
+CheckItemIdx 113136 1
+#ACT
+TakeItemIdx 113133 1
+TakeItemIdx 113134 1
+TakeItemIdx 113135 1
+TakeItemIdx 113136 1
+GiveItemIdx 99940040 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@4_2_3]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换风行暗戒需要“风行暗戒宝图一”至“风行暗戒宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换风行暗戒<#SO/>
+
+[@4_2_3_1]
+#IF
+Not CheckItemIdx 113129 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行暗戒宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113130 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行暗戒宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113131 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行暗戒宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113132 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 风行暗戒宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113129 1
+CheckItemIdx 113130 1
+CheckItemIdx 113131 1
+CheckItemIdx 113132 1
+#ACT
+TakeItemIdx 113129 1
+TakeItemIdx 113130 1
+TakeItemIdx 113131 1
+TakeItemIdx 113132 1
+GiveItemIdx 99930051 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+;===================================================================================================================
+;战士雷霆套装
+[@5]
+#IF
+#ACT
+Break
+#SAY
+<#D>英雄您是要兑换玄冰套装装备还是玄冰套装首饰？<#D/><#SO:1>我要兑换玄冰装备<#SO/><#SO:2>我要兑换玄冰首饰<#SO/>
+
+;我要兑换玄冰装备
+[@5_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装装备部件。<#D/><#SO:1>我要兑换玄冰战甲(男)<#SO/><#SO:2>我要兑换玄冰战甲(女)<#SO/><#SO:3>我要兑换玄冰腰带<#SO/><#SO:4>我要兑换玄冰猎靴<#SO/>
+
+;我要兑换玄冰战甲(男)
+[@5_1_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换玄冰战甲(男)需要“玄冰战甲男宝图一”至“玄冰战甲男宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换玄冰战甲(男)<#SO/>
+
+[@5_1_1_1]
+#IF
+Not CheckItemIdx 113145 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲男宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113146 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲男宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113147 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲男宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113148 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲男宝图四 ]<#D/>
+
+#IF
+Not CheckItemIdx 113149 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲男宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113150 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲男宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113151 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲男宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113152 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲男宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113145 1
+CheckItemIdx 113146 1
+CheckItemIdx 113147 1
+CheckItemIdx 113148 1
+CheckItemIdx 113149 1
+CheckItemIdx 113150 1
+CheckItemIdx 113151 1
+CheckItemIdx 113152 1
+#ACT
+TakeItemIdx 113145 1
+TakeItemIdx 113146 1
+TakeItemIdx 113147 1
+TakeItemIdx 113148 1
+TakeItemIdx 113149 1
+TakeItemIdx 113150 1
+TakeItemIdx 113151 1
+TakeItemIdx 113152 1
+GiveItemIdx 99980753 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@5_1_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换玄冰战甲(女)需要“玄冰战甲女宝图一”至“玄冰战甲女宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换玄冰战甲(女)<#SO/>
+
+[@5_1_2_1]
+#IF
+Not CheckItemIdx 113153 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲女宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113154 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲女宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113155 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲女宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113156 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲女宝图四 ]<#D/>
+
+#IF
+Not CheckItemIdx 113157 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲女宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113158 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲女宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113159 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲女宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113160 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰战甲女宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113153 1
+CheckItemIdx 113154 1
+CheckItemIdx 113155 1
+CheckItemIdx 113156 1
+CheckItemIdx 113157 1
+CheckItemIdx 113158 1
+CheckItemIdx 113159 1
+CheckItemIdx 113160 1
+#ACT
+TakeItemIdx 113153 1
+TakeItemIdx 113154 1
+TakeItemIdx 113155 1
+TakeItemIdx 113156 1
+TakeItemIdx 113157 1
+TakeItemIdx 113158 1
+TakeItemIdx 113159 1
+TakeItemIdx 113160 1
+GiveItemIdx 99990753 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@5_1_3]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换玄冰腰带需要“玄冰腰带宝图一”至“玄冰腰带宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换玄冰腰带<#SO/>
+
+[@5_1_3_1]
+#IF
+Not CheckItemIdx 113173 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰腰带宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113174 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰腰带宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113175 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰腰带宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113176 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰腰带宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113173 1
+CheckItemIdx 113174 1
+CheckItemIdx 113175 1
+CheckItemIdx 113176 1
+#ACT
+TakeItemIdx 113173 1
+TakeItemIdx 113174 1
+TakeItemIdx 113175 1
+TakeItemIdx 113176 1
+GiveItemIdx 99990755 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+
+[@5_1_4]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换玄冰猎靴需要“玄冰猎靴宝图一”至“玄冰猎靴宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换玄冰猎靴<#SO/>
+
+[@5_1_4_1]
+#IF
+Not CheckItemIdx 113177 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰猎靴宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113178 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰猎靴宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113179 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰猎靴宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113180 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰猎靴宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113177 1
+CheckItemIdx 113178 1
+CheckItemIdx 113179 1
+CheckItemIdx 113180 1
+#ACT
+TakeItemIdx 113177 1
+TakeItemIdx 113178 1
+TakeItemIdx 113179 1
+TakeItemIdx 113180 1
+GiveItemIdx 99990757 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@5_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装首饰部件。<#D/><#SO:1>我要兑换玄冰项链<#SO/><#SO:2>我要兑换玄冰护腕<#SO/><#SO:3>我要兑换玄冰指环<#SO/>
+
+[@5_2_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换玄冰项链需要“玄冰项链宝图一”至“玄冰项链宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换玄冰项链<#SO/>
+
+[@5_2_1_1]
+#IF
+Not CheckItemIdx 113161 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰项链宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113162 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰项链宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113163 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰项链宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113164 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰项链宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113161 1
+CheckItemIdx 113162 1
+CheckItemIdx 113163 1
+CheckItemIdx 113164 1
+#ACT
+TakeItemIdx 113161 1
+TakeItemIdx 113162 1
+TakeItemIdx 113163 1
+TakeItemIdx 113164 1
+GiveItemIdx 99920076 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@5_2_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换玄冰护腕需要“玄冰护腕宝图一”至“玄冰护腕宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换玄冰护腕<#SO/>
+
+[@5_2_2_1]
+#IF
+Not CheckItemIdx 113169 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰护腕宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113170 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰护腕宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113171 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰护腕宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113172 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰护腕宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113169 1
+CheckItemIdx 113170 1
+CheckItemIdx 113171 1
+CheckItemIdx 113172 1
+#ACT
+TakeItemIdx 113169 1
+TakeItemIdx 113170 1
+TakeItemIdx 113171 1
+TakeItemIdx 113172 1
+GiveItemIdx 99940075 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@5_2_3]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换玄冰指环需要“玄冰指环宝图一”至“玄冰指环宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换玄冰指环<#SO/>
+
+[@5_2_3_1]
+#IF
+Not CheckItemIdx 113165 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰指环宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113166 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰指环宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113167 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰指环宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113168 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 玄冰指环宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113165 1
+CheckItemIdx 113166 1
+CheckItemIdx 113167 1
+CheckItemIdx 113168 1
+#ACT
+TakeItemIdx 113165 1
+TakeItemIdx 113166 1
+TakeItemIdx 113167 1
+TakeItemIdx 113168 1
+GiveItemIdx 99930077 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+;===================================================================================================================
+
+;龙枪天诛套装
+[@6]
+#IF
+#ACT
+Break
+#SAY
+<#D>英雄您是要兑换天诛套装装备还是天诛套装首饰？<#D/><#SO:1>我要兑换天诛装备<#SO/><#SO:2>我要兑换天诛首饰<#SO/>
+
+[@6_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装装备部件。<#D/><#SO:1>我要兑换天诛魔甲(男)<#SO/><#SO:2>我要兑换天诛魔甲(女)<#SO/><#SO:3>我要兑换天诛腰带<#SO/><#SO:4>我要兑换天诛暗靴<#SO/>
+
+
+[@6_1_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换天诛魔甲(男)需要“天诛魔甲男宝图一”至“天诛魔甲男宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换天诛魔甲(男)<#SO/>
+
+[@6_1_1_1]
+
+#IF
+Not CheckItemIdx 113301 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲男宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113302 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲男宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113303 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲男宝图三 ]<#D/>
+
+
+#IF
+Not CheckItemIdx 113304 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲男宝图四 ]<#D/>
+
+
+#IF
+Not CheckItemIdx 113305 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲男宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113306 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲男宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113307 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲男宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113308 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲男宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113301 1
+CheckItemIdx 113302 1
+CheckItemIdx 113303 1
+CheckItemIdx 113304 1
+CheckItemIdx 113305 1
+CheckItemIdx 113306 1
+CheckItemIdx 113307 1
+CheckItemIdx 113308 1
+#ACT
+TakeItemIdx 113301 1
+TakeItemIdx 113302 1
+TakeItemIdx 113303 1
+TakeItemIdx 113304 1
+TakeItemIdx 113305 1
+TakeItemIdx 113306 1
+TakeItemIdx 113307 1
+TakeItemIdx 113308 1
+GiveItemIdx 99980763 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@6_1_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换天诛魔甲(女)需要“天诛魔甲女宝图一”至“天诛魔甲女宝图八”共八个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换天诛魔甲(女)<#SO/>
+
+[@6_1_2_1]
+#IF
+Not CheckItemIdx 113309 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲女宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113310 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲女宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113311 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲女宝图三 ]<#D/>
+
+
+#IF
+Not CheckItemIdx 113312 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲女宝图四 ]<#D/>
+
+
+#IF
+Not CheckItemIdx 113313 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲女宝图五 ]<#D/>
+
+#IF
+Not CheckItemIdx 113314 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲女宝图六 ]<#D/>
+
+#IF
+Not CheckItemIdx 113315 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲女宝图七 ]<#D/>
+
+#IF
+Not CheckItemIdx 113316 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛魔甲女宝图八 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113309 1
+CheckItemIdx 113310 1
+CheckItemIdx 113311 1
+CheckItemIdx 113312 1
+CheckItemIdx 113313 1
+CheckItemIdx 113314 1
+CheckItemIdx 113315 1
+CheckItemIdx 113316 1
+#ACT
+TakeItemIdx 113309 1
+TakeItemIdx 113310 1
+TakeItemIdx 113311 1
+TakeItemIdx 113312 1
+TakeItemIdx 113313 1
+TakeItemIdx 113314 1
+TakeItemIdx 113315 1
+TakeItemIdx 113316 1
+GiveItemIdx 99990763 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@6_1_3]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换天诛腰带需要“天诛腰带宝图一”至“天诛腰带宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换天诛腰带<#SO/>
+
+[@6_1_3_1]
+#IF
+Not CheckItemIdx 113329 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛腰带宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113330 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛腰带宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113331 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛腰带宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113332 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛腰带宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113329 1
+CheckItemIdx 113330 1
+CheckItemIdx 113331 1
+CheckItemIdx 113332 1
+#ACT
+TakeItemIdx 113329 1
+TakeItemIdx 113330 1
+TakeItemIdx 113331 1
+TakeItemIdx 113332 1
+GiveItemIdx 99990765 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+[@6_1_4]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换天诛暗靴需要“天诛暗靴宝图一”至“天诛暗靴宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换天诛暗靴<#SO/>
+
+[@6_1_4_1]
+#IF
+Not CheckItemIdx 113333 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛暗靴宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113334 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛暗靴宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113335 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛暗靴宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113336 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛暗靴宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113333 1
+CheckItemIdx 113334 1
+CheckItemIdx 113335 1
+CheckItemIdx 113336 1
+#ACT
+TakeItemIdx 113333 1
+TakeItemIdx 113334 1
+TakeItemIdx 113335 1
+TakeItemIdx 113336 1
+GiveItemIdx 99990767 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+
+[@6_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>请选择您要兑换的具体套装首饰部件。<#D/><#SO:1>我要兑换天诛项链<#SO/><#SO:2>我要兑换天诛护腕<#SO/><#SO:3>我要兑换天诛血戒<#SO/>
+
+[@6_2_1]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换天诛项链需要“天诛项链宝图一”至“天诛项链宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换天诛项链<#SO/>
+
+[@6_2_1_1]
+#IF
+Not CheckItemIdx 113317 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛项链宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113318 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛项链宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113319 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛项链宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113320 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛项链宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113317 1
+CheckItemIdx 113318 1
+CheckItemIdx 113319 1
+CheckItemIdx 113320 1
+#ACT
+TakeItemIdx 113317 1
+TakeItemIdx 113318 1
+TakeItemIdx 113319 1
+TakeItemIdx 113320 1
+GiveItemIdx 99920086 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@6_2_2]
+#IF
+#ACT
+Break
+#SAY
+<#D>兑换天诛护腕需要“天诛护腕宝图一”至“天诛护腕宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换天诛护腕<#SO/>
+
+[@6_2_2_1]
+#IF
+Not CheckItemIdx 113325 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛护腕宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113326 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛护腕宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113327 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛护腕宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113328 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛护腕宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113325 1
+CheckItemIdx 113326 1
+CheckItemIdx 113327 1
+CheckItemIdx 113328 1
+#ACT
+TakeItemIdx 113325 1
+TakeItemIdx 113326 1
+TakeItemIdx 113327 1
+TakeItemIdx 113328 1
+GiveItemIdx 99940085 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+[@6_2_3]
+#IF
+#ACT
+#SAY
+<#D>兑换天诛血戒需要“天诛血戒宝图一”至“天诛血戒宝图四”共四个宝图才能成功兑换，是否确认兑换？<#D/><#SO:1>确认兑换天诛血戒<#SO/>
+
+[@6_2_3_1]
+#IF
+Not CheckItemIdx 113321 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛血戒宝图一 ]<#D/>
+
+#IF
+Not CheckItemIdx 113322 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛血戒宝图二 ]<#D/>
+
+#IF
+Not CheckItemIdx 113323 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛血戒宝图三 ]<#D/>
+
+#IF
+Not CheckItemIdx 113324 1
+#ACT
+Break
+#SAY
+<#D>缺少兑换物品 [ 天诛血戒宝图四 ]<#D/>
+
+#IF
+HasBagSpace < 2
+#ACT
+Break
+#SAY
+<#D>当前背包空间不足[2]格子，请先预留两个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 113321 1
+CheckItemIdx 113322 1
+CheckItemIdx 113323 1
+CheckItemIdx 113324 1
+#ACT
+TakeItemIdx 113321 1
+TakeItemIdx 113322 1
+TakeItemIdx 113323 1
+TakeItemIdx 113324 1
+GiveItemIdx 99930087 1
+Break
+#SAY
+恭喜兑换成功。
+#ELSESAY
+兑换所需宝图不足，请集齐后再来兑换。
+
+;===================================================================================================================

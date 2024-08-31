@@ -1,0 +1,51 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+被龙卫擒住的贪婪魔王就关押在此。它有众多分身，每被消灭一个分身，就会掉落一些宝箱。人越多，掉落的宝箱也就越多。想要获得它的财宝，就尽管来消灭它吧。<#SO:1>进入宝库<#SO/><#INS:S20>关于“皇室宝库”<#INS/><#SO:3>取消<#SO/>
+
+[@1]
+#IF
+#ACT
+#SAY
+每周二、四、六的21点，等级达到[25]级的勇士，都可进入宝库1小时，每次进入需要消耗20000金币。<#SO:1>确定进入（需要消耗20000金币）<#SO/><#SO:2>取消<#SO/>
+
+[@1_1]
+#IF
+LEVEL < 25
+#ACT
+Break
+#SAY
+你还太嫩了，你的等级未满[25]级，暂时无法进入。<#D/><#SO:1>确定<#SO/>
+
+#IF
+CheckGold < 20000
+#ACT
+Break
+#SAY
+身上不足[20000]金币，不足以支付报名费用！
+
+#IF
+CheckCalc <$WEEK> == 2
+CheckCalc <$HOUR> == 21
+#ACT
+TakeGold 10000
+MOVE 184 0 0 3
+Break
+
+#IF
+CheckCalc <$WEEK> == 4
+CheckCalc <$HOUR> == 21
+#ACT
+TakeGold 10000
+MOVE 184 0 0 3
+Break
+
+#IF
+CheckCalc <$WEEK> == 6
+CheckCalc <$HOUR> == 21
+#ACT
+TakeGold 10000
+MOVE 184 0 0 3
+#ELSESAY
+还没到时间，年轻人。不要急躁，宝库只在每周二，四，六的21点开放1小时，请在那个时候来。<#SO:1>确定<#SO/>

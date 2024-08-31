@@ -1,0 +1,51 @@
+[@MAIN]
+#IF
+CheckCalc <$VERSION> < 1
+#ACT
+Break
+#SAY
+该玩法将在幽冥海版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+CheckCalc <$HOUR> < 10
+#ACT
+Break
+#SAY
+通往冥海秘窟的裂隙仅在每日10~24点才可进入，请届时再来吧。<#SO:2>知道了<#SO/>
+
+#IF
+#ACT
+#SAY
+据传远处的古船上发现了通往冥海深处的裂隙，前路凶险，阁下若想省去些麻烦，我可助你一臂之力<#SO:1>前往冥海秘窟(消耗10万金币)<#SO/><#SO:2>暂时不要<#SO/>
+
+[@1]
+#IF
+LEVEL < 35
+#ACT
+Break
+#SAY
+等级不足[35]级，无法进入此地图！
+
+#IF
+CheckGold < 100000
+#ACT
+Break
+#SAY
+身上不足[10]万金币，无法进入此地图！
+
+#IF
+HasBuff 46415
+#ACT
+TakeGold 100000
+MOVE 229 1110 553 0
+Break
+
+#IF
+CheckCalc <$STR(J2)> == 0
+#ACT
+TakeGold 100000
+MOV J2 1
+move 229 1110 553 0
+GiveBuff 46415
+#ELSESAY
+您今日已探索过[冥海裂缝]，无法继续探索！

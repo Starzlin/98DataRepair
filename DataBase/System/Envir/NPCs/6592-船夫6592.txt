@@ -1,0 +1,21 @@
+[@MAIN]
+#SAY
+<#Dft>
+;我的船可以带你去白日门城。<#SO:1>坐船去白日门城(50000金币)<#SO/>
+
+
+[@1]
+#IF
+CheckGold < 50000
+#ACT
+Break
+#SAY
+身上不足[50000]金币，无法坐船！
+
+#IF
+CheckCalc <$VERSION> >= 4
+CheckGold > 50000
+#ACT
+TakeGold 50000
+MOVE 93 925 256
+BREAK

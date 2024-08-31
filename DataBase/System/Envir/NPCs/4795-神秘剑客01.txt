@@ -1,0 +1,66 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+武斗场每次开放30分钟，进入武斗场，即可随着时间收获经验。抢占定期刷新的好位置，可以获得更多经验。武斗场在魔龙节点和龙耀节点会大幅提升经验获取效率。另外，在武斗场成功驱逐他人还有额外奖励。<#D/><#SO:1>进入武斗场<#SO/><#INS:S21>关于“经验武斗场”<#INS/><#SO:2>取消<#SO/>
+
+[@1]
+#IF
+#ACT
+#SAY
+每周一、三、五的21点，等级达到[25]级的勇士，都可进入武斗场30分钟，每次进入需要消耗10000金币。<#SO:1>确认进入（10000金币）<#SO/><#SO:2>取消<#SO/>
+
+[@1_1]
+#IF
+LEVEL < 25
+#ACT
+Break
+#SAY
+你还太嫩了，你的等级未满[25]级，暂时无法进入。<#D/><#SO:1>确定<#SO/>
+
+#IF
+CheckGold < 10000
+#ACT
+Break
+#SAY
+身上不足[10000]金币，不足以支付报名费用！<#D/><#SO:1>确定<#SO/>
+
+#IF
+CheckCalc <$WEEK> == 1
+CheckCalc <$HOUR> == 21
+CheckCalc <$MINUTE> < 30
+#ACT
+TakeGold 10000
+MOVE 183 0 0 3
+ChangeSelfVar 220 = <$CURDATE>
+GOTO @检测七天乐
+Break
+
+#IF
+CheckCalc <$WEEK> == 3
+CheckCalc <$HOUR> == 21
+CheckCalc <$MINUTE> < 30
+#ACT
+TakeGold 10000
+MOVE 183 0 0 3
+ChangeSelfVar 220 = <$CURDATE>
+GOTO @检测七天乐
+Break
+
+#IF
+CheckCalc <$WEEK> == 5
+CheckCalc <$HOUR> == 21
+CheckCalc <$MINUTE> < 30
+#ACT
+TakeGold 10000
+MOVE 183 0 0 3
+ChangeSelfVar 220 = <$CURDATE>
+GOTO @检测七天乐
+#ELSESAY
+还未到开放时间，请稍安勿躁。每周一，三，五的21点到21点30分，武斗场都会开放。<#D/><#SO:1>确定<#SO/>
+
+[@检测七天乐]
+#IF
+IsOpenSevenCarnival
+#ACT
+ChangeSevenCarnival 53 + 1

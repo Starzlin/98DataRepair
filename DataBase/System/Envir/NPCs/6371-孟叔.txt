@@ -1,0 +1,4399 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+相传古有一兽，其首有瑞光，脚踏腾云，凡过之处，皆受其灼，吾偶得白泽幼兽数只，有缘人才可领取，能否驾驭，便看君之造化了。<#UI:OpenFilterShop1>购买骑术<#UI/>你好，英雄你现在是否要用多余的坐骑兑换其他的材料<#D/><#SO:1>点击坐骑兑换<#SO/><#SO:2>其他坐骑兑换<#SO/>
+
+
+[@1]
+#IF
+#ACT
+#SAY
+每个顶级坐骑可兑换六职业铸魂精粹10个，兑换六职业武器精粹100个，兑换六职业装备精粹10个。其他普通坐骑可兑换六职业铸魂精粹1个，兑换六职业武器精粹10个，兑换六职业装备精粹1个<#D/><#SO:1>白泽点击兑换<#SO/><#SO:2>熔火龙蜥点击兑换<#SO/><#SO:3>牛魔点击兑换<#SO/><#SO:4>玄虎点击兑换<#SO/><#SO:5>灵兔点击兑换<#SO/><#SO:6>巅峰战熊点击兑换<#SO/>
+
+[@1_1]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@1_1_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@1_1_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@1_1_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+
+[@1_2]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@1_2_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@1_2_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊武器精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@1_2_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+[@1_3]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@1_3_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@1_3_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊武器精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@1_3_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+[@1_4]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@1_4_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@1_4_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊武器精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@1_4_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+[@1_5]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@1_5_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@1_5_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊武器精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@1_5_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+[@1_6]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@1_6_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@1_6_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊武器精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@1_6_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+[@2]
+#IF
+#ACT
+#SAY
+其他普通坐骑可兑换六职业铸魂精粹1个，兑换六职业武器精粹10个，兑换六职业装备精粹1个<#SO:1>追风兑换<#SO/><#SO:2>踏风隼兑换<#SO/><#SO:3>长牙兑换<#SO/><#SO:4>机关木鼠兑换<#SO/><#SO:5>三尾兑换<#SO/><#SO:6>踏云兑换<#SO/><#SO:7>利爪兑换<#SO/>
+
+[@2_1]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@2_1_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@2_1_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@2_1_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+
+[@2_2]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@2_2_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@2_2_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@2_2_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+[@2_3]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@2_3_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@2_3_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@2_3_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+[@2_4]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@2_4_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@2_4_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@2_4_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+[@2_5]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@2_5_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@2_5_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@2_5_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+[@2_6]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@2_6_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@2_6_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@2_6_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+[@2_7]
+#IF
+#ACT
+#SAY
+<#SO:1>兑换六职业铸魂精粹<#SO/><#SO:2>兑换六职业武器精粹<#SO/><#SO:3>兑换六职业装备精粹<#SO/>
+
+[@2_7_1]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战铸魂精粹兑换<#SO/><#SO:2>法神铸魂精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>箭灵铸魂精粹兑换<#SO/><#SO:5>影刺铸魂精粹兑换<#SO/><#SO:6>龙枪铸魂精粹兑换<#SO/>
+
+[@2_7_2]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战武器精粹兑换<#SO/><#SO:2>法神武器精粹兑换<#SO/><#SO:3>天尊铸魂精粹兑换<#SO/><#SO:4>影刺武器精粹兑换<#SO/><#SO:5>箭灵武器精粹兑换<#SO/><#SO:6>龙枪武器精粹兑换<#SO/>
+
+[@2_7_3]
+#IF
+#ACT
+#SAY
+<#SO:1>圣战装备精粹兑换<#SO/><#SO:2>法神装备精粹兑换<#SO/><#SO:3>天尊装备精粹兑换<#SO/><#SO:4>箭灵装备精粹兑换<#SO/><#SO:5>影刺装备精粹兑换<#SO/><#SO:6>龙枪装备精粹兑换<#SO/>
+
+;-----白泽兑换六职业铸魂精粹-----------
+[@1_1_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111105 10
+Break
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+[@1_1_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111106 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+[@1_1_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111107 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+[@1_1_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111116 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+[@1_1_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111108 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+[@1_1_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111306 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+;-----白泽兑换六职业武器精粹-----------
+[@1_1_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111058 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+[@1_1_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111059 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+[@1_1_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111060 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+
+[@1_1_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111078 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+
+[@1_1_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111091 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+
+[@1_1_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  111301 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+;-----白泽兑换六职业装备精粹-----------
+[@1_1_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  110006 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+[@1_1_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  110007 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+[@1_1_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  110008 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+[@1_1_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  110010 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+
+[@1_1_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  110009 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+
+[@1_1_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveItemIdx  110013 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+;--------熔火龙蜥兑换六职业铸魂精粹--------
+
+
+[@1_2_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111105 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111106 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111107 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111116 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111108 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111306 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+;--------熔火龙蜥兑换六职业武器精粹--------
+[@1_2_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111058 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有白泽坐骑不能兑换" FALSE
+
+[@1_2_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111059 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111060 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111078 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111091 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  111301 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+;--------熔火龙蜥兑换六职业武器精粹--------
+[@1_2_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  110006 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  110007 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  110008 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  110010 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  110009 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+[@1_2_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveItemIdx  110013 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有熔火龙蜥坐骑不能兑换" FALSE
+
+;--------牛魔兑换六职业铸魂精粹--------
+
+[@1_3_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111105 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111106 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111107 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111116 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111108 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111306 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+;--------牛魔兑换六职业武器精粹--------
+[@1_3_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111058 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111059 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111060 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111078 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111091 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  111301 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+;--------牛魔兑换六职业装备精粹--------
+[@1_3_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  110006 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  110007 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  110008 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  110010 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  110009 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+[@1_3_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveItemIdx  110013 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有牛魔坐骑不能兑换" FALSE
+
+
+;--------玄虎兑换六职业铸魂精粹--------
+
+[@1_4_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111105 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111106 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111107 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111116 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111108 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111306 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+;--------玄虎兑换六职业武器精粹--------
+[@1_4_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111058 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111059 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111060 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111078 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111091 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  111301 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+;--------玄虎兑换六职业装备精粹--------
+[@1_4_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  110006 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  110007 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  110008 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  110010 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  110009 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+[@1_4_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveItemIdx  110013 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有玄虎坐骑不能兑换" FALSE
+
+
+;--------灵兔兑换六职业铸魂精粹--------
+
+[@1_5_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111105 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111106 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111107 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111116 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111108 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111306 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+;--------灵兔兑换六职业武器精粹--------
+[@1_5_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111058 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111059 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111060 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111078 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111091 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  111301 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+;--------灵兔兑换六职业装备精粹--------
+[@1_5_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  110006 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  110007 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  110008 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  110010 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  110009 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+[@1_5_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveItemIdx  110013 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有灵兔坐骑不能兑换" FALSE
+
+;--------灵巅峰战熊兑换六职业铸魂精粹--------
+
+[@1_6_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111105 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111106 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111107 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111116 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111108 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111306 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+;--------巅峰战熊兑换六职业武器精粹--------
+[@1_6_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111058 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111059 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111060 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111078 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111091 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  111301 100
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+;--------巅峰战熊兑换六职业装备精粹--------
+[@1_6_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  110006 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  110007 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  110008 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  110010 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  110009 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+[@1_6_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveItemIdx  110013 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有巅峰战熊坐骑不能兑换" FALSE
+
+;--------追风兑换六职业铸魂精粹--------
+[@2_1_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111105 1
+Break
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+[@2_1_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111106 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+[@2_1_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111107 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+[@2_1_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111116 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+[@2_1_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111108 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+[@2_1_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111306 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+;-----追风兑换六职业武器精粹-----------
+[@2_1_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111058 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+[@2_1_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111059 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+[@2_1_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111060 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+
+[@2_1_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111078 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+
+[@2_1_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111091 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+
+[@2_1_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111301 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+;-----追风兑换六职业装备精粹-----------
+[@2_1_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  110006 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+[@2_1_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  110007 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+[@2_1_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  110008 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+[@2_1_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  110010 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+
+[@2_1_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  110009 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+
+[@2_1_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  110013 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有追风坐骑不能兑换" FALSE
+
+;--------踏风隼兑换六职业铸魂精粹--------
+
+[@2_2_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  111105 1
+Break
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+[@2_2_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  111106 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+[@2_2_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  111107 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+[@2_2_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  111116 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+[@2_2_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  111108 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+[@2_2_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  111306 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+;-----踏风隼兑换六职业武器精粹-----------
+[@2_2_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  111058 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+[@2_2_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  111059 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+[@2_2_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  111060 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+
+[@2_2_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  111078 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+
+[@2_2_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveItemIdx  111091 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+
+[@2_2_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  111301 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+;-----踏风隼兑换六职业装备精粹-----------
+[@2_2_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  110006 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+[@2_2_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  110007 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+[@2_2_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  110008 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+[@2_2_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  110010 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+
+[@2_2_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  110009 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+
+[@2_2_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveItemIdx  110013 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏风隼坐骑不能兑换" FALSE
+
+;--------长牙兑换六职业铸魂精粹--------
+
+[@2_3_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111105 1
+Break
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+[@2_3_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111106 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+[@2_3_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111107 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+[@2_3_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111116 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+[@2_3_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111108 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+[@2_3_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111306 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+;-----长牙兑换六职业武器精粹-----------
+[@2_3_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111058 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+[@2_3_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111059 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+[@2_3_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111060 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+
+[@2_3_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111078 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+
+[@2_3_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111091 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+
+[@2_3_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  111301 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+;-----长牙兑换六职业装备精粹-----------
+[@2_3_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  110006 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+[@2_3_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  110007 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+[@2_3_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  110008 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+[@2_3_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  110010 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+
+[@2_3_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  110009 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+
+[@2_3_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveItemIdx  110013 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有长牙坐骑不能兑换" FALSE
+
+;--------机关木鼠兑换六职业铸魂精粹--------
+[@2_4_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111105 1
+Break
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+[@2_4_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111106 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+[@2_4_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111107 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+[@2_4_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111116 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+[@2_4_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111108 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+[@2_4_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111306 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+;-----机关木鼠兑换六职业武器精粹-----------
+[@2_4_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111058 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+[@2_4_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111059 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+[@2_4_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111060 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+
+[@2_4_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111078 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+
+[@2_4_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111091 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+
+[@2_4_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111301 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+;-----机关木鼠兑换六职业装备精粹-----------
+[@2_4_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  110006 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+[@2_4_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  110007 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+[@2_4_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  110008 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+[@2_4_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  110010 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+
+[@2_4_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  110009 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+
+[@2_4_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  110013 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有机关木鼠坐骑不能兑换" FALSE
+
+;--------踏云三尾兑换六职业铸魂精粹--------
+[@2_5_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  111105 1
+Break
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+[@2_5_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111106 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+[@2_5_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111107 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+[@2_5_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveItemIdx  111116 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+[@2_5_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  111108 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+[@2_5_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  111306 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+;-----三尾换六职业武器精粹-----------
+[@2_5_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  111058 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+[@2_5_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  111059 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+[@2_5_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  111060 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+
+[@2_5_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  111078 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾鼠坐骑不能兑换" FALSE
+
+
+[@2_5_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  111091 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+
+[@2_5_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  111301 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+;-----三尾兑换六职业装备精粹-----------
+[@2_5_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  110006 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+[@2_5_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  110007 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+[@2_5_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  110008 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+[@2_5_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  110010 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+
+[@2_5_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  110009 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+
+[@2_5_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveItemIdx  110013 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有三尾坐骑不能兑换" FALSE
+
+;--------踏云兑换六职业铸魂精粹--------
+[@2_6_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111105 1
+Break
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+[@2_6_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111106 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+[@2_6_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111107 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+[@2_6_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111116 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+[@2_6_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111108 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+[@2_6_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111306 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+;-----踏云换六职业武器精粹-----------
+[@2_6_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111058 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+[@2_6_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111059 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+[@2_6_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111060 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+
+[@2_6_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111078 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云不能兑换" FALSE
+
+
+[@2_6_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111091 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+
+[@2_6_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  111301 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+;-----踏云兑换六职业装备精粹-----------
+[@2_6_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  110006 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+[@2_6_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  110007 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+[@2_6_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  110008 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+[@2_6_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  110010 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+
+[@2_6_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  110009 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+
+[@2_6_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveItemIdx  110013 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有踏云坐骑不能兑换" FALSE
+
+;--------利爪兑换六职业铸魂精粹--------
+[@2_7_1_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111105 1
+Break
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+[@2_7_1_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111106 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+[@2_7_1_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111107 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+[@2_7_1_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111116 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+[@2_7_1_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111108 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+[@2_7_1_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111306 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+;-----利爪换六职业武器精粹-----------
+[@2_7_2_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111058 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+[@2_7_2_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111059 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+[@2_7_2_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111060 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+
+[@2_7_2_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111078 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪不能兑换" FALSE
+
+[@2_7_2_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111091 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+[@2_7_2_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  111301 10
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+;-----利爪兑换六职业装备精粹-----------
+[@2_7_3_1]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  110006 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+[@2_7_3_2]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  110007 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+[@2_7_3_3]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  110008 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+[@2_7_3_4]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  110010 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+
+[@2_7_3_5]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  110009 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+
+[@2_7_3_6]
+#IF
+HasBagSpace < 1
+#ACT
+BREAK
+#SAY
+<#D>当前背包空间不足[1]格子，请先预留一个格子在来兑换<#D/>
+
+#IF
+CheckItemIdx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveItemIdx  110013 1
+BREAK
+#ELSEACT
+TopMessage "对不起你没有利爪坐骑不能兑换" FALSE
+
+;--------利爪兑换六职业铸魂精粹--------

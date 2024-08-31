@@ -1,0 +1,91 @@
+[@MAIN]
+#IF
+CheckCalc <$STR(J20)> == 0
+#ACT
+MOV U20 2
+
+#IF
+CheckCalc <$VERSION> < 4
+#ACT
+BREAK
+#SAY
+<#P0:0><#P1:0><#T:666472>
+
+#IF
+CheckCalc <$Map> == 103
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:700103>
+#ELSESAY
+白日门鹰卫发现了一个神秘寺庙遗址，寺庙中珍宝众多，只要给我15万，我就能保护你进入遗落寺庙。寺庙保护时间内不再需要支付额外金币就可以重复挑战遗落寺庙。<br>今日剩余挑战次数：[<$STR(U20)>]。<#SO:1> 前往遗落寺庙休息区（15万金币）<#SO/>
+
+[@1]
+#IF
+CheckCalc <$HOUR> < 10
+#ACT
+BREAK
+#SAY
+<#P0:0><#P1:0><#T:700104>
+
+
+#IF
+LEVEL < 35
+#ACT
+Break
+#SAY
+不好意思，您的等级不足，请到达[35]级以后再来！<#SO:999>知道了<#SO/>
+
+#IF
+HasBuff 2565
+#ACT
+MOVE 103 773 357 0
+BREAK
+
+#IF
+CheckCalc <$STR(J20)> >= 2
+#ACT
+Break
+#SAY
+今天你已经挑战过太多次数了，请改日再来。<#SO:999>知道了<#SO/>
+
+#IF
+CheckGold < 150000
+#ACT
+Break
+#SAY
+身上不足[15]万金币，无法进入此地图！
+#ELSEACT
+MOVE 103 773 357 0
+GiveBuff 2565
+Calc J20 + 1
+Calc U20 - 1
+TakeGold 150000
+
+[@2]
+#IF
+CheckGold > 50000
+#ACT
+TakeGold 50000
+MOVE 103 769 864 0
+#ELSESAY
+<#P0:30><#P1:0><#T:666533>
+
+[@3]
+#IF
+CheckGold > 50000
+#ACT
+TakeGold 50000
+MOVE 103 1280 353 0
+#ELSESAY
+<#P0:30><#P1:0><#T:666533>
+
+[@4]
+#IF
+CheckGold > 150000
+#ACT
+TakeGold 150000
+MOVE 103 1280 864 0
+#ELSESAY
+<#P0:30><#P1:0><#T:666533>
+
+

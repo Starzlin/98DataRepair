@@ -1,0 +1,140 @@
+[@开始高级技能重铸]
+{
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 33018
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 31035
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 32546
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 35006
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 36006
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 32535
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 32547
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 34006
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 36007
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 31036
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 32537
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 35007
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 1000
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 36008
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 75
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 31035,32535,32546,32547,33012,34005,34006,35006,35013,36006,36007 1
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 350
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 35007,32537,34008,31036,36008,33008 1
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+Random 800
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 31038,33015,35008,34010,36009,34008,35010,34010,36010 1
+SendItemRestore <$STR(G1000)>
+Break
+
+#IF
+#ACT
+Calc U599 + 1
+RandomGiveItemIdx 31031,31032,31033,32531,32532,32541,32544,32533,32549,32538,32545,32534,33002,33001,33004,33005,33003,33009,33014,33006,33007,34001,34004,34011,34002,34003,34007,35001,35002,35003,35004,35005,36001,36002,36003,36004,36005 1
+SendItemRestore <$STR(G1000)>
+Break
+
+}
+

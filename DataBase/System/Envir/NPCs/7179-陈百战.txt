@@ -1,0 +1,8 @@
+[@MAIN]
+#IF
+CheckCalc <$VERSION> < 7
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:666476>
+#ELSESAY
+<#P0:0><#P1:0><#T:991083>

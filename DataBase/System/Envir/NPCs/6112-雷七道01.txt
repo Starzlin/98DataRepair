@@ -1,0 +1,73 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+妖塔内镇压着诸多妖王，现在妖塔有些损坏，妖王蠢蠢欲动，你确定想镇压一下吗？老夫能送你进去，至于进入后遇到什么事情，老夫就无能为力了！<br>温馨提示：据说只有拥有[妖兽秘卷]，才可召唤妖王！<#SO:1>挑战九层妖塔<#SO/><#SO:2>让我考虑一下<#SO/>
+
+[@1]
+#IF
+#ACT
+#SAY
+据说只有拥有[妖兽秘卷]，才可召唤妖王！你还确定要继续挑战妖塔吗？([妖兽秘卷]可通过野外宝箱获取)<#SO:1>挑战九层妖塔(每次需[10]万金币)<#SO/><#SO:2>让我考虑一下<#SO/>
+
+[@1_1]
+#IF
+CHECKGOLD < 100000
+#ACT
+Break
+#SAY
+身上不足[10]万金币，无法挑战妖塔！
+
+#IF
+random 9
+#ACT
+MOVE 227 996 718 0
+Break
+
+#IF
+random 8
+#ACT
+MOVE 227 1144 570 0
+Break
+
+#IF
+random 7
+#ACT
+MOVE 227 1291 423 0
+Break
+
+#IF
+random 6
+#ACT
+MOVE 227 853 575 0
+Break
+
+#IF
+random 5
+#ACT
+MOVE 227 1001 427 0
+Break
+
+#IF
+random 4
+#ACT
+MOVE 227 1148 280 0
+Break
+
+#IF
+random 3
+#ACT
+MOVE 227 733 455 0
+Break
+
+#IF
+random 2
+#ACT
+MOVE 227 881 307 0
+Break
+
+#IF
+random 1
+#ACT
+MOVE 227 1028 160 0
+Break

@@ -1,0 +1,5 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+龙卫的弟子们真是名不虚传啊！<#UI:OpenFilterShop2>药店<#UI/>

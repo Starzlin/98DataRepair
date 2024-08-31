@@ -1,0 +1,12 @@
+[@MAIN]
+#IF
+CheckCalc <$VERSION> < 1
+#ACT
+Break
+#SAY
+该玩法将在幽冥海版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+#ACT
+#SAY
+人家叫碧橙，可千万别以为我只能改变两种镶孔的颜色呢！我这里承担了打孔雕色一条龙服务哦！<#D/><#UI:EquipSocketMake>装备打孔<#UI/><#UI:EquipSocketRfin>装备雕色<#UI/><#UI:EquipSocketNhrt>孔色传承<#UI/>

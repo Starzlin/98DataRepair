@@ -1,0 +1,44 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+小鹏给大家带来一些特别的道具，每次兑换后可获得相应的活动积分，积分可换取各种道具，过时不候哦！<#UI:OpenFilterShop1>兑换道具<#UI/><#UI:OpenFilterShop5>积分换道具<#UI/><#UI:OpenFilterShop8>优惠兑换玄虎坐骑<#UI/><#UI:OpenFilterShop9>优惠兑换灵兔坐骑<#UI/><#SO:1>批量使用背包内灵参<#SO/>
+
+[@1]
+#IF
+#ACT
+#SAY
+灵参兑换经验<#SO:1>[1]灵参兑换[10]万经验<#SO/><#SO:2>[10]灵参兑换[100]万经验<#SO/><#SO:3>[100]灵参兑换[1000]万经验<#SO/>
+
+[@1_1]
+#IF
+CheckItemIdx 1501059 1
+#ACT
+TakeItemIdx 1501059 1
+GiveExp 100000
+#SAY
+成功将灵参兑换成了经验！
+#ELSESAY
+抱歉，阁下身上似乎没有灵参啊。<#SO:1>知道了<#SO/>
+
+[@1_2]
+#IF
+CheckItemIdx 1501059 10
+#ACT
+TakeItemIdx 1501059 10
+GiveExp 1000000
+#SAY
+成功将灵参兑换成了经验！
+#ELSESAY
+抱歉，阁下身上似乎没有灵参啊。<#SO:1>知道了<#SO/>
+
+[@1_3]
+#IF
+CheckItemIdx 1501059 100
+#ACT
+TakeItemIdx 1501059 100
+GiveExp 10000000
+#SAY
+成功将灵参兑换成了经验！
+#ELSESAY
+抱歉，阁下身上似乎没有灵参啊。<#SO:1>知道了<#SO/>

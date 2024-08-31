@@ -1,0 +1,42 @@
+[@MAIN]
+#IF
+CheckClass 战士
+#ACT
+Break
+#SAY
+<#D>来看看我的货吧，就连龙卫大人，当年也在我的铺子里买过东西。<#D/><#UI:OpenFilterShop1>杂货店<#UI/><#INS:S43>关于聚灵珠<#INS/>
+
+#IF
+CheckClass 法师
+#ACT
+Break
+#SAY
+<#D>来看看我的货吧，就连龙卫大人，当年也在我的铺子里买过东西。<#D/><#UI:OpenFilterShop2>杂货店<#UI/><#INS:S43>关于聚灵珠<#INS/>
+
+#IF
+CheckClass 刺客
+#ACT
+Break
+#SAY
+<#D>来看看我的货吧，就连龙卫大人，当年也在我的铺子里买过东西。<#D/><#UI:OpenFilterShop3>杂货店<#UI/><#INS:S43>关于聚灵珠<#INS/>
+
+#IF
+CheckClass 弓手
+#ACT
+Break
+#SAY
+<#D>来看看我的货吧，就连龙卫大人，当年也在我的铺子里买过东西。<#D/><#UI:OpenFilterShop4>杂货店<#UI/><#INS:S43>关于聚灵珠<#INS/>
+
+#IF
+CheckClass 道士
+#ACT
+Break
+#SAY
+<#D>来看看我的货吧，就连龙卫大人，当年也在我的铺子里买过东西。<#D/><#UI:OpenFilterShop5>杂货店<#UI/><#INS:S43>关于聚灵珠<#INS/>
+
+#IF
+CheckClass 龙枪
+#ACT
+Break
+#SAY
+<#D>来看看我的货吧，就连龙卫大人，当年也在我的铺子里买过东西。<#D/><#UI:OpenFilterShop6>杂货店<#UI/><#INS:S43>关于聚灵珠<#INS/>

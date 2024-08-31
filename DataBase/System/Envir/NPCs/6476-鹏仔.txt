@@ -1,0 +1,143 @@
+[@MAIN]
+#IF
+CheckCalc <$VERSION> < 4
+#ACT
+Break
+#SAY
+<#P0:0><#P1:0><#T:667671>
+
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:700400>
+
+[@1]
+#IF
+#ACT
+#SAY
+;请选择您想升级的防具类型。<#SO:1>升级衣服<#SO/><#SO:2>升级头盔<#SO/><#SO:3>升级腰带<#SO/><#SO:4>升级鞋子<#SO/>
+<#P0:0><#P1:0><#T:700446>
+
+[@1_1]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:700402>
+
+[@1_2]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:700403>
+
+[@1_13]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:700404>
+
+[@1_14]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:700405>
+
+[@2]
+#IF
+#ACT
+#SAY
+;请选择您想升级的配饰类型。<#SO:5>升级肩甲<#SO/><#SO:6>升级护腕<#SO/><#SO:7>升级背饰<#SO/><#SO:8>升级玉佩<#SO/>
+<#P0:0><#P1:0><#T:700447>
+
+[@2_5]
+#IF
+#ACT
+#SAY
+;升级配饰需要花费相应的材料，如果都准备妥当了，我随时可以开工。<#PC:ITEMSUBTYPE_EQUIP_SHOULDER_ARMOR><#UI:OpenEquipLevelUp>升级肩甲<#UI/><#SO:1>我再想想<#SO/>
+<#P0:0><#P1:0><#T:700442>
+
+[@2_6]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:700443>
+
+[@2_7]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:700444>
+
+[@2_8]
+#IF
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:700445>
+
+[@3]
+#IF
+CheckClass 战士
+#ACT
+MOV N1 110006
+Break
+#SAY
+<#P0:20><#P1:0><#T:700421>
+
+#IF
+CheckClass 法师
+#ACT
+MOV N1 110007
+Break
+#SAY
+<#P0:20><#P1:0><#T:700422>
+
+#IF
+CheckClass 道士
+#ACT
+MOV N1 110008
+Break
+#SAY
+<#P0:20><#P1:0><#T:700423>
+
+#IF
+CheckClass 刺客
+#ACT
+Break
+#SAY
+<#P0:20><#P1:0><#T:700424>
+
+#IF
+CheckClass 弓手
+#ACT
+MOV N1 110010
+Break
+#SAY
+<#P0:20><#P1:0><#T:700425>
+
+#IF
+CheckClass 龙枪
+#ACT
+MOV N1 110013
+Break
+#SAY
+<#P0:20><#P1:0><#T:700426>
+
+[@3_1]
+#IF
+Checkcalc <$OUTPUT(J103)> == 1
+#ACT
+Break
+#SAY
+<#P0:0><#P1:0><#T:700407>
+
+#IF
+CheckItemIdx 90226 20
+#ACT
+MOV J103 1
+TakeItemIdx 90226 20
+GiveItemIdx <$OUTPUT(N1)> 1
+#SAY
+<#P0:0><#P1:0><#T:700409>
+#ELSESAY
+<#P0:0><#P1:0><#T:700408>
+

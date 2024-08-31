@@ -1,0 +1,57 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+阁下似乎正在探寻天赋之道，若你能完成此处的委托，我可赠予你些灵机竹签以便早日达成当前目标。<#SO:3>兑换无相石礼包<#SO/><#SO:4>兑换天赋突破石<#SO/><#UI:OpenUIMergeMelon>合成无相石<#UI/>
+
+[@1]
+#IF
+#ACT
+#SAY
+为彻底解决卡顿问题，我们对程序底层做了全部重构，目前任务系统暂未修复完，后续会动态更新，请留意公告！
+
+[@3]
+#IF
+#ACT
+#SAY
+<#P0:20><#P1:1><#T:700748>
+
+[@3_1]
+#IF
+CheckItemIdx 90226 20
+#ACT
+TakeItemIdx 90226 20
+GiveItemIdx 140006 1
+#SAY
+<#P0:0><#P1:0><#T:700750>
+#ELSESAY
+<#P0:0><#P1:0><#T:700749>
+
+[@4]
+#IF
+#ACT
+#SAY
+<#P0:20><#P1:0><#T:700751>
+
+[@4_1]
+#IF
+CheckItemIdx 90226 20
+#ACT
+TakeItemIdx 90226 20
+GiveItemIdx 140005 1
+#SAY
+<#P0:0><#P1:0><#T:700750>
+#ELSESAY
+<#P0:0><#P1:0><#T:700749>
+
+[@4_2]
+#IF
+CheckItemIdx 90226 200
+#ACT
+TakeItemIdx 90226 200
+GiveItemIdx 140005 10
+#SAY
+<#P0:0><#P1:0><#T:700750>
+#ELSESAY
+<#P0:0><#P1:0><#T:700749>
+

@@ -1,0 +1,12 @@
+[@MAIN]
+#IF
+CheckCalc <$VERSION> < 3
+#ACT
+Break
+#SAY
+该玩法将在赤月版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+#ACT
+#SAY
+我可以帮你把低级灵石合成高级灵石，让它们瞬间大放异彩，不过合成过程有灵石碎裂的风险，最好加入些幸运符。<#D/><#UI:GemComposePanel>灵石合成<#UI/>

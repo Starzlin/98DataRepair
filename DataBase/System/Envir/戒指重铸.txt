@@ -1,0 +1,92 @@
+[@开始戒指重铸]
+{
+
+#IF
+CheckCalc <$STR(U510)> == 65000
+#ACT
+MOV U510 0
+
+;99930018-龙之戒指 沃玛
+#IF
+Random 510
+#ACT
+Calc U510 + 1
+RandomGiveItemIdx 99930018 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99930017-红宝石戒指 沃玛
+#IF
+Random 520
+#ACT
+Calc U510 + 1
+RandomGiveItemIdx 99930017 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99930014-铂金戒指 沃玛
+#IF
+Random 530
+#ACT
+Calc U510 + 1
+RandomGiveItemIdx 99930014 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99930048-闪影戒指 沃玛
+#IF
+Random 540
+#ACT
+Calc U510 + 1
+RandomGiveItemIdx 99930048 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99930074-狼首戒指 沃玛
+#IF
+Random 550
+#ACT
+Calc U510 + 1
+RandomGiveItemIdx 99930074 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99930009-蛇眼戒指
+;99930007-珍珠戒指
+;99930072-扣弦扳指
+;99930046-翡翠戒指
+;99930047-紫玉戒指
+;99930012-魅力戒指
+;99930011-道德戒指
+;99930008-黑色水晶戒指
+;99930071-古藤戒指
+;99930005-蓝色水晶戒指
+
+#IF
+Random 30
+#ACT
+Calc U510 + 1
+RandomGiveItemIdx 99930009,99930007,99930072,99930046,99930047,99930012,99930011,99930008,99930071,99930005 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;99930016-珊瑚戒指
+;99930015-骷髅戒指
+;99930010-金戒指
+;99930073-铁皮指环
+;99930001-古铜戒指
+;99930004-牛角戒指
+;99930003-六角戒指
+;99930002-玻璃戒指
+;99930006-生铁戒指
+;99930045-青铜戒指
+
+#IF
+#ACT
+Calc U510 + 1
+RandomGiveItemIdx 99930016,99930013,99930015,99930010,99930001,99930004,99930003,99930002,99930073,99930006,99930045 1
+SendItemRestore <$STR(G1000)>
+Break
+
+;======================================================================
+}

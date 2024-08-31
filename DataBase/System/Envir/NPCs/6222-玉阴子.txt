@@ -1,0 +1,5 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+需要药物吗？来找我就对了！<#UI:OpenFilterShop2>魔龙药铺<#UI/>

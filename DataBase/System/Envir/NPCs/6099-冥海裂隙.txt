@@ -1,0 +1,42 @@
+[@MAIN]
+#IF
+CheckCalc <$VERSION> < 1
+#ACT
+Break
+#SAY
+该玩法将在幽冥海版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+CheckCalc <$HOUR> < 10
+#ACT
+Break
+#SAY
+通往冥海秘窟的裂隙仅在每日10~24点才可进入，请届时再来吧。<#SO:2>知道了<#SO/>
+
+#IF
+#ACT
+#SAY
+似乎是条连通冥海深处的裂隙，是否要进入一探？<#SO:1>进入冥海秘窟<#SO/><#SO:2>暂时不要<#SO/>
+
+[@1]
+#IF
+LEVEL < 35
+#ACT
+Break
+#SAY
+等级不足[35]级，无法进入此地图！
+
+#IF
+HasBuff 46415
+#ACT
+MOVE 229 1100 553 0
+Break
+
+#IF
+CheckCalc <$STR(J2)>  == 0
+#ACT
+MOV J2 1
+move 229 1100 553 0
+GiveBuff 46415
+#ELSESAY
+您今日已探索过[冥海裂缝]，无法继续探索！

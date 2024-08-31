@@ -1,0 +1,15 @@
+[@MAIN]
+#IF
+CheckCalc <$VERSION> < 4
+#ACT
+Break
+#SAY
+该玩法将在魔龙版本开放，可以通过快捷键W查看版本内容详情！
+
+#IF
+CheckCalc <$PHYSIQUE> == 1
+#ACT
+#SAY
+<#P0:0><#P1:0><#T:666401>
+#ELSESAY
+<#P0:0><#P1:0><#T:666402>

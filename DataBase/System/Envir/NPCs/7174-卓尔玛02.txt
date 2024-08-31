@@ -1,0 +1,43 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+是否要进入巨龙之巅？<#SO:1>进入巨龙之巅<#SO/>
+[@1]
+#IF
+Random 6
+#ACT
+MOVE 126 1056 174 0
+BREAK
+
+#IF
+Random 5
+#ACT
+MOVE 126 1050 180 0
+BREAK
+
+#IF
+Random 4
+#ACT
+MOVE 126 1042 176 0
+BREAK
+
+#IF
+Random 3
+#ACT
+MOVE 126 1038 172 0
+BREAK
+
+#IF
+Random 2
+#ACT
+MOVE 126 1038 166 0
+BREAK
+
+#IF
+Random 1
+#ACT
+MOVE 126 1054 166 0
+BREAK
+
+
