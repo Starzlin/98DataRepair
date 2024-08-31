@@ -23,3 +23,9 @@
 - `98端`在`百牛端`的基础上，进一步开放了扩展能力和数据配置能力，并发布了免费试玩版本，见`release附件`
 - 但98端自带的DataBase不完善，所以，本项目当前变更为了修复DataBase
 
+> 测试方式
+- 下载release中的 `98GameServer.zip` 解压
+- 下载最新版本的`DataBase`目录解压
+- 在98GameServer的setup.ini配置中指定DataBase路径
+- 用`本地测试登录器.exe`登录游戏进行测试
+
