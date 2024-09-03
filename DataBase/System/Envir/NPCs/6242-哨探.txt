@@ -1,89 +1,99 @@
 [@MAIN]
 #IF
 #ACT
-Break
 #SAY
-此活动将在3天后开放，与二区同步，给您带来不便，请谅解！
-
-#IF
-#ACT
-#SAY
-正义与邪恶的斗争一触即发！<#SO:111>屠魔大厅<#SO/><#SO:111>魔龙幻境<#SO/><#SO:111>秘宝广场<#SO/>
-
-[@111]
-#IF
-#ACT
-#SAY
-星空二区全面改版副本活动玩法，由于内容定档于赤月节点，故赤月节点开放屠魔大厅，魔龙幻境，秘宝广场三大世界BOSS争夺玩法！
-
-[@1]
-#IF
-#ACT
-#SAY
-<#SO:1>挑战屠魔大厅<#SO/>
-
-[@1_1]
-#OR
-CheckCalc <$WEEK> == 1
-CheckCalc <$WEEK> == 3
-CheckCalc <$WEEK> == 5
-#ACT
-Break
-#SAY
-当前不在活动时间，屠魔大厅仅在每周二，四，六、日的19点开放。<#SO:1>知道了<#SO/>
-
-#IF
-CheckCalc <$HOUR> != 19
-#ACT
-Break
-#SAY
-当前不在活动时间，屠魔大厅仅在每周二，四，六、日的19点开放。<#SO:1>知道了<#SO/>
-
-#IF
-#ACT
-MOVE 80 0 0 3
-
-[@2]
-#IF
-#ACT
-#SAY
-<#SO:1>挑战魔龙幻境<#SO/>
-
-[@2_1]
-#OR
-CheckCalc <$WEEK> == 2
-CheckCalc <$WEEK> == 4
-CheckCalc <$WEEK> == 6
-#ACT
-Break
-#SAY
-当前不在活动时间，魔龙幻境仅在每周一，三，五、日的19点开放。<#SO:1>知道了<#SO/>
-
-#IF
-CheckCalc <$HOUR> != 19
-#ACT
-Break
-#SAY
-当前不在活动时间，魔龙幻境仅在每周一，三，五、日的19点开放。<#SO:1>知道了<#SO/>
-
-#IF
-#ACT
-MOVE 36 0 0 3
+我知道如何去往魔虫窟，那是个凶险无比的地方，只有依靠团队的力量才能存活，所以你必须组队前往。另外你的等级要达到25级，并且交给我1张“魔虫窟入场券”或“副本入场券”，我就能给你指点道路。（每天只能进入一次。）<#SO:1>使用魔虫窟入场券进入<#SO/><#SO:2>使用副本入场券进入<#SO/><#SO:3>购买入场券<#SO/><#SO:4>取消<#SO/>
 
 [@3]
-#IF
-#ACT
 #SAY
-<#SO:1>挑战秘宝广场<#SO/>
+购买“魔虫窟入场券”需要[10]张灵符，是否确认购买？<#SO:1>确认购买<#SO/>
 
 [@3_1]
 #IF
-CheckCalc <$HOUR> != 19
+CheckItemIdx 90226 10
+#ACT
+TakeItemIdx 90226 10
+GiveItem 魔虫窟入场券 1 1
+#ELSESAY
+购买“魔虫窟入场券”需要[10]张灵符！
+
+
+[@1]
+#IF
+not Groupleader
 #ACT
 Break
 #SAY
-当前不在活动时间，秘宝广场仅在每日19点开放。<#SO:1>知道了<#SO/>
+<#P0:0><#P1:0><#T:990109>
+
+#IF
+CHECKGROUPVAR J255 == 1
+#ACT
+Break
+#ELSESAY
+队伍中有人今天已经去过魔虫窟了。<#SO:999999>确定<#SO/>
+
+#IF
+LEVEL < 25
+#ACT
+Break
+#SAY
+不好意思，您的等级不足，请到达25级以后再来。<#SO:1>确定<#SO/>
+
+#IF
+CheckItem 魔虫窟入场券 1 1
+#ACT
+GroupGoto @扣除魔虫窟入场券
 
 #IF
 #ACT
-MOVE 74 0 0 3
+CreateInstance 72 180
+GroupInstanceMove 72 0 0 3
+Break
+#ELSESAY
+传入魔虫窟需扣除每位队伍成员1张“魔虫窟入场券”，似乎有人准备不足啊。
+
+[@2]
+#IF
+not Groupleader
+#ACT
+Break
+#SAY
+<#P0:0><#P1:0><#T:990109>
+
+#IF
+CHECKGROUPVAR J255 == 1
+#ACT
+Break
+#ELSESAY
+队伍中有人今天已经去过魔虫窟了。<#SO:999999>确定<#SO/>
+
+#IF
+LEVEL < 25
+#ACT
+Break
+#SAY
+不好意思，您的等级不足，请到达25级以后再来。<#SO:1>确定<#SO/>
+
+#IF
+CheckItem 副本入场券 1 1
+#ACT
+GroupGoto @扣除副本入场券
+
+#IF
+#ACT
+CreateInstance 72 180
+GroupInstanceMove 72 0 0 3
+Break
+#ELSESAY
+传入魔虫窟需扣除每位队伍成员1张“副本入场券”，似乎有人准备不足啊。
+
+[@扣除副本入场券]
+#IF
+#ACT
+TAKEITEM 副本入场券 1
+
+[@扣除魔虫窟入场券]
+#IF
+#ACT
+TAKEITEM 魔虫窟入场券 1
